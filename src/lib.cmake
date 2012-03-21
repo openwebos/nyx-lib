@@ -21,6 +21,7 @@ include(${NYX_COMPONENT_UTILS})
 
 configure_file(${PROJECT_SOURCE_DIR}/config/nyx_version.h.in ${PROJECT_SOURCE_DIR}/../include/nyx/common/nyx_version.h)
 configure_file(${PROJECT_SOURCE_DIR}/config/nyx_config.h.in ${PROJECT_SOURCE_DIR}/config/nyx_config.h)
+configure_file(${PROJECT_SOURCE_DIR}/config/nyx.pc.in ${PROJECT_SOURCE_DIR}/config/nyx.pc @ONLY)
 
 find_package(Glib2 REQUIRED)
 
@@ -62,4 +63,5 @@ set_target_properties(nyx PROPERTIES VERSION ${NYX_LIBRARY_VERSION} SOVERSION ${
 
 install(DIRECTORY ../include/ DESTINATION include/ PATTERN "*.swp" EXCLUDE)
 install(TARGETS nyx LIBRARY DESTINATION lib${LIB_SUFFIX}/)
+install(FILES ${PROJECT_SOURCE_DIR}/config/nyx.pc DESTINATION lib/pkgconfig)
 

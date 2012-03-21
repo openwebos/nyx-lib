@@ -16,3 +16,4 @@ doc/html
 *.DS_Store
 include/nyx/common/nyx_version.h
 src/config/nyx_config.h
+src/config/nyx.pc
