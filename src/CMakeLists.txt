@@ -88,6 +88,10 @@ add_definitions(-DNYX_MODULE_PREFIX=\"${CMAKE_SHARED_MODULE_PREFIX}\")
 add_definitions(-DNYX_MODULE_SUFFIX=\"${CMAKE_SHARED_MODULE_SUFFIX}\")
 add_definitions(-DNYX_MODULE_DIR=\"${NYX_MODULE_DIR}\")
 add_definitions(-DNYX_MODULE_MOCK_DIR=\"${NYX_MODULE_MOCK_DIR}\")
+message("NYX_MODULE_DIR      set to ${NYX_MODULE_DIR}")
+message("NYX_MODULE_MOCK_DIR set to ${NYX_MODULE_MOCK_DIR}")
+message("NYX_MODULE_PREFIX   set to ${CMAKE_SHARED_MODULE_PREFIX}")
+message("NYX_MODULE_SUFFIX   set to ${CMAKE_SHARED_MODULE_SUFFIX}")
 
 include(lib.cmake)
 
