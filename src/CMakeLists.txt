@@ -76,13 +76,23 @@ macro(add_release_flags flags)
 	endif()
 endmacro()
 
+macro(add_linker_flags flags)
+	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${flags}")
+endmacro()
+
 set(NYX_COMPONENT_UTILS "${CMAKE_CURRENT_SOURCE_DIR}/nyx.cmake")
 
-#Can't enable Werror until hidd fixes it's headers.
-#add_flags("-Werror")
+# Can't enable Werror yet
+# add_flags("-Werror")
 add_flags("-Wall -pipe -g -std=c99")
 add_debug_flags("-O0 -DDEBUG -D_DEBUG")
 add_release_flags("-DNDEBUG")
+
+# XXX Using add_linker_flags() fails to add them to the link command line -- why??
+add_flags("-Wl,--no-undefined")
+# XXX The libraries that come with gcc fail when --no-allow-shlib-undefined is specified
+#add_flags("-Wl,--no-allow-shlib-undefined")
+
 add_definitions(-D_GNU_SOURCE=1)
 add_definitions(-DNYX_MODULE_PREFIX=\"${CMAKE_SHARED_MODULE_PREFIX}\")
 add_definitions(-DNYX_MODULE_SUFFIX=\"${CMAKE_SHARED_MODULE_SUFFIX}\")
