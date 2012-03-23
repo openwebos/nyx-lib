@@ -43,18 +43,21 @@ if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${TARGET}")
 endif ()
 
 include_directories(
-        ../include
-        utils
-        ${NYX_INCLUDES}
+	../include
+	utils
+	${NYX_INCLUDES}
 )
 
 add_library(nyx
-        SHARED
-        ${NYX_SOURCE}
+	SHARED
+	${NYX_SOURCE}
 )
 
 target_link_libraries(nyx
-        ${NYX_LIBS}
+	${NYX_LIBS}
+	dl
+	pthread
+	rt
 )
 
 set_target_properties(nyx PROPERTIES DEFINE_SYMBOL NYX_SHARED)
