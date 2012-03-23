@@ -25,47 +25,14 @@
 #ifndef _NYX_UTILS_H_
 #define _NYX_UTILS_H_
 
-#include <stdarg.h>
-#include <string.h>
-
-#include <nyx/common/nyx_macros.h>
+#include <stdint.h>
 #include <nyx/module/nyx_device_internal.h>
-#include <nyx/module/nyx_log.h>
 
 /* Utility functions to write and read an integer value to/from a file */
 void nyx_utils_write_value (char* path, int32_t val);
 int32_t nyx_utils_read_value (char* path);
 
-nyx_error_t nyx_utils_async_callback (nyx_device_t* device_in_ptr,  nyx_device_callback callback,
+nyx_error_t nyx_utils_async_callback (nyx_device_t* device_in_ptr, nyx_device_callback callback,
 		nyx_callback_status_t status,void* context);
-
-#define return_if(condition, args...)                         \
-  do {                                                        \
-    if (UNLIKELY(condition)) {                                \
-      return args;                                            \
-    }                                                         \
-  } while(0)
-
-#define msg_return_if(cond, retval, msg_level, m, args...)    \
-  do {                                                        \
-    if (UNLIKELY(cond)) {                                     \
-      nyx_msg((msg_level), (m), ##args);                          \
-      return retval;                                          \
-    }                                                         \
-  } while (0)
-
-#ifdef DEBUG_MEMORY
-#define dbg_set(var, val) ((var) = (val))
-#else
-#define dbg_set(var, val) do {} while(0)
-#endif
-
-#define release_assert(cond)                                 \
-  do {                                                       \
-    if (UNLIKELY(!cond)) {                                   \
-      nyx_msg(NYX_LOG_CRITICAL, "Condition %s broken", #cond);           \
-      abort();                                               \
-               }                                                        \
-  } while(0)
 
 #endif /* _NYX_UTILS_H_ */

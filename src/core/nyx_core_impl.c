@@ -25,9 +25,9 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <nyx/common/nyx_error.h>
+#include <nyx/module/nyx_log.h>
 
 #include "nyx_core_impl.h"
-#include <nyx/module/nyx_utils.h>
 
 struct nyx_core {
 	GMainContext* main_context;
