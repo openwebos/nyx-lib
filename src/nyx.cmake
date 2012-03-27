@@ -21,46 +21,21 @@ macro(nyx_component dir)
 	if (NYX_SUBDIR)
 		set(NYX_SUBDIR "${NYX_SUBDIR}/${dir}")
 	else()
-		set(NYX_SUBDIR "${CMAKE_CURRENT_SOURCE_DIR}/${dir}")
+		set(NYX_SUBDIR "${dir}")
 	endif()
 
-	add_subdirectory(${dir} ${dir})
+	add_subdirectory(${dir})
+
 	set(NYX_SUBDIR ${BASE_NYX_SUBDIR})
 
-	# make sure portability source is propogated to parent
-	# if this isn't the top-level portability directory
-	# don't want to leak variables unnecessarily
 	if (NYX_SUBDIR)
-		set(NYX_INCLUDES "${NYX_INCLUDES}" PARENT_SCOPE)
 		set(NYX_SOURCE "${NYX_SOURCE}" PARENT_SCOPE)
-		set(NYX_LIBS "${NYX_LIBS}" PARENT_SCOPE)
-	else()
-		message("Sources = ${NYX_SOURCE}")
 	endif()
 endmacro()
-
-macro(nyx_include)
-	foreach (inc ${ARGV})
-		if (NOT "${inc}" MATCHES ^/)
-			set(inc "${NYX_SUBDIR}/${inc}")
-		endif()
-		list(APPEND NYX_INCLUDES ${inc})
-	endforeach()
-	set(NYX_INCLUDES ${NYX_INCLUDES} PARENT_SCOPE)
-endmacro(nyx_include)
 
 macro(add_nyx_source)
 	foreach (src ${ARGV})
-		if (NOT "${src}" MATCHES ^/)
-			set(src "${NYX_SUBDIR}/${src}")
-		endif()
-		list(APPEND NYX_SOURCE ${src})
+		list(APPEND NYX_SOURCE "${NYX_SUBDIR}/${src}")
 	endforeach()
 	set(NYX_SOURCE ${NYX_SOURCE} PARENT_SCOPE)
 endmacro()
-
-macro(add_nyx_libs)
-	list(APPEND NYX_LIBS ${ARGV})
-	set(NYX_LIBS ${NYX_LIBS} ${ARGV} PARENT_SCOPE)
-endmacro()
-	

@@ -21,11 +21,3 @@ include(${NYX_COMPONENT_UTILS})
 add_nyx_source(
 	nyx_core_impl.c nyx_impl.c
 )
-
-add_nyx_libs(
-        ${Glib2_LIBRARIES}
-)
-
-nyx_include(
-	.
-)

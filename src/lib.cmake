@@ -25,15 +25,6 @@ configure_file(${PROJECT_SOURCE_DIR}/config/nyx.pc.in ${PROJECT_SOURCE_DIR}/conf
 
 find_package(Glib2 REQUIRED)
 
-nyx_include(
-	${PROJECT_SOURCE_DIR}/config/
-	${PROJECT_SOURCE_DIR}/core/
-	${PROJECT_SOURCE_DIR}/device/
-	${PROJECT_SOURCE_DIR}/utils/
-	${Glib2_INCLUDE_DIRS}
-	${Glib2_Config_INCLUDE_DIRS}
-)
-
 nyx_component(core)
 nyx_component(device)
 nyx_component(utils)
@@ -43,9 +34,12 @@ if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${TARGET}")
 endif ()
 
 include_directories(
+	${Glib2_INCLUDE_DIRS}
+	${Glib2_Config_INCLUDE_DIRS}
 	../include
-	utils
-	${NYX_INCLUDES}
+	${PROJECT_SOURCE_DIR}/config/
+	${PROJECT_SOURCE_DIR}/core/
+	.
 )
 
 add_library(nyx
@@ -54,11 +48,12 @@ add_library(nyx
 )
 
 target_link_libraries(nyx
-	${NYX_LIBS}
+	${Glib2_LIBRARIES}
 	dl
 	pthread
 	rt
 )
+
 
 set_target_properties(nyx PROPERTIES DEFINE_SYMBOL NYX_SHARED)
 set_target_properties(nyx PROPERTIES DEFINE_SYMBOL NYX_EXPORT)
@@ -67,4 +62,3 @@ set_target_properties(nyx PROPERTIES VERSION ${NYX_LIBRARY_VERSION} SOVERSION ${
 install(DIRECTORY ../include/ DESTINATION include/ PATTERN "*.swp" EXCLUDE)
 install(TARGETS nyx LIBRARY DESTINATION lib${LIB_SUFFIX}/)
 install(FILES ${PROJECT_SOURCE_DIR}/config/nyx.pc DESTINATION lib/pkgconfig)
-
