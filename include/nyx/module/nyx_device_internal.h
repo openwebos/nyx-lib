@@ -176,9 +176,9 @@ typedef nyx_error_t (*nyx_battery_get_ctia_parameters_function_t)(nyx_device_t *
 typedef nyx_error_t (*nyx_battery_set_wakeup_percentage_function_t)(nyx_device_t *, int32_t);
 typedef nyx_error_t (*nyx_firmware_update_query_current_version_function_t)(nyx_device_t*, char**);
 typedef nyx_error_t (*nyx_firmware_update_get_available_versions_iterator_function_t)(nyx_device_t*, nyx_firmware_update_iterator_handle_t*);
-typedef nyx_error_t (*nyx_firmware_update_get_next_available_version_function_t)(nyx_device_t*, nyx_firmware_update_iterator_handle_t, nyx_firmware_version_info_t*);
+typedef nyx_error_t (*nyx_firmware_update_get_next_available_version_function_t)(nyx_device_t*, nyx_firmware_update_iterator_handle_t, nyx_firmware_version_info_handle_t*);
 typedef nyx_error_t (*nyx_firmware_update_release_available_versions_iterator_function_t)(nyx_device_t*, nyx_firmware_update_iterator_handle_t);
-typedef nyx_error_t (*nyx_firmware_update_flash_function_t)(nyx_device_t*, nyx_firmware_version_info_t*, bool, int32_t*, nyx_device_callback, void*);
+typedef nyx_error_t (*nyx_firmware_update_flash_function_t)(nyx_device_t*, nyx_firmware_version_info_handle_t, bool, int32_t*, nyx_device_callback, void*);
 
 typedef nyx_error_t (*nyx_system_set_alarm_function_t)(nyx_device_t *, time_t, nyx_device_callback, void *);
 typedef nyx_error_t (*nyx_system_query_next_alarm_function_t)(nyx_device_t *, time_t *);

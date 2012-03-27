@@ -55,7 +55,7 @@ struct nyx_firmware_version_info {
     char* version;		/**< Version string of a firmware image */
     char* uri;			/**< Location of the image (typically a filename path) */
 };
-typedef struct nyx_firmware_version_info* nyx_firmware_version_info_t;
+typedef struct nyx_firmware_version_info* nyx_firmware_version_info_handle_t;
 
 /** @} */
 

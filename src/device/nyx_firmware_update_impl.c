@@ -38,7 +38,7 @@ nyx_error_t nyx_firmware_update_get_available_versions_iterator(nyx_device_handl
 	nyx_execute_return_function(firmware_update_get_available_versions_iterator, FIRMWARE_UPDATE, GET_AVAILABLE_VERSIONS_ITERATOR, handle, iterator_out_ptr);
 }
 
-nyx_error_t nyx_firmware_update_get_next_available_version(nyx_device_handle_t handle, nyx_firmware_update_iterator_handle_t iterator, nyx_firmware_version_info_t* version_out_ptr)
+nyx_error_t nyx_firmware_update_get_next_available_version(nyx_device_handle_t handle, nyx_firmware_update_iterator_handle_t iterator, nyx_firmware_version_info_handle_t* version_out_ptr)
 {
 	nyx_execute_return_function(firmware_update_get_next_available_version, FIRMWARE_UPDATE, GET_NEXT_AVAILABLE_VERSION, handle, iterator, version_out_ptr);
 }
@@ -48,7 +48,7 @@ nyx_error_t nyx_firmware_update_release_available_versions_iterator(nyx_device_h
 	nyx_execute_return_function(firmware_update_release_available_versions_iterator, FIRMWARE_UPDATE, RELEASE_AVAILABLE_VERSIONS_ITERATOR, handle, iterator);
 }
 
-nyx_error_t nyx_firmware_update_flash(nyx_device_handle_t handle, nyx_firmware_version_info_t version, bool force, int32_t* fd_out_ptr, nyx_device_callback done_callback, void* context)
+nyx_error_t nyx_firmware_update_flash(nyx_device_handle_t handle, nyx_firmware_version_info_handle_t version, bool force, int32_t* fd_out_ptr, nyx_device_callback done_callback, void* context)
 {
     nyx_execute_return_function(firmware_update_flash, FIRMWARE_UPDATE, FLASH, handle, version, force, fd_out_ptr, done_callback, context);
 }
