@@ -47,7 +47,7 @@ extern "C" {
  *
  * @param[in]  handle - the event handle
  * @param[in]  time - time to set the alarm for (if 0, any existing RTC alarm present will be cleared)
- * @param[in]  callback - callback function to be called when any RTC alarm fires
+ * @param[in]  callback_func - callback function to be called when any RTC alarm fires
  * @param[in]  context - context passed to the callback function
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
