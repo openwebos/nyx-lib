@@ -68,7 +68,7 @@ NYX_API_EXPORT nyx_error_t nyx_sensor_bearing_get_location(nyx_device_handle_t h
  * Set the device's global location.
  *
  * @param[in]  handle the device handle.
- * @param[in]  location the device's location as defined in @ref nyx_sensor_bearing_location_t
+ * @param[in]  new_location the device's new location as should be set in this call
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  */
@@ -78,6 +78,5 @@ NYX_API_EXPORT nyx_error_t nyx_sensor_bearing_set_location(nyx_device_handle_t h
 #ifdef __cplusplus
 }
 #endif
-
 
 #endif /* _NYX_SENSOR_BEARING_H_ */
