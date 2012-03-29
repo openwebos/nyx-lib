@@ -140,8 +140,11 @@ typedef nyx_error_t (*nyx_release_event_function_t)(nyx_device_t*, nyx_event_t*)
 typedef nyx_error_t (*nyx_set_event_report_rate_t)(nyx_device_t*, nyx_report_rate_t);
 typedef nyx_error_t (*nyx_get_event_report_rate_t)(nyx_device_t*, nyx_report_rate_t*);
 
-typedef nyx_error_t (*nyx_set_rate_t)(nyx_device_t*, uint32_t);
-typedef nyx_error_t (*nyx_get_rate_t)(nyx_device_t*, uint32_t*);
+typedef nyx_error_t (*nyx_set_report_rate_t)(nyx_device_t*, nyx_report_rate_t);
+typedef nyx_error_t (*nyx_get_report_rate_t)(nyx_device_t*, nyx_report_rate_t*);
+
+typedef nyx_error_t (*nyx_set_scan_rate_t)(nyx_device_t*, uint32_t);
+typedef nyx_error_t (*nyx_get_scan_rate_t)(nyx_device_t*, uint32_t*);
 
 typedef nyx_error_t (*nyx_set_int_function_t)(nyx_device_t*, int32_t);
 typedef nyx_error_t (*nyx_get_int_function_t)(nyx_device_t*, int32_t*);

@@ -57,7 +57,7 @@ nyx_error_t nyx_touchpanel_set_active_scan_rate(nyx_device_handle_t handle, uint
 {
     nyx_device_t* d = (nyx_device_t*)handle;
     CHECK_DEVICE(d);
-    nyx_set_rate_t f = LOOKUP_METHOD(d,  NYX_TOUCHPANEL_SET_ACTIVE_SCAN_RATE_MODULE_METHOD);
+    nyx_set_scan_rate_t f = LOOKUP_METHOD(d,  NYX_TOUCHPANEL_SET_ACTIVE_SCAN_RATE_MODULE_METHOD);
     if (f)
         return f(d,active_scan_rate_in);
     else
@@ -68,7 +68,7 @@ nyx_error_t nyx_touchpanel_get_active_scan_rate(nyx_device_handle_t handle, uint
 {
     nyx_device_t* d = (nyx_device_t*)handle;
     CHECK_DEVICE(d);
-    nyx_get_rate_t f = LOOKUP_METHOD(d, NYX_TOUCHPANEL_GET_ACTIVE_SCAN_RATE_MODULE_METHOD);
+    nyx_get_scan_rate_t f = LOOKUP_METHOD(d, NYX_TOUCHPANEL_GET_ACTIVE_SCAN_RATE_MODULE_METHOD);
     if (f)
         return f(d,active_scan_rate_out_ptr);
     else
@@ -79,7 +79,7 @@ nyx_error_t nyx_touchpanel_set_idle_scan_rate(nyx_device_handle_t handle, uint32
 {
     nyx_device_t* d = (nyx_device_t*)handle;
     CHECK_DEVICE(d);
-    nyx_set_rate_t f = LOOKUP_METHOD(d,  NYX_TOUCHPANEL_SET_IDLE_SCAN_RATE_MODULE_METHOD);
+    nyx_set_scan_rate_t f = LOOKUP_METHOD(d,  NYX_TOUCHPANEL_SET_IDLE_SCAN_RATE_MODULE_METHOD);
     if (f)
         return f(d,idle_scan_rate_in);
     else
@@ -90,7 +90,7 @@ nyx_error_t nyx_touchpanel_get_idle_scan_rate(nyx_device_handle_t handle, uint32
 {
     nyx_device_t* d = (nyx_device_t*)handle;
     CHECK_DEVICE(d);
-    nyx_get_rate_t f = LOOKUP_METHOD(d, NYX_TOUCHPANEL_GET_IDLE_SCAN_RATE_MODULE_METHOD);
+    nyx_get_scan_rate_t f = LOOKUP_METHOD(d, NYX_TOUCHPANEL_GET_IDLE_SCAN_RATE_MODULE_METHOD);
     if (f)
         return f(d,idle_scan_rate_out_ptr);
     else
