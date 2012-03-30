@@ -417,7 +417,7 @@ nyx_error_t nyx_device_set_report_rate(nyx_device_handle_t handle, nyx_report_ra
 {
 	nyx_device_t* d = (nyx_device_t*)handle;
 	CHECK_DEVICE(d);
-	nyx_set_rate_t f = LOOKUP_METHOD(d,  NYX_SET_REPORT_RATE_MODULE_METHOD);
+	nyx_set_report_rate_t f = LOOKUP_METHOD(d,  NYX_SET_REPORT_RATE_MODULE_METHOD);
 	if (f)
 		return f(d,rate);
 	else
@@ -428,7 +428,7 @@ nyx_error_t nyx_device_get_report_rate(nyx_device_handle_t handle, nyx_report_ra
 {
 	nyx_device_t* d = (nyx_device_t*)handle;
 	CHECK_DEVICE(d);
-	nyx_get_rate_t f = LOOKUP_METHOD(d, NYX_GET_REPORT_RATE_MODULE_METHOD);
+	nyx_get_report_rate_t f = LOOKUP_METHOD(d, NYX_GET_REPORT_RATE_MODULE_METHOD);
 	if (f)
 		return f(d,rate_out_ptr);
 	else

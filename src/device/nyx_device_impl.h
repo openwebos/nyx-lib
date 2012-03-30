@@ -18,7 +18,7 @@
 
 /**
  *******************************************************************************
- * @file nyx_led_impl.h
+ * @file nyx_device_impl.h
  *
  * @brief internal header file.
  *
