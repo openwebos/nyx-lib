@@ -117,7 +117,7 @@ nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_controller_effe
 
     }
 
-    *handle_ptr = (nyx_led_controller_core_configuration_handle_t*)configuration;
+    *handle_ptr = (nyx_led_controller_core_configuration_handle_t)configuration;
 
     return NYX_ERROR_NONE;
 }
