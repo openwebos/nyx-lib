@@ -29,6 +29,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 #define READ_BUFFER_SIZE 10
 
