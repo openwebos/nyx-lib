@@ -54,7 +54,7 @@ extern "C" {
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_system_set_alarm(nyx_device_handle_t handle, time_t time, nyx_device_callback callback_func, void *context);
+NYX_API_EXPORT nyx_error_t nyx_system_set_alarm(nyx_device_handle_t handle, time_t time, nyx_device_callback_function_t callback_func, void *context);
 
 /**
  * @brief Query RTC time for next alarm.
@@ -171,7 +171,7 @@ NYX_API_EXPORT nyx_error_t nyx_system_get_msm_state(nyx_device_handle_t handle, 
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_system_register_msm_change_callback(nyx_device_handle_t handle, nyx_device_callback callback_func, void *context);
+NYX_API_EXPORT nyx_error_t nyx_system_register_msm_change_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context);
 
 /**
  * @brief Erase partition.

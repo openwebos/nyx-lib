@@ -32,7 +32,7 @@
 
 struct callback_data {
 	nyx_device_t* device_ptr;
-	nyx_device_callback callback;
+	nyx_device_callback_function_t callback;
 	nyx_callback_status_t status;
 	void* context;
 };
@@ -47,7 +47,7 @@ static void *callback_thread (void *ptr)
 	return NULL;
 }
 
-nyx_error_t nyx_utils_async_callback (nyx_device_t* device_in_ptr,  nyx_device_callback callback, nyx_callback_status_t status, void* context)
+nyx_error_t nyx_utils_async_callback (nyx_device_t* device_in_ptr,  nyx_device_callback_function_t callback, nyx_callback_status_t status, void* context)
 {
 	if (NULL == device_in_ptr) {
 		nyx_warn ("%s: device pointer is null, no device to use in call", __FUNCTION__);

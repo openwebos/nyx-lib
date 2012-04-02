@@ -115,7 +115,7 @@ NYX_API_EXPORT nyx_error_t nyx_firmware_update_release_available_versions_iterat
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_firmware_update_flash(nyx_device_handle_t handle, nyx_firmware_version_info_handle_t version, bool force, int32_t* fd_out_ptr, nyx_device_callback done_callback, void* context);
+NYX_API_EXPORT nyx_error_t nyx_firmware_update_flash(nyx_device_handle_t handle, nyx_firmware_version_info_handle_t version, bool force, int32_t* fd_out_ptr, nyx_device_callback_function_t done_callback, void* context);
 
 
 /** @} */

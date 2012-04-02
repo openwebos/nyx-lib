@@ -30,7 +30,7 @@
 #include <nyx/nyx_module.h>
 
 
-nyx_error_t nyx_system_set_alarm(nyx_device_handle_t handle, time_t time, nyx_device_callback callback_func, void *context)
+nyx_error_t nyx_system_set_alarm(nyx_device_handle_t handle, time_t time, nyx_device_callback_function_t callback_func, void *context)
 {
 	nyx_execute_return_function(system_set_alarm, SYSTEM, SET_ALARM, handle, time, callback_func, context);
 }
@@ -70,7 +70,7 @@ nyx_error_t nyx_system_get_msm_state(nyx_device_handle_t handle, nyx_system_msm_
 	nyx_execute_return_function(system_get_msm_state, SYSTEM, GET_MSM_STATE, handle, state);
 }
 
-nyx_error_t nyx_system_register_msm_change_callback(nyx_device_handle_t handle, nyx_device_callback callback_func, void *context)
+nyx_error_t nyx_system_register_msm_change_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context)
 {
 	nyx_execute_return_function(system_register_msm_change_callback, SYSTEM, REGISTER_MSM_CHANGE_CALLBACK, handle, callback_func, context);
 }

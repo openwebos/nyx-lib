@@ -65,7 +65,7 @@ NYX_API_EXPORT nyx_error_t nyx_charger_query_charger_status(nyx_device_handle_t 
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_charger_register_charger_status_callback(nyx_device_handle_t handle, nyx_device_callback callback_func, void *context);
+NYX_API_EXPORT nyx_error_t nyx_charger_register_charger_status_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context);
 
 
 /**
@@ -101,7 +101,7 @@ NYX_API_EXPORT nyx_error_t nyx_charger_disable_charging(nyx_device_handle_t hand
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_charger_register_state_change_callback(nyx_device_handle_t handle, nyx_device_callback callback_func, void *context);
+NYX_API_EXPORT nyx_error_t nyx_charger_register_state_change_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context);
 
 /**
  * @brief Query charging event.

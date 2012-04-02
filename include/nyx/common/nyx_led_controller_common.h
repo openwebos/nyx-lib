@@ -72,7 +72,7 @@ typedef struct {
 	struct {
 		int32_t brightness_lcd;
 		int32_t brightness_keypad;
-		nyx_device_callback callback;
+		nyx_device_callback_function_t callback;
 		void* callback_context;
 	} backlight;
 
