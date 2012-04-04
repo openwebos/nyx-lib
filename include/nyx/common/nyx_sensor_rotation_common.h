@@ -37,8 +37,7 @@ extern "C" {
 */
 
 
-typedef struct
-{
+typedef struct {
     float w;
     float x;
     float y;
@@ -55,7 +54,6 @@ typedef struct {
  * Definition of rotation event type.
  */
 typedef struct {
-
     /** Rotation matrix */
     float matrix[9];
     /** Quaternion vector of rotation */

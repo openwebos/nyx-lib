@@ -61,8 +61,7 @@ extern "C" {
  * Struct to get charger status
  */
 
-typedef struct nyx_charger_status
-{
+typedef struct nyx_charger_status {
   int32_t charger_max_current;	/** Max current that can be drawn from any charger connected*/
   int32_t connected;	/** ORing of all charger types connected */
   int32_t powered;		/** ORing of all charger types powering the device */

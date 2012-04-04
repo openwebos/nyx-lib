@@ -40,8 +40,7 @@ extern "C" {
 /**
  * This type is an enum describing the type of the bluetooth_input_detect event.
  */
-typedef enum
-{
+typedef enum {
     NYX_BLUETOOTH_INPUT_DETECT_EVENT_UNDEFINED = 0,	        /**< value NYX_BLUETOOTH_INPUT_DETECT_EVENT_UNDEFINED. */
     NYX_BLUETOOTH_INPUT_DETECT_EVENT_DEVICE_ID_ADD,         /**< value NYX_BLUETOOTH_INPUT_DETECT_EVENT_DEVICE_ID_ADD. */
     NYX_BLUETOOTH_INPUT_DETECT_EVENT_DEVICE_ID_REMOVE,      /**< value NYX_BLUETOOTH_INPUT_DETECT_EVENT_DEVICE_ID_REMOVE. */
@@ -50,8 +49,7 @@ typedef enum
 
 } nyx_bluetooth_input_detect_event_type_t;
 
-typedef struct
-{
+typedef struct {
     nyx_bluetooth_input_detect_event_type_t event_type;
     int32_t value;
 
