@@ -56,8 +56,7 @@ typedef enum {
 /**
  * @brief Defines the parameters used by @ref nyx_led_controller_core_configuration_set_param().
  */
-typedef enum
-{
+typedef enum {
     NYX_LED_CONTROLLER_CORE_EFFECT_BRIGHTNESS,          /**< brightness */
 
     NYX_LED_CONTROLLER_CORE_EFFECT_CENTER_FADE_IN,      /**< center_fade_in */

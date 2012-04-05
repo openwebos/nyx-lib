@@ -42,8 +42,7 @@ extern "C" {
 /**
  * Struct to get current battery readings
  */
-typedef struct 
-{
+typedef struct {
 	bool present;		/** True if the battery is present */
 	bool charging;		/** True if the battery is being charged currently */
 	int32_t percentage;	/** Battery capacity in percentage */

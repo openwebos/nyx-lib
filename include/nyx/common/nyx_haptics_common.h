@@ -41,8 +41,7 @@ extern "C" {
 /**
  * This type is an enum describing the types of haptics effects
  */
-typedef enum
-{
+typedef enum {
     HAPTICS_EFFECT_UNDEFINED = 0,   /**< value HAPTICS_EFFECT_UNDEFINED. */
     HAPTICS_EFFECT_RINGTONE,        /**< value HAPTICS_EFFECT_RINGTONE. */
     HAPTICS_EFFECT_ALERT,           /**< value HAPTICS_EFFECT_ALERT. */
@@ -57,15 +56,13 @@ typedef enum
 /**
  * This type is an enum describing the direction for a custom haptics effect
  */
-typedef enum
-{
+typedef enum {
     HAPTICS_DIRECTION_RIGHT,        /**< value HAPTICS_DIRECTION_RIGHT. */
     HAPTICS_DIRECTION_LEFT,         /**< value HAPTICS_DIRECTION_LEFT. */
 
 } nyx_haptics_direction_t;
 
-typedef struct
-{
+typedef struct {
     int32_t period;
     int32_t duration;
     nyx_haptics_direction_t direction;
