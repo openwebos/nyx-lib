@@ -61,12 +61,12 @@ typedef enum {
 	NYX_LOG_PRINTER_SYSLOG,
 } nyx_log_destination_t;
 
-typedef int32_t (*nyx_log_printer)(nyx_log_level_t level, const char *msg, va_list args);
+typedef int32_t (*nyx_log_printer_function_t)(nyx_log_level_t level, const char *msg, va_list args);
 
 
 void nyx_log_init();
 void nyx_log_set_level(nyx_log_level_t level);
-void nyx_log_set_printer(nyx_log_printer new_logger);
+void nyx_log_set_printer(nyx_log_printer_function_t new_logger);
 
 
 #define nyx_critical(m, args...) nyx_msg(NYX_LOG_CRITICAL, (m), ##args)

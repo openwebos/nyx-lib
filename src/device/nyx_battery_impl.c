@@ -30,7 +30,7 @@ nyx_error_t nyx_battery_query_battery_status(nyx_device_handle_t handle, nyx_bat
 	nyx_execute_return_function(battery_query_battery_status, BATTERY, QUERY_BATTERY_STATUS, handle, status);
 }
 
-nyx_error_t nyx_battery_register_battery_status_callback(nyx_device_handle_t handle, nyx_device_callback callback_func, void *context)
+nyx_error_t nyx_battery_register_battery_status_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context)
 {
 	nyx_execute_return_function(battery_register_battery_status_callback, BATTERY, REGISTER_BATTERY_STATUS_CALLBACK, handle, callback_func, context);
 }

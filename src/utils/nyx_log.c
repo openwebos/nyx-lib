@@ -108,7 +108,7 @@ int32_t _nyx_log_syslog_printer(nyx_log_level_t level, const char *msg, va_list 
 	return 0;
 }
 
-static nyx_log_printer nyx_printer = _nyx_log_syslog_printer;
+static nyx_log_printer_function_t nyx_printer = _nyx_log_syslog_printer;
 
 
 static int32_t print_error_wrapper(const char *msg, ...)
@@ -123,7 +123,7 @@ static int32_t print_error_wrapper(const char *msg, ...)
 	return printed;
 }
 
-void nyx_log_set_printer(nyx_log_printer new_log_printer)
+void nyx_log_set_printer(nyx_log_printer_function_t new_log_printer)
 {
 	if (new_log_printer == NULL) {
 		print_error_wrapper("Attempt to set a NULL logger");

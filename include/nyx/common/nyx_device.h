@@ -115,7 +115,7 @@ typedef struct nyx_device_iterator* nyx_device_iterator_handle_t;
 /**
  * Defines the possible statuses of a worker thread.
  *
- * This status is passed as a parameter to the callback function (@ref nyx_device_callback).
+ * This status is passed as a parameter to the callback function (@ref nyx_device_callback_function_t).
  */
 typedef enum {
 	NYX_CALLBACK_STATUS_UNDEFINED = 0,    /**< Status of worker thread is unknown */
@@ -130,7 +130,7 @@ typedef enum {
 /**
  * Typedef that defines the function signature for a callback routine.
  */
-typedef void (*nyx_device_callback)(nyx_device_handle_t, nyx_callback_status_t, void*);
+typedef void (*nyx_device_callback_function_t)(nyx_device_handle_t, nyx_callback_status_t, void*);
 
 /**
  * Defines all valid poll rates for sensors.

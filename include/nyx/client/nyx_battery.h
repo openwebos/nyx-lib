@@ -60,7 +60,7 @@ NYX_API_EXPORT nyx_error_t nyx_battery_query_battery_status(nyx_device_handle_t 
  * @return error code (NYX_ERROR_NONE if operation is successful
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_battery_register_battery_status_callback(nyx_device_handle_t handle, nyx_device_callback callback_func, void *context);
+NYX_API_EXPORT nyx_error_t nyx_battery_register_battery_status_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context);
 
 
 /**

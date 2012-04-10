@@ -64,7 +64,7 @@ nyx_error_t nyx_module_set_name(nyx_instance_t instance, nyx_device_t* device_in
  * set the description of the newly created device.
  *
  * @param[in] 	instance - instance passed into nyx_open_function.
- * @param[in] 	device_in_ptr - pointer to the device on which to set the name
+ * @param[in] 	device_in_ptr - pointer to the device on which to set the description
  * @param[in]	description_str - description string to set on the device.
  *
  * @return nyx_error_t that will be NYX_ERROR_NONE if operation is
@@ -77,7 +77,7 @@ nyx_error_t nyx_module_set_description(nyx_instance_t instance, nyx_device_t* de
  * set the method for the newly created device.
  *
  * @param[in] 	instance - instance passed into nyx_open_function.
- * @param[in] 	device_in_ptr - pointer to the device on which to set the name
+ * @param[in] 	device_in_ptr - pointer to the device on which to set the method
  * @param[in]	method - method to be set
  * @param[in]	symbol_str - symbol for the method to use.
  *

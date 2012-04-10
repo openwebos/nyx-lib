@@ -36,10 +36,10 @@
 #include "nyx_device_impl.h"
 #include "nyx_core_impl.h"
 
-typedef int32_t (*_nyx_module_get_api_version_major_t) (void);
-typedef int32_t (*_nyx_module_get_api_version_minor_t) (void);
-typedef const char* (*_nyx_module_get_name_t) (void);
-typedef nyx_device_type_t (*_nyx_module_get_type_t) (void);
+typedef int32_t (*_nyx_module_get_api_version_major_function_t) (void);
+typedef int32_t (*_nyx_module_get_api_version_minor_function_t) (void);
+typedef const char* (*_nyx_module_get_name_function_t) (void);
+typedef nyx_device_type_t (*_nyx_module_get_type_function_t) (void);
 
 struct nyx_device_iterator {
 	GSList* list;
@@ -250,28 +250,28 @@ nyx_error_t nyx_device_open(nyx_device_type_t type, nyx_device_id_t id, nyx_devi
 		return NYX_ERROR_UNSUPPORTED_DEVICE_TYPE;
 	}
 
-	_nyx_module_get_api_version_major_t  get_version_major_ptr = dlsym(module_ptr, "_nyx_module_get_api_version_major");
+	_nyx_module_get_api_version_major_function_t  get_version_major_ptr = dlsym(module_ptr, "_nyx_module_get_api_version_major");
 	if (NULL == get_version_major_ptr) {
 		nyx_error ("module was not declared with NYX_DECLARE_MODULE");
 		dlclose (module_ptr);
 		return NYX_ERROR_UNSUPPORTED_DEVICE_TYPE;
 	}
 
-	_nyx_module_get_api_version_minor_t get_version_minor_ptr = dlsym(module_ptr, "_nyx_module_get_api_version_minor");
+	_nyx_module_get_api_version_minor_function_t get_version_minor_ptr = dlsym(module_ptr, "_nyx_module_get_api_version_minor");
 	if (NULL == get_version_minor_ptr) {
 		nyx_error ("module was not declared with NYX_DECLARE_MODULE");
 		dlclose (module_ptr);
 		return NYX_ERROR_UNSUPPORTED_DEVICE_TYPE;
 	}
 
-	_nyx_module_get_name_t get_name_ptr = dlsym(module_ptr, "_nyx_module_get_name");
+	_nyx_module_get_name_function_t get_name_ptr = dlsym(module_ptr, "_nyx_module_get_name");
 	if (NULL == get_name_ptr) {
 		nyx_error ("module was not declared with NYX_DECLARE_MODULE");
 		dlclose (module_ptr);
 		return NYX_ERROR_UNSUPPORTED_DEVICE_TYPE;
 	}
 
-	_nyx_module_get_type_t get_device_type_ptr = dlsym(module_ptr, "_nyx_module_get_type");
+	_nyx_module_get_type_function_t get_device_type_ptr = dlsym(module_ptr, "_nyx_module_get_type");
 	if (NULL == get_device_type_ptr) {
 		nyx_error ("module was not declared with NYX_DECLARE_MODULE");
 		dlclose (module_ptr);
@@ -417,7 +417,7 @@ nyx_error_t nyx_device_set_report_rate(nyx_device_handle_t handle, nyx_report_ra
 {
 	nyx_device_t* d = (nyx_device_t*)handle;
 	CHECK_DEVICE(d);
-	nyx_set_report_rate_t f = LOOKUP_METHOD(d,  NYX_SET_REPORT_RATE_MODULE_METHOD);
+	nyx_set_report_rate_function_t f = LOOKUP_METHOD(d,  NYX_SET_REPORT_RATE_MODULE_METHOD);
 	if (f)
 		return f(d,rate);
 	else
@@ -428,7 +428,7 @@ nyx_error_t nyx_device_get_report_rate(nyx_device_handle_t handle, nyx_report_ra
 {
 	nyx_device_t* d = (nyx_device_t*)handle;
 	CHECK_DEVICE(d);
-	nyx_get_report_rate_t f = LOOKUP_METHOD(d, NYX_GET_REPORT_RATE_MODULE_METHOD);
+	nyx_get_report_rate_function_t f = LOOKUP_METHOD(d, NYX_GET_REPORT_RATE_MODULE_METHOD);
 	if (f)
 		return f(d,rate_out_ptr);
 	else
