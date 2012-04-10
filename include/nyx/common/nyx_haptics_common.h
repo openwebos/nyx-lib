@@ -42,12 +42,12 @@ extern "C" {
  * This type is an enum describing the types of haptics effects
  */
 typedef enum {
-    HAPTICS_EFFECT_UNDEFINED = 0,   /**< value HAPTICS_EFFECT_UNDEFINED. */
-    HAPTICS_EFFECT_RINGTONE,        /**< value HAPTICS_EFFECT_RINGTONE. */
-    HAPTICS_EFFECT_ALERT,           /**< value HAPTICS_EFFECT_ALERT. */
-    HAPTICS_EFFECT_NOTIFICATION,    /**< value HAPTICS_EFFECT_NOTIFICATION. */
-    HAPTICS_EFFECT_TAPDOWN,         /**< value HAPTICS_EFFECT_TAPDOWN. */
-    HAPTICS_EFFECT_TAPUP,           /**< value HAPTICS_EFFECT_TAPUP. */
+    NYX_HAPTICS_EFFECT_UNDEFINED = 0,   /**< value NYX_HAPTICS_EFFECT_UNDEFINED. */
+    NYX_HAPTICS_EFFECT_RINGTONE,        /**< value NYX_HAPTICS_EFFECT_RINGTONE. */
+    NYX_HAPTICS_EFFECT_ALERT,           /**< value NYX_HAPTICS_EFFECT_ALERT. */
+    NYX_HAPTICS_EFFECT_NOTIFICATION,    /**< value NYX_HAPTICS_EFFECT_NOTIFICATION. */
+    NYX_HAPTICS_EFFECT_TAPDOWN,         /**< value NYX_HAPTICS_EFFECT_TAPDOWN. */
+    NYX_HAPTICS_EFFECT_TAPUP,           /**< value NYX_HAPTICS_EFFECT_TAPUP. */
 
 
 } nyx_haptics_effect_type_t;
@@ -57,8 +57,8 @@ typedef enum {
  * This type is an enum describing the direction for a custom haptics effect
  */
 typedef enum {
-    HAPTICS_DIRECTION_RIGHT,        /**< value HAPTICS_DIRECTION_RIGHT. */
-    HAPTICS_DIRECTION_LEFT,         /**< value HAPTICS_DIRECTION_LEFT. */
+    NYX_HAPTICS_DIRECTION_RIGHT,        /**< value NYX_HAPTICS_DIRECTION_RIGHT. */
+    NYX_HAPTICS_DIRECTION_LEFT,         /**< value NYX_HAPTICS_DIRECTION_LEFT. */
 
 } nyx_haptics_direction_t;
 

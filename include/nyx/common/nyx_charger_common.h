@@ -55,7 +55,7 @@ extern "C" {
 #define NYX_CHARGER_INDUCTIVE_POWERED	2
 #define NYX_CHARGER_DIRECT_POWERED	4
 
-#define DOCK_SERIAL_NUMBER_LEN	32
+#define NYX_DOCK_SERIAL_NUMBER_LEN	32
 
 /**
  * Struct to get charger status
@@ -66,7 +66,7 @@ typedef struct nyx_charger_status {
   int32_t connected;	/** ORing of all charger types connected */
   int32_t powered;		/** ORing of all charger types powering the device */
   bool is_charging;	/** True if device is being charged from a charger with sufficient capacity */
-  char dock_serial_number[DOCK_SERIAL_NUMBER_LEN]; /** Serial number of dock (if connected) */
+  char dock_serial_number[NYX_DOCK_SERIAL_NUMBER_LEN]; /** Serial number of dock (if connected) */
 } nyx_charger_status_t;
 
 
