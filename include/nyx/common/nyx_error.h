@@ -43,7 +43,7 @@ extern "C" {
 /**
  * Nyx error codes
  */
-typedef enum nyx_error_enum {
+typedef enum {
 	NYX_ERROR_NONE,				/**< Operation successful */
 	NYX_ERROR_INVALID_HANDLE,		/**< Incorrect handle passes to API function */
 	NYX_ERROR_WRONG_DEVICE_TYPE,		/**< Device used for this operation has the wrong type */
