@@ -33,9 +33,9 @@
 
 typedef struct {
 	nyx_event_t _parent;
-        nyx_touchpanel_event_type_t type;
-        nyx_touchpanel_event_item_t item_array[NYX_MAX_TOUCH_EVENTS];
-        int32_t item_count;
+	nyx_touchpanel_event_type_t type;
+	nyx_touchpanel_event_item_t item_array[NYX_MAX_TOUCH_EVENTS];
+	int32_t item_count;
 
 } nyx_event_touchpanel_t;
 

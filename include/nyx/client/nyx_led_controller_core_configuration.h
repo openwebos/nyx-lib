@@ -49,7 +49,7 @@ extern "C" {
  *
  */
 NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_controller_effect_type_t effect_type,
-        nyx_led_controller_core_configuration_handle_t* handle_ptr);
+	nyx_led_controller_core_configuration_handle_t* handle_ptr);
 
 /*
  * Set a parameter in an LED core configuration.
@@ -345,7 +345,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  *
  */
 NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_set_param(
-        nyx_led_controller_core_configuration_handle_t handle, nyx_led_controller_parameter_type_t param, int32_t new_value);
+	nyx_led_controller_core_configuration_handle_t handle, nyx_led_controller_parameter_type_t param, int32_t new_value);
 
 /**
  * Finalize an LED core configuration.
@@ -359,7 +359,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_set_param(
  *
  */
 NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_finalize(
-        nyx_led_controller_core_configuration_handle_t handle);
+	nyx_led_controller_core_configuration_handle_t handle);
 
 /**
  * Release memory associated with a handle.
@@ -371,7 +371,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_finalize(
  *
  */
 NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_release(
-        nyx_led_controller_core_configuration_handle_t handle);
+	nyx_led_controller_core_configuration_handle_t handle);
 
 
 

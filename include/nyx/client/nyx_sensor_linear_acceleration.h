@@ -20,7 +20,7 @@
  * @file nyx_sensor_linear_acceleration.h
  *
  */
- 
+
 /**
  * @brief Nyx's public API for accessing a linear acceleration sensor
  * device and the events it generates.

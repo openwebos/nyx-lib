@@ -20,7 +20,7 @@
  * @file nyx_sensor_bearing.h
  *
  */
- 
+
 /**
  * @brief Nyx's public API for accessing a bearing sensor
  * device and the events it generates.

@@ -76,10 +76,10 @@ void nyx_log_set_printer(nyx_log_printer_function_t new_logger);
 #define nyx_debug(m, args...) nyx_msg(NYX_LOG_DEBUG, (m), ##args)
 #define nyx_print(l, m, args...) nyx_msg(l, (m), ##args)
 
-#define nyx_msg(msg_level, msg, args...)                      \
-  do {                                                        \
-    _nyx_log__(__FILE__, __LINE__, (msg_level), (msg), ##args);    \
-  } while(0)
+#define nyx_msg(msg_level, msg, args...)                                 \
+	do {                                                             \
+	  _nyx_log__(__FILE__, __LINE__, (msg_level), (msg), ##args);    \
+	} while(0)
 
 void _nyx_log__(const char *file, int32_t line, nyx_log_level_t level, const char *msg, ...) NYX_PRINTF_FORMAT_FUNC(4, 5);
 

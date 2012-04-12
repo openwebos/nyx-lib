@@ -41,10 +41,10 @@ extern "C" {
  */
 typedef enum {
 	NYX_SENSOR_ORIENTATION_UNDEFINED,	/**< Device orientation is unknown */
-	NYX_SENSOR_ORIENTATION_FACE_UP,	/**< Device is facing up */
+	NYX_SENSOR_ORIENTATION_FACE_UP,		/**< Device is facing up */
 	NYX_SENSOR_ORIENTATION_FACE_DOWN,	/**< Device is facing down */
 	NYX_SENSOR_ORIENTATION_FACE_FORWARD,	/**< Device is in normal orientation */
-	NYX_SENSOR_ORIENTATION_FACE_BACK,		/**< Device is in upside-down orientation */
+	NYX_SENSOR_ORIENTATION_FACE_BACK,	/**< Device is in upside-down orientation */
 	NYX_SENSOR_ORIENTATION_LEFT,		/**< Device has left side facing down */
 	NYX_SENSOR_ORIENTATION_RIGHT,		/**< Device has right side facing down */
 } nyx_sensor_orientation_value_t;
@@ -54,18 +54,18 @@ typedef enum {
  * The orientation (in degrees) must be greater than threshold for an event to be emitted.
  */
 typedef struct {
-	int32_t x;        /**< Threshold (minimum rotation) for x-axis in degrees */
-	int32_t y;        /**< Threshold (minimum rotation) for y-axis in degrees */
-	int32_t z;        /**< Threshold (minimum rotation) for z-axis in degrees */
+	int32_t x;	/**< Threshold (minimum rotation) for x-axis in degrees */
+	int32_t y;	/**< Threshold (minimum rotation) for y-axis in degrees */
+	int32_t z;	/**< Threshold (minimum rotation) for z-axis in degrees */
 } nyx_sensor_orientation_threshold_t;
 
-	   
+
 /**
  * Definition of orientation event type.
  */
 typedef struct {
 
-    nyx_sensor_orientation_value_t value;	/**< orientation value of type @ref nyx_sensor_orientation_value_t. */
+	nyx_sensor_orientation_value_t value;	/**< orientation value of type @ref nyx_sensor_orientation_value_t. */
 
 } nyx_sensor_orientation_event_item_t;
 

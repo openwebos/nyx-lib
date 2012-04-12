@@ -20,12 +20,12 @@
  * @file nyx_core.h
  *
  */
- 
+
 /**
  * @brief Nyx's public core API.
  *
  */
- 
+
 #ifndef _NYX_CORE_H_
 #define _NYX_CORE_H_
 

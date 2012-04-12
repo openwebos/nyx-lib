@@ -25,7 +25,7 @@
  * @brief Nyx's public charging API.
  *
  */
- 
+
 #ifndef _NYX_CHARGER_H_
 #define _NYX_CHARGER_H_
 

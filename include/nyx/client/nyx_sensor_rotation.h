@@ -20,7 +20,7 @@
  * @file nyx_sensor_rotation.h
  *
  */
- 
+
 /**
  * @brief Nyx's public API for accessing a rotation sensor
  * device and the events it generates.

@@ -20,7 +20,7 @@
  * @file nyx_sensor_proximity.h
  *
  */
- 
+
 /**
  * @brief Nyx's public API for accessing a proximity sensor
  * device and the events it generates.

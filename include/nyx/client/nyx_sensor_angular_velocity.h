@@ -20,7 +20,7 @@
  * @file nyx_sensor_angular_velocity.h
  *
  */
- 
+
 /**
  * @brief Nyx's public API for accessing an angular velocity sensor
  * device and the events it generates.

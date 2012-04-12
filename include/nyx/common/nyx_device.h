@@ -64,24 +64,24 @@ typedef enum {
 	NYX_DEVICE_LED,
 	NYX_DEVICE_LED_CONTROLLER,
 	NYX_DEVICE_MEMORY,
-    NYX_DEVICE_SENSOR_FIRST,          /* all psc sensors */
-    NYX_DEVICE_SENSOR_ACCELERATION = NYX_DEVICE_SENSOR_FIRST,
-    NYX_DEVICE_SENSOR_ALS,
-    NYX_DEVICE_SENSOR_ANGULAR_VELOCITY,
-    NYX_DEVICE_SENSOR_BEARING,
-    NYX_DEVICE_SENSOR_GRAVITY,
-    NYX_DEVICE_SENSOR_LINEAR_ACCELERATION,
-    NYX_DEVICE_SENSOR_MAGNETIC_FIELD,
-    NYX_DEVICE_SENSOR_ORIENTATION,
-    NYX_DEVICE_SENSOR_PROXIMITY,
-    NYX_DEVICE_SENSOR_ROTATION,
-    NYX_DEVICE_SENSOR_SHAKE,
-    NYX_DEVICE_SENSOR_LAST = NYX_DEVICE_SENSOR_SHAKE,
+	NYX_DEVICE_SENSOR_FIRST,	/* all psc sensors */
+	NYX_DEVICE_SENSOR_ACCELERATION = NYX_DEVICE_SENSOR_FIRST,
+	NYX_DEVICE_SENSOR_ALS,
+	NYX_DEVICE_SENSOR_ANGULAR_VELOCITY,
+	NYX_DEVICE_SENSOR_BEARING,
+	NYX_DEVICE_SENSOR_GRAVITY,
+	NYX_DEVICE_SENSOR_LINEAR_ACCELERATION,
+	NYX_DEVICE_SENSOR_MAGNETIC_FIELD,
+	NYX_DEVICE_SENSOR_ORIENTATION,
+	NYX_DEVICE_SENSOR_PROXIMITY,
+	NYX_DEVICE_SENSOR_ROTATION,
+	NYX_DEVICE_SENSOR_SHAKE,
+	NYX_DEVICE_SENSOR_LAST = NYX_DEVICE_SENSOR_SHAKE,
 	NYX_DEVICE_TOUCHPANEL,
 	NYX_DEVICE_SYSTEM,
 	NYX_DEVICE_MEDIA_CAMERA,
-    NYX_DEVICE_TYPE_COUNT, /* should always be the last, used primarly in testing
-                             for iterating over all known devices */
+	NYX_DEVICE_TYPE_COUNT,		/* should always be the last, used primarly in testing
+						 for iterating over all known devices */
 } nyx_device_type_t;
 
 /**
@@ -89,9 +89,9 @@ typedef enum {
  * returned by @ref nyx_device_get_iterator()
  */
 typedef enum {
-	NYX_FILTER_DEFAULT = 0, 				   /**< include default set of devices */
-	NYX_FILTER_INCLUDE_MOCK_DEVICES = 0x1, 	   /**< include the mock devices in the iterator */
-	NYX_FILTER_INCLUDE_STATIC_DEVICES = 0x2,   /**< include the static devices in the iterator */
+	NYX_FILTER_DEFAULT = 0,				/**< include default set of devices */
+	NYX_FILTER_INCLUDE_MOCK_DEVICES = 0x1,		/**< include the mock devices in the iterator */
+	NYX_FILTER_INCLUDE_STATIC_DEVICES = 0x2,	/**< include the static devices in the iterator */
 	NYX_FILTER_INCLUDE_MOCK_AND_STATIC_DEVICES = NYX_FILTER_INCLUDE_MOCK_DEVICES | NYX_FILTER_INCLUDE_STATIC_DEVICES,
 	NYX_FILTER_ALL = 0xffff,
 } nyx_device_filter_t;
@@ -101,8 +101,8 @@ typedef enum {
 */
 typedef enum {
 	NYX_OPERATING_MODE_UNKNOWN = -1,
-    NYX_OPERATING_MODE_OFF,        /**< Device is not operational */
-	NYX_OPERATING_MODE_ON,         /**< Device is operational */
+	NYX_OPERATING_MODE_OFF,				/**< Device is not operational */
+	NYX_OPERATING_MODE_ON,				/**< Device is operational */
 } nyx_operating_mode_t;
 
 struct nyx_device;
@@ -118,13 +118,13 @@ typedef struct nyx_device_iterator* nyx_device_iterator_handle_t;
  * This status is passed as a parameter to the callback function (@ref nyx_device_callback_function_t).
  */
 typedef enum {
-	NYX_CALLBACK_STATUS_UNDEFINED = 0,    /**< Status of worker thread is unknown */
-	NYX_CALLBACK_STATUS_DONE,             /**< Worker thread has finished */
+	NYX_CALLBACK_STATUS_UNDEFINED = 0,		/**< Status of worker thread is unknown */
+	NYX_CALLBACK_STATUS_DONE,			/**< Worker thread has finished */
 	NYX_CALLBACK_STATUS_ASYNC,
 	NYX_CALLBACK_STATUS_HARDWARE_ASYNC,
-	NYX_CALLBACK_STATUS_FAILED,           /**< Worker thread has finished but got an error */
-	NYX_CALLBACK_STATUS_CANCELLED,        /**< Worker thread was cancelled before finishing */
-	NYX_CALLBACK_STATUS_PREMPTIED,        /**< Another request/event arrived that replaces (preempts) the worker thread */
+	NYX_CALLBACK_STATUS_FAILED,			/**< Worker thread has finished but got an error */
+	NYX_CALLBACK_STATUS_CANCELLED,			/**< Worker thread was cancelled before finishing */
+	NYX_CALLBACK_STATUS_PREMPTIED,			/**< Another request/event arrived that replaces (preempts) the worker thread */
 } nyx_callback_status_t;
 
 /**
@@ -139,13 +139,13 @@ typedef void (*nyx_device_callback_function_t)(nyx_device_handle_t, nyx_callback
  * for each of these values.
  */
 typedef enum {
-    NYX_REPORT_RATE_UNKNOWN = -1,   /**< Report rate is unknown */
-    NYX_REPORT_RATE_DEFAULT = 0,    /**< Default reporting rate for sensor when user has not requested specific rate */
-    NYX_REPORT_RATE_LOW,            /**< Slow rate of reporting sensor events */
-    NYX_REPORT_RATE_MEDIUM,         /**< Medium rate of reporting sensor events */
-    NYX_REPORT_RATE_HIGH,           /**< Fast rate of reporting sensor events */
-    NYX_REPORT_RATE_HIGHEST,        /**< Fastest rate of reporting sensor events */
-    NYX_REPORT_RATE_COUNT,		/* Must always be last */
+	NYX_REPORT_RATE_UNKNOWN = -1,			/**< Report rate is unknown */
+	NYX_REPORT_RATE_DEFAULT = 0,			/**< Default reporting rate for sensor when user has not requested specific rate */
+	NYX_REPORT_RATE_LOW,				/**< Slow rate of reporting sensor events */
+	NYX_REPORT_RATE_MEDIUM,				/**< Medium rate of reporting sensor events */
+	NYX_REPORT_RATE_HIGH,				/**< Fast rate of reporting sensor events */
+	NYX_REPORT_RATE_HIGHEST,			/**< Fastest rate of reporting sensor events */
+	NYX_REPORT_RATE_COUNT,				/* Must always be last */
 } nyx_report_rate_t;
 
 

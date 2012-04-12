@@ -43,9 +43,9 @@ extern "C" {
  */
 typedef struct {
 
-    float x;	/**< gravitational acceleration x component of unit vector */
-    float y;	/**< gravitational acceleration y component of unit vector */
-    float z;	/**< gravitational acceleration z component of unit vector */
+	float x;	/**< gravitational acceleration x component of unit vector */
+	float y;	/**< gravitational acceleration y component of unit vector */
+	float z;	/**< gravitational acceleration z component of unit vector */
 
 } nyx_sensor_gravity_event_item_t;
 

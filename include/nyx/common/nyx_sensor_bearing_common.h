@@ -40,9 +40,9 @@ extern "C" {
  * Definition of type for specifying location 
  */
 typedef struct {
-	float longitude;    /**< location longitude in degrees */
-	float latitude;     /**< location latitude in degrees */
-	float altitude;     /**< altitude in meters */
+	float longitude;	/**< location longitude in degrees */
+	float latitude;		/**< location latitude in degrees */
+	float altitude;		/**< altitude in meters */
 } nyx_sensor_bearing_location_t;
 
 /**
@@ -50,9 +50,9 @@ typedef struct {
  */
 typedef struct {
 
-    float magnetic;        /**< magnetic bearing in degrees */
-    float true_bearing;    /**< true bearing in degrees */
-    float confidence;      /**< confidence of bearing values in percent (%) */
+	float magnetic;		/**< magnetic bearing in degrees */
+	float true_bearing;	/**< true bearing in degrees */
+	float confidence;	/**< confidence of bearing values in percent (%) */
 
 } nyx_sensor_bearing_event_item_t;
 

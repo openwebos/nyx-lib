@@ -40,12 +40,12 @@
  * @param[in]	_name - name of the module
  *
  */
-  
+
 #define NYX_DECLARE_MODULE(_type, _name) \
-       int32_t _nyx_module_get_api_version_major () { return NYX_API_VERSION_MAJOR; } \
-       int32_t _nyx_module_get_api_version_minor () { return NYX_API_VERSION_MINOR; } \
-       const char* _nyx_module_get_name () { return _name; } \
-       nyx_device_type_t _nyx_module_get_type () { return _type; }
+	int32_t _nyx_module_get_api_version_major () { return NYX_API_VERSION_MAJOR; } \
+	int32_t _nyx_module_get_api_version_minor () { return NYX_API_VERSION_MINOR; } \
+	const char* _nyx_module_get_name () { return _name; } \
+	nyx_device_type_t _nyx_module_get_type () { return _type; }
 
 /**
  * set the name of the newly created device.

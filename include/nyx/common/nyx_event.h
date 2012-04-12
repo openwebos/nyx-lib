@@ -20,7 +20,7 @@
  * @file nyx_event.h
  *
  */
- 
+
 /**
  * @brief Nyx's events and associated types.
  *
@@ -49,11 +49,11 @@ typedef enum {
 	NYX_EVENT_KEYS,				/**< Keys */
 	NYX_EVENT_TOUCHPANEL,			/**< Touchpanel */
 	NYX_EVENT_SENSOR_ACCELERATION,		/**< Acceleration */
-	NYX_EVENT_SENSOR_ALS,				/**< Ambient light sensor */
+	NYX_EVENT_SENSOR_ALS,			/**< Ambient light sensor */
 	NYX_EVENT_SENSOR_ANGULAR_VELOCITY,	/**< Angular velocity */
 	NYX_EVENT_SENSOR_BEARING,		/**< Bearing (heading) */
 	NYX_EVENT_SENSOR_GRAVITY,		/**< Gravity */
-	NYX_EVENT_SENSOR_LINEAR_ACCELERATION, 	/**< Linear Acceleration */
+	NYX_EVENT_SENSOR_LINEAR_ACCELERATION,	/**< Linear Acceleration */
 	NYX_EVENT_SENSOR_MAGNETIC_FIELD,	/**< Magnetic field */
 	NYX_EVENT_SENSOR_ORIENTATION,		/**< Orientation */
 	NYX_EVENT_SENSOR_PROXIMITY,		/**< Proximity */

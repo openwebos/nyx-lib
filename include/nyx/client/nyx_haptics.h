@@ -20,7 +20,7 @@
  * @file nyx_haptics.h
  *
  */
- 
+
 /**
  * @brief Nyx's public API for accessing a haptics device.
  *

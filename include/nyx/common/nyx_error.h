@@ -62,7 +62,7 @@ typedef enum {
 	NYX_ERROR_GENERIC,			/**< Generic NYX_LOG_ERROR */
 	NYX_ERROR_ALREADY_UP_TO_DATE,		/**< Firmware is already up-to-date */
 	NYX_ERROR_BAD_CHECKSUM,			/**< Bad checksum */
-	NYX_ERROR_INCOMPATIBLE_LIBRARY,         /**< The available nyx-lib is incompatible with the ABI the caller or module expects */
+	NYX_ERROR_INCOMPATIBLE_LIBRARY,		/**< The available nyx-lib is incompatible with the ABI the caller or module expects */
 } nyx_error_t;
 
 /** @} */

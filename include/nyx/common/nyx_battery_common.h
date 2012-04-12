@@ -60,10 +60,10 @@ typedef struct {
  * Battery Charging Parameters
  */
 typedef struct {
-	int32_t charge_min_temp_c; /** Temperature below which charging is turned off */
-	int32_t charge_max_temp_c; /** Temperature above which charging is turned off */
-	int32_t battery_crit_max_temp; /** Temperature above which device is shut down */
-	bool skip_battery_authentication; /** Is battery authentication required (True/False) */
+	int32_t charge_min_temp_c; 		/** Temperature below which charging is turned off */
+	int32_t charge_max_temp_c; 		/** Temperature above which charging is turned off */
+	int32_t battery_crit_max_temp; 		/** Temperature above which device is shut down */
+	bool skip_battery_authentication; 	/** Is battery authentication required (True/False) */
 } nyx_battery_ctia_t;
 
 /** @} */

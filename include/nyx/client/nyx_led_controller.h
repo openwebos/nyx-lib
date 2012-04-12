@@ -24,7 +24,7 @@
 /**
  * @brief Nyx's public LED Controller API.
  */
- 
+
 #ifndef _NYX_LED_CONTROLLER_H_
 #define _NYX_LED_CONTROLLER_H_
 
@@ -74,7 +74,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_stop(nyx_device_handle_t handle, n
  *
  */
 NYX_API_EXPORT nyx_error_t nyx_led_controller_get_state(nyx_device_handle_t handle,
-        nyx_led_controller_led_t led, nyx_led_controller_state_t* state_out_ptr);
+	nyx_led_controller_led_t led, nyx_led_controller_state_t* state_out_ptr);
 
 
 /**
@@ -88,7 +88,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_get_state(nyx_device_handle_t hand
  *
  */
 NYX_API_EXPORT nyx_error_t nyx_led_controller_set_abl_state(nyx_device_handle_t handle,
-        nyx_led_controller_led_t led, nyx_led_controller_abl_state_t abl_state);
+	nyx_led_controller_led_t led, nyx_led_controller_abl_state_t abl_state);
 
 /** @} */
 #ifdef __cplusplus

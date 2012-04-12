@@ -20,7 +20,7 @@
  * @file nyx_bluetooth_input_detect.h
  *
  */
- 
+
 /**
  * @brief Nyx's public API for accessing a bluetooth input detection device
  * and the events it generates.

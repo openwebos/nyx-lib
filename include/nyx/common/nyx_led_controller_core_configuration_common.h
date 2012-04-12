@@ -43,13 +43,13 @@ extern "C" {
  * @brief Defines valid direction values for LED controller devices
  */
 typedef enum {
-	NYX_LED_CONTROLLER_DIRECTION_UNDEFINED = 0,     /**< none, */
-	NYX_LED_CONTROLLER_DIRECTION_RIGHT,             /**< right */
-	NYX_LED_CONTROLLER_DIRECTION_LEFT,              /**< left */
-	NYX_LED_CONTROLLER_DIRECTION_UP,                /**< up */
-	NYX_LED_CONTROLLER_DIRECTION_DOWN,              /**< down */
-	NYX_LED_CONTROLLER_DIRECTION_FORWARD,           /**< forward */
-	NYX_LED_CONTROLLER_DIRECTION_REVERSE,           /**< reverse */
+	NYX_LED_CONTROLLER_DIRECTION_UNDEFINED = 0,	/**< none, */
+	NYX_LED_CONTROLLER_DIRECTION_RIGHT,		/**< right */
+	NYX_LED_CONTROLLER_DIRECTION_LEFT,		/**< left */
+	NYX_LED_CONTROLLER_DIRECTION_UP,		/**< up */
+	NYX_LED_CONTROLLER_DIRECTION_DOWN,		/**< down */
+	NYX_LED_CONTROLLER_DIRECTION_FORWARD,		/**< forward */
+	NYX_LED_CONTROLLER_DIRECTION_REVERSE,		/**< reverse */
 } nyx_led_controller_effect_direction_t;
 
 
@@ -57,36 +57,36 @@ typedef enum {
  * @brief Defines the parameters used by @ref nyx_led_controller_core_configuration_set_param().
  */
 typedef enum {
-    NYX_LED_CONTROLLER_CORE_EFFECT_BRIGHTNESS,          /**< brightness */
+	NYX_LED_CONTROLLER_CORE_EFFECT_BRIGHTNESS,	    /**< brightness */
 
-    NYX_LED_CONTROLLER_CORE_EFFECT_CENTER_FADE_IN,      /**< center_fade_in */
-    NYX_LED_CONTROLLER_CORE_EFFECT_CENTER_FADE_OUT,     /**< center_fade_out */
+	NYX_LED_CONTROLLER_CORE_EFFECT_CENTER_FADE_IN,	    /**< center_fade_in */
+	NYX_LED_CONTROLLER_CORE_EFFECT_CENTER_FADE_OUT,	    /**< center_fade_out */
 
-    NYX_LED_CONTROLLER_CORE_EFFECT_SIDE_FADE_IN,        /**< side_fade_in */
-    NYX_LED_CONTROLLER_CORE_EFFECT_SIDE_FADE_OUT,       /**< side_fade_out */
+	NYX_LED_CONTROLLER_CORE_EFFECT_SIDE_FADE_IN,	    /**< side_fade_in */
+	NYX_LED_CONTROLLER_CORE_EFFECT_SIDE_FADE_OUT,	    /**< side_fade_out */
 
-    NYX_LED_CONTROLLER_CORE_EFFECT_FADE_IN,             /**< fade_in */
-    NYX_LED_CONTROLLER_CORE_EFFECT_FADE_OUT,            /**< fade_out */
+	NYX_LED_CONTROLLER_CORE_EFFECT_FADE_IN,		    /**< fade_in */
+	NYX_LED_CONTROLLER_CORE_EFFECT_FADE_OUT,	    /**< fade_out */
 
-    NYX_LED_CONTROLLER_CORE_EFFECT_START_DELAY,         /**< start_delay */
-    NYX_LED_CONTROLLER_CORE_EFFECT_FADE_OUT_DELAY,      /**< fade_out_delay */
-    NYX_LED_CONTROLLER_CORE_EFFECT_DURATION,            /**< duration */
+	NYX_LED_CONTROLLER_CORE_EFFECT_START_DELAY,	    /**< start_delay */
+	NYX_LED_CONTROLLER_CORE_EFFECT_FADE_OUT_DELAY,	    /**< fade_out_delay */
+	NYX_LED_CONTROLLER_CORE_EFFECT_DURATION,	    /**< duration */
 
-    NYX_LED_CONTROLLER_CORE_EFFECT_PULSE_RAMP,          /**< pulse_ramp */
-    NYX_LED_CONTROLLER_CORE_EFFECT_PULSE_DURATION,      /**< pulse_duration */
-    NYX_LED_CONTROLLER_CORE_EFFECT_PULSE_DELAY,         /**< pulse_delay */
+	NYX_LED_CONTROLLER_CORE_EFFECT_PULSE_RAMP,	    /**< pulse_ramp */
+	NYX_LED_CONTROLLER_CORE_EFFECT_PULSE_DURATION,	    /**< pulse_duration */
+	NYX_LED_CONTROLLER_CORE_EFFECT_PULSE_DELAY,	    /**< pulse_delay */
 
 
-    NYX_LED_CONTROLLER_CORE_EFFECT_REPEAT,              /**< repeat */
-    NYX_LED_CONTROLLER_CORE_EFFECT_REPEAT_DELAY,        /**< repeat_delay */
+	NYX_LED_CONTROLLER_CORE_EFFECT_REPEAT,		    /**< repeat */
+	NYX_LED_CONTROLLER_CORE_EFFECT_REPEAT_DELAY,	    /**< repeat_delay */
 
-    NYX_LED_CONTROLLER_CORE_EFFECT_FIRST_IN,            /**< first_in */
-    NYX_LED_CONTROLLER_CORE_EFFECT_FIRST_OUT,           /**< first_out */
-    NYX_LED_CONTROLLER_CORE_EFFECT_SECOND_IN,           /**< second_in */
-    NYX_LED_CONTROLLER_CORE_EFFECT_SECOND_OUT,          /**< second_out */
-    NYX_LED_CONTROLLER_CORE_EFFECT_THIRD_OUT,           /**< third_out */
+	NYX_LED_CONTROLLER_CORE_EFFECT_FIRST_IN,	    /**< first_in */
+	NYX_LED_CONTROLLER_CORE_EFFECT_FIRST_OUT,	    /**< first_out */
+	NYX_LED_CONTROLLER_CORE_EFFECT_SECOND_IN,	    /**< second_in */
+	NYX_LED_CONTROLLER_CORE_EFFECT_SECOND_OUT,	    /**< second_out */
+	NYX_LED_CONTROLLER_CORE_EFFECT_THIRD_OUT,	    /**< third_out */
 
-    NYX_LED_CONTROLLER_CORE_EFFECT_DIRECTION,           /**< direction */
+	NYX_LED_CONTROLLER_CORE_EFFECT_DIRECTION,	    /**< direction */
 
 
 } nyx_led_controller_parameter_type_t;
@@ -97,7 +97,7 @@ typedef enum {
  * @see nyx_led_controller_core_configuration_create()
  */
 typedef enum {
-	NYX_LED_CONTROLLER_EFFECT_UNDEFINED	= 0,	/**< none, */
+	NYX_LED_CONTROLLER_EFFECT_UNDEFINED     = 0,	/**< none, */
 	NYX_LED_CONTROLLER_EFFECT_LED_FADE,		/**< brightness, center_fade_in, center_fade_out, side_fade_in, side_fade_out */
 	NYX_LED_CONTROLLER_EFFECT_FULL_FADE,		/**< brightness, first_in, first_out, second_in, second_out, third_out, direction */
 	NYX_LED_CONTROLLER_EFFECT_LED_PULSATE,		/**< brightness, start_delay, fade_in, fade_out, duration, repeat_delay, repeat */
@@ -128,7 +128,7 @@ typedef struct nyx_led_controller_core_configuration* nyx_led_controller_core_co
  *
  */
 NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_get_param(
-        nyx_led_controller_core_configuration_handle_t handle, nyx_led_controller_parameter_type_t param, int32_t* value_out_ptr);
+	nyx_led_controller_core_configuration_handle_t handle, nyx_led_controller_parameter_type_t param, int32_t* value_out_ptr);
 
 /**
  * Query whether an LED core configuration is finalized.
@@ -140,7 +140,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_get_param(
  *
  */
 NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_is_finalized(
-        nyx_led_controller_core_configuration_handle_t handle, bool* value_out_ptr);
+	nyx_led_controller_core_configuration_handle_t handle, bool* value_out_ptr);
 
 
 /** @} */

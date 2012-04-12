@@ -41,9 +41,9 @@ extern "C" {
  */
 typedef struct {
 
-    float x;	/**< acceleration value for x-axis as a fraction of "g" */
-    float y;	/**< acceleration value for y-axis as a fraction of "g" */
-    float z;	/**< acceleration value for z-axis as a fraction of "g" */
+	float x;    /**< acceleration value for x-axis as a fraction of "g" */
+	float y;    /**< acceleration value for y-axis as a fraction of "g" */
+	float z;    /**< acceleration value for z-axis as a fraction of "g" */
 
 } nyx_sensor_acceleration_event_item_t;
 

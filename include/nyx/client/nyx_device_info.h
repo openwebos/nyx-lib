@@ -20,11 +20,11 @@
  * @file nyx_device_info.h
  *
  */
- 
- /**
-  * @brief Nyx's public API for accessing device info.
-  *
-  */
+
+/**
+ * @brief Nyx's public API for accessing device info.
+ *
+ */
 
 #ifndef _NYX_DEVICE_INFO_H_
 #define _NYX_DEVICE_INFO_H_

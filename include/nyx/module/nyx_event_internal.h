@@ -29,7 +29,7 @@
 
 #include <stdint.h>
 
-struct nyx_event{
+struct nyx_event {
 	nyx_event_type_t type;
 	int64_t timestamp;
 	void* _device;
@@ -38,12 +38,12 @@ typedef struct nyx_event nyx_event_t;
 
 
 typedef struct nyx_event_keys {
-        nyx_event_t _parent;
+	nyx_event_t _parent;
 
-        nyx_key_type_t key_type;
-        int32_t key;
-        bool key_is_press;
-        bool key_is_auto_repeat;
+	nyx_key_type_t key_type;
+	int32_t key;
+	bool key_is_press;
+	bool key_is_auto_repeat;
 
 } nyx_event_keys_t;
 

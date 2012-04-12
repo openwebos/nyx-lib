@@ -20,7 +20,7 @@
  * @file nyx_sensor_magnetic_field.h
  *
  */
- 
+
 /**
  * @brief Nyx's public API for accessing a magnetic field sensor
  * device and the events it generates.

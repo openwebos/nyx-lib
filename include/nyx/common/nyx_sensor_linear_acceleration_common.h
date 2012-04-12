@@ -41,12 +41,12 @@ extern "C" {
  */
 typedef struct {
 
-    float x;	/**< acceleration value for x-axis in meters per second<sup>2</sup> */
-    float y;	/**< acceleration value for y-axis in meters per second<sup>2</sup> */
-    float z;	/**< acceleration value for z-axis in meters per second<sup>2</sup> */
-    float world_x;	/**< world coordinate acceleration value for x-axis in meters per second<sup>2</sup> */
-    float world_y;	/**< world coordinate acceleration value for y-axis in meters per second<sup>2</sup> */
-    float world_z;	/**< world coordinate acceleration value for z-axis in meters per second<sup>2</sup> */
+	float x;		/**< acceleration value for x-axis in meters per second<sup>2</sup> */
+	float y;		/**< acceleration value for y-axis in meters per second<sup>2</sup> */
+	float z;		/**< acceleration value for z-axis in meters per second<sup>2</sup> */
+	float world_x;		/**< world coordinate acceleration value for x-axis in meters per second<sup>2</sup> */
+	float world_y;		/**< world coordinate acceleration value for y-axis in meters per second<sup>2</sup> */
+	float world_z;		/**< world coordinate acceleration value for z-axis in meters per second<sup>2</sup> */
 
 } nyx_sensor_linear_acceleration_event_item_t;
 

@@ -38,29 +38,25 @@ extern "C" {
 
 
 typedef struct {
-    float w;
-    float x;
-    float y;
-    float z;
+	float w;
+	float x;
+	float y;
+	float z;
 } nyx_sensor_rotation_quaternion_vector_t;
 
 typedef struct {
-    float roll;       /**< amount of roll in degrees */
-    float pitch;      /**< amount of pitch in degrees */
-    float yaw;        /**< amount of yaw in degrees */
+	float roll;	  /**< amount of roll in degrees */
+	float pitch;	  /**< amount of pitch in degrees */
+	float yaw;	  /**< amount of yaw in degrees */
 } nyx_sensor_rotation_euler_angle_t;
 
 /**
  * Definition of rotation event type.
  */
 typedef struct {
-    /** Rotation matrix */
-    float matrix[9];
-    /** Quaternion vector of rotation */
-    nyx_sensor_rotation_quaternion_vector_t quaternion_vector;
-    /** Euler angle of rotation (in degrees) */
-    nyx_sensor_rotation_euler_angle_t euler_angle;
-
+	float  matrix[9];						/** Rotation matrix */
+	nyx_sensor_rotation_quaternion_vector_t quaternion_vector;	/** Quaternion vector of rotation */
+	nyx_sensor_rotation_euler_angle_t euler_angle;			/** Euler angle of rotation (in degrees) */
 } nyx_sensor_rotation_event_item_t;
 
 /** @} */

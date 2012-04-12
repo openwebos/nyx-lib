@@ -52,8 +52,8 @@ typedef struct nyx_firmware_update_iterator* nyx_firmware_update_iterator_handle
  * ignored.
  */
 struct nyx_firmware_version_info {
-    char* version;		/**< Version string of a firmware image */
-    char* uri;			/**< Location of the image (typically a filename path) */
+	char* version;		/**< Version string of a firmware image */
+	char* uri;		/**< Location of the image (typically a filename path) */
 };
 typedef struct nyx_firmware_version_info* nyx_firmware_version_info_handle_t;
 

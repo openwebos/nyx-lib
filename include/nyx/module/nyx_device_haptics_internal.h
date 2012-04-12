@@ -32,12 +32,9 @@ typedef struct nyx_haptics_data* nyx_haptics_data_handle_t;
 
 typedef struct {
 	nyx_device_t original;
-
-    int32_t haptic_effect_id;
-    int32_t dampening_factor;
-
+	int32_t haptic_effect_id;
+	int32_t dampening_factor;
 	nyx_haptics_data_handle_t data;
-
 } nyx_haptics_device_t;
 
 #endif /* _NYX_DEVICE_HAPTICS_INTERNAL_H_ */

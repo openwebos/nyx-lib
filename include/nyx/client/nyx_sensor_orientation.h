@@ -20,7 +20,7 @@
  * @file nyx_sensor_orientation.h
  *
  */
- 
+
 /**
  * @brief Nyx's public API for accessing an orientation sensor
  * device and the events it generates.

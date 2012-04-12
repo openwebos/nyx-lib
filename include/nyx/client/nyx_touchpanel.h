@@ -20,7 +20,7 @@
  * @file nyx_touchpanel.h
  *
  */
- 
+
 /**
  * @brief Nyx's public API for accessing a touchpanel
  * device and the events it generates.
@@ -132,7 +132,7 @@ NYX_API_EXPORT nyx_error_t nyx_touchpanel_event_get_type(nyx_event_handle_t hand
  *
  */
 NYX_API_EXPORT nyx_error_t nyx_touchpanel_event_get_touches(nyx_event_handle_t handle, nyx_touchpanel_event_item_t** touches_out_ptr,
-    int32_t *count_out_ptr);
+	int32_t *count_out_ptr);
 
 /** @} */
 #ifdef __cplusplus
