@@ -53,7 +53,7 @@ nyx_error_t nyx_sensor_bearing_get_location(nyx_device_handle_t handle, nyx_sens
 }
 
 
-nyx_error_t nyx_sensor_bearing_set_location(nyx_device_handle_t handle, nyx_sensor_bearing_location_t* new_location)
+nyx_error_t nyx_sensor_bearing_set_location(nyx_device_handle_t handle, const nyx_sensor_bearing_location_t* new_location)
 {
     nyx_device_t* d = (nyx_device_t*)handle;
     CHECK_DEVICE(d);

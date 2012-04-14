@@ -73,7 +73,7 @@ NYX_API_EXPORT nyx_error_t nyx_sensor_orientation_get_threshold(nyx_device_handl
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_sensor_orientation_set_threshold(nyx_device_handle_t handle, nyx_sensor_orientation_threshold_t* new_threshold);
+NYX_API_EXPORT nyx_error_t nyx_sensor_orientation_set_threshold(nyx_device_handle_t handle, const nyx_sensor_orientation_threshold_t* new_threshold);
 
 /** @} */
 #ifdef __cplusplus

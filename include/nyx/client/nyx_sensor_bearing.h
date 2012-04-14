@@ -72,7 +72,7 @@ NYX_API_EXPORT nyx_error_t nyx_sensor_bearing_get_location(nyx_device_handle_t h
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  */
-NYX_API_EXPORT nyx_error_t nyx_sensor_bearing_set_location(nyx_device_handle_t handle, nyx_sensor_bearing_location_t* new_location);
+NYX_API_EXPORT nyx_error_t nyx_sensor_bearing_set_location(nyx_device_handle_t handle, const nyx_sensor_bearing_location_t* new_location);
 
 /** @} */
 #ifdef __cplusplus

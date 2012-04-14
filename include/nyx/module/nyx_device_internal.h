@@ -195,9 +195,9 @@ typedef nyx_error_t (*nyx_system_register_msm_change_callback_function_t)(nyx_de
 typedef nyx_error_t (*nyx_system_erase_partition_function_t)(nyx_device_t *, nyx_system_erase_type_t, const char *);
 
 typedef nyx_error_t (*nyx_bearing_get_location_function_t)(nyx_device_t*, nyx_sensor_bearing_location_t*);
-typedef nyx_error_t (*nyx_bearing_set_location_function_t)(nyx_device_t*, nyx_sensor_bearing_location_t*);
+typedef nyx_error_t (*nyx_bearing_set_location_function_t)(nyx_device_t*, const nyx_sensor_bearing_location_t*);
 typedef nyx_error_t (*nyx_orientation_get_threshold_function_t)(nyx_device_t*, nyx_sensor_orientation_threshold_t*);
-typedef nyx_error_t (*nyx_orientation_set_threshold_function_t)(nyx_device_t*, nyx_sensor_orientation_threshold_t*);
+typedef nyx_error_t (*nyx_orientation_set_threshold_function_t)(nyx_device_t*, const nyx_sensor_orientation_threshold_t*);
 
 typedef nyx_error_t (*nyx_device_info_get_info_function_t)(nyx_device_t*, nyx_device_info_type_t type, char* dest, size_t dest_len);
 
