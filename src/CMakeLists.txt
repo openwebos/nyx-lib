@@ -16,14 +16,6 @@
 #
 # LICENSE@@@
 
-cmake_minimum_required(VERSION 2.6)
-
-project(Nyx)
-
-set(NYX_LIBRARY_VERSION "2.0.0")
-set(NYX_API_VERSION_MAJOR 2)
-set(NYX_API_VERSION_MINOR 0)
-
 # Make sure the build system's version of this component matches what we're building.
 # The intent is for it to pass in COMPONENT_VERSION via the command line.
 if(DEFINED NYX_COMPONENT_VERSION)
@@ -32,7 +24,7 @@ if(DEFINED NYX_COMPONENT_VERSION)
 	endif()
 endif()
 
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMakeModules/" ${CMAKE_MODULE_PATH})
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules/" ${CMAKE_MODULE_PATH})
 
 set(DEFAULT_TARGET "ubuntu" CACHE INTERNAL "The default core OS for which to build")
 
@@ -44,7 +36,7 @@ endif()
 set(TARGET ${TARGET} CACHE string "The core OS for which to build")
 
 # Get the target-specific configuration (if any).
-include(${CMAKE_SOURCE_DIR}/target/${TARGET}/CMakeLists.txt OPTIONAL RESULT_VARIABLE TARGET_CONFIG)
+include(${CMAKE_CURRENT_SOURCE_DIR}/target/${TARGET}/CMakeLists.txt OPTIONAL RESULT_VARIABLE TARGET_CONFIG)
 
 if(NOT TARGET)
 	message(FATAL_ERROR "No TARGET variable specified")

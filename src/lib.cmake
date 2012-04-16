@@ -19,9 +19,9 @@
 
 include(${NYX_COMPONENT_UTILS})
 
-configure_file(${PROJECT_SOURCE_DIR}/config/nyx_version.h.in ${PROJECT_SOURCE_DIR}/../include/nyx/common/nyx_version.h)
-configure_file(${PROJECT_SOURCE_DIR}/config/nyx_config.h.in ${PROJECT_SOURCE_DIR}/config/nyx_config.h)
-configure_file(${PROJECT_SOURCE_DIR}/config/nyx.pc.in ${PROJECT_SOURCE_DIR}/config/nyx.pc @ONLY)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config/nyx_version.h.in ${PROJECT_SOURCE_DIR}/include/nyx/common/nyx_version.h)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config/nyx_config.h.in ${CMAKE_CURRENT_SOURCE_DIR}/config/nyx_config.h)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config/nyx.pc.in ${CMAKE_CURRENT_SOURCE_DIR}/config/nyx.pc @ONLY)
 
 find_package(Glib2 REQUIRED)
 
@@ -37,8 +37,8 @@ include_directories(
 	${Glib2_INCLUDE_DIRS}
 	${Glib2_Config_INCLUDE_DIRS}
 	../include
-	${PROJECT_SOURCE_DIR}/config/
-	${PROJECT_SOURCE_DIR}/core/
+	${CMAKE_CURRENT_SOURCE_DIR}/config/
+	${CMAKE_CURRENT_SOURCE_DIR}/core/
 	.
 )
 
@@ -61,4 +61,4 @@ set_target_properties(nyx PROPERTIES VERSION ${NYX_LIBRARY_VERSION} SOVERSION ${
 
 install(DIRECTORY ../include/ DESTINATION include/ PATTERN "*.swp" EXCLUDE)
 install(TARGETS nyx LIBRARY DESTINATION lib${LIB_SUFFIX}/)
-install(FILES ${PROJECT_SOURCE_DIR}/config/nyx.pc DESTINATION lib/pkgconfig)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/config/nyx.pc DESTINATION lib/pkgconfig)

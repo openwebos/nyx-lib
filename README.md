@@ -24,7 +24,7 @@ Once you have downloaded the source, execute the following to build it:
 
     $ mkdir BUILD
     $ cd BUILD
-    $ cmake ../src
+    $ cmake ..
     $ make
     $ sudo make install
 
@@ -38,7 +38,7 @@ and the libraries under
 
 You can install it elsewhere by supplying a value for _CMAKE\_INSTALL\_PREFIX_ when invoking _cmake_. For example:
 
-    $ cmake -D CMAKE_INSTALL_PREFIX:STRING=$HOME/projects/openwebos ../src
+    $ cmake -D CMAKE_INSTALL_PREFIX:STRING=$HOME/projects/openwebos ..
     $ make
     $ make install
     
