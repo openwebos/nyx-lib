@@ -54,18 +54,38 @@ directory.
 
 ## Generating documentation
 
+Nyx generates two sets of documentation, reflecting that fact that it the APIs it presents to 
+application and module writers are different.
+
 The tool required to generate the documentation is:
 
 * doxygen 1.6.3
+* graphviz 2.20.2 
 
-Once you have downloaded the source, execute the following to generate the documentation:
+Once you have run cmake, execute the following to generate the documentation:
 
-    $ cd doc
-    $ ./create_docs.sh
+$ make docs
 
-To view the generated HTML documentation, point your browser to 
+To view the generated HTML documentation, point your browser to either of the following
 
-    doc/html/index.html
+    doc/module_api/html/index.html
+    doc/client_api/html/index.html
+
+in your build directory.
+
+Just as you can do out-of-tree builds, Nyx allows you to place the documentation files anywhere
+you wish by overriding the NYX_DOC_LOCATION variable on the cmake command line. For example, 
+
+    $ cmake -D NYX_DOC_LOCATION:PATH=$HOME/documentation/nyx-lib ..
+    $ make docs
+
+will place the documentation directories (module_api and client_api) under the 
+
+    $HOME/documentation/nyx-lib 
+
+directory.
+
+The provided path may be absolute or relative. Relative paths are 'relative' to the build directory.
 
 # Copyright and License Information
 

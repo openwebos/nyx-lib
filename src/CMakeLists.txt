@@ -97,3 +97,4 @@ message("NYX_MODULE_SUFFIX   set to ${CMAKE_SHARED_MODULE_SUFFIX}")
 
 include(lib.cmake)
 
+add_subdirectory(doc)
