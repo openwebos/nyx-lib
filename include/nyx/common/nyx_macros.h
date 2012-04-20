@@ -19,7 +19,7 @@
 /**
  * @file nyx_macros.h
  *
- * @brief definition of NYX's macros.
+ * @brief Definition of NYX's macros.
  *
  */
 

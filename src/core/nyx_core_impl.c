@@ -20,7 +20,7 @@
  * @file nyx_core_impl.c
  *
  * @brief This is a part of the nyx core implementation
- ********************************************************************************/ 
+ ********************************************************************************/
 
 #include <stdlib.h>
 #include <pthread.h>
@@ -28,21 +28,6 @@
 #include <nyx/module/nyx_log.h>
 
 #include "nyx_core_impl.h"
-
-struct nyx_core {
-	GMainContext* main_context;
-	GMainLoop* main_loop;
-	pthread_t worker;
-};
-
-static struct nyx_core nyx_core;
-
-static void *nyx_worker_thread(void *arg)
-{
-	g_main_loop_run(nyx_core.main_loop);
-
-	return NULL;
-}
 
 typedef struct typeStringPair
 {
@@ -96,51 +81,15 @@ const char* nyx_core_device_type_to_string(nyx_device_type_t type)
 	return name;
 }
 
-GMainLoop* nyx_core_get_mainloop()
-{
-	return nyx_core.main_loop;
-}
-
-GMainContext* nyx_core_get_maincontext()
-{
-	return nyx_core.main_context;
-}
-
 nyx_error_t nyx_core_init()
 {
 	nyx_log_init();
 
-	nyx_core.main_context = g_main_context_new();
-	if (NULL == nyx_core.main_context) {
-		nyx_error( "Unable to create GmainContext\n");
-		return NYX_ERROR_GENERIC;
-	}
-
-	nyx_core.main_loop = g_main_loop_new(nyx_core.main_context, FALSE);
-	if (NULL == nyx_core.main_loop) {
-		nyx_error("Unable to create GmainLoop\n");
-		return NYX_ERROR_GENERIC;
-	}
-
-	pthread_attr_t attr;
-	pthread_attr_init(&attr);
-
-	if (pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED) != 0) {
-		nyx_error("Unable to create pthread attribute\n");
-		return NYX_ERROR_GENERIC;
-	}
-
-	if (pthread_create(&nyx_core.worker, &attr, nyx_worker_thread, 0)
-			!= 0) {
-		nyx_error("Unable to create worker thread\n");
-		return NYX_ERROR_GENERIC;
-	}
 	return NYX_ERROR_NONE;
 }
 
 nyx_error_t nyx_core_deinit(void)
 {
-	g_main_loop_quit(nyx_core.main_loop);
 	return NYX_ERROR_NONE;
 }
 
