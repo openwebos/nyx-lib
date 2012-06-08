@@ -20,9 +20,9 @@
  * @file nyx_impl.c
  *
  * @brief This is part of the nyx core implementation
- ********************************************************************************/ 
+ ********************************************************************************/
 
-#include "nyx_impl.h"
+//#include "nyx_impl.h"
 #include "nyx_core_impl.h"
 #include "nyx_config.h"
 #include <nyx/common/nyx_version.h>
@@ -32,17 +32,7 @@ nyx_error_t nyx_init(void)
 	nyx_error_t error = NYX_ERROR_NONE;
 
 	error = nyx_core_init();
-	if (NYX_ERROR_NONE != error) {
-		goto end;
-	}
 
-	GMainLoop* main_loop = nyx_core_get_mainloop();
-	if (NULL == main_loop) {
-		error = NYX_ERROR_GENERIC;
-		goto end;
-	}
-
-end:
 	return error;
 }
 
@@ -51,11 +41,7 @@ nyx_error_t nyx_deinit(void)
 	nyx_error_t error = NYX_ERROR_NONE;
 
 	error = nyx_core_deinit ();
-	if (NYX_ERROR_NONE != error) {
-		goto end;
-	}
 
-end:
 	return error;
 }
 

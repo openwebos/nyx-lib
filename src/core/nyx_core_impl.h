@@ -20,16 +20,13 @@
  * @file nyx_core_impl.h
  *
  * @brief This is a header file of the nyx core implementation
- ********************************************************************************/ 
+ ********************************************************************************/
 
 #ifndef _NYX_CORE_IMPL_H_
 #define _NYX_CORE_IMPL_H_
 
 #include <glib.h>
 #include <nyx/nyx_client.h>
-
-GMainLoop* nyx_core_get_mainloop (void);
-GMainContext* nyx_core_get_maincontext (void);
 
 nyx_error_t nyx_core_init(void);
 nyx_error_t nyx_core_deinit(void);

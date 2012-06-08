@@ -20,7 +20,7 @@
  * @file nyx_error.h
  *
  */
- 
+
 /**
  * @brief Nyx's public error interface.
  *
@@ -41,18 +41,18 @@ extern "C" {
 
 
 /**
- * Nyx error codes
+ * Error codes returned from Nyx API functions.
  */
 typedef enum {
 	NYX_ERROR_NONE,				/**< Operation successful */
-	NYX_ERROR_INVALID_HANDLE,		/**< Incorrect handle passes to API function */
-	NYX_ERROR_WRONG_DEVICE_TYPE,		/**< Device used for this operation has the wrong type */
+	NYX_ERROR_INVALID_HANDLE,		/**< Invalid handle passed to an API function */
+	NYX_ERROR_WRONG_DEVICE_TYPE,		/**< Operation not defined for the supplied device */
 	NYX_ERROR_DEVICE_NOT_EXIST,		/**< Device does not exist */
 	NYX_ERROR_TOO_MANY_OPENS,		/**< Reached maximum opens allowed on device */
 	NYX_ERROR_OUT_OF_MEMORY,		/**< Out of memory */
 	NYX_ERROR_DEVICE_UNAVAILABLE,		/**< Device not present OR Connection to device not available */
 	NYX_ERROR_UNSUPPORTED_DEVICE_TYPE,	/**< No support for this device type currently */
-	NYX_ERROR_INVALID_VALUE,		/**< Value passed in is not valid */
+	NYX_ERROR_INVALID_VALUE,		/**< Value passed to an API function is not valid */
 	NYX_ERROR_NOT_IMPLEMENTED,		/**< The method/function has not been implemented by module */
 	NYX_ERROR_INVALID_EVENT_TYPE,		/**< Event is of a wrong type for this operation */
 	NYX_ERROR_INVALID_OPERATION,		/**< This operation cannot be performed at this time */
