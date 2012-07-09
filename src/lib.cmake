@@ -23,7 +23,10 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config/nyx_version.h.in ${PROJECT_SOU
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config/nyx_config.h.in ${CMAKE_CURRENT_SOURCE_DIR}/config/nyx_config.h)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config/nyx.pc.in ${CMAKE_CURRENT_SOURCE_DIR}/config/nyx.pc @ONLY)
 
-find_package(Glib2 REQUIRED)
+include(FindPkgConfig)
+
+#Check that we have glib-2.0
+pkg_check_modules(GLIB2 REQUIRED glib-2.0)
 
 nyx_component(core)
 nyx_component(device)
@@ -34,8 +37,7 @@ if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${TARGET}")
 endif ()
 
 include_directories(
-	${Glib2_INCLUDE_DIRS}
-	${Glib2_Config_INCLUDE_DIRS}
+	${GLIB2_INCLUDE_DIRS}
 	../include
 	${CMAKE_CURRENT_SOURCE_DIR}/config/
 	${CMAKE_CURRENT_SOURCE_DIR}/core/
@@ -48,7 +50,7 @@ add_library(nyx
 )
 
 target_link_libraries(nyx
-	${Glib2_LIBRARIES}
+	${GLIB2_LIBRARIES}
 	dl
 	pthread
 	rt
