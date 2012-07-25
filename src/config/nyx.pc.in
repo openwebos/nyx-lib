@@ -4,7 +4,7 @@ libdir=${exec_prefix}/lib
 includedir=${prefix}/include
 
 Name: Nyx
-Description: webOS Portability Layer
+Description: Open webOS Portability Layer
 Version: @NYX_LIBRARY_VERSION@
 Libs: -L${libdir} -lnyx
 Cflags: -I${includedir}
