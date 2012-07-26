@@ -1,7 +1,11 @@
 nyx-lib
 =======
 
-Nyx is the webOS portability layer used to isolate the remainder of webOS from dependencies on the hardware and core OS upon which it is running. It is implemented as a shared library that exposes a uniform client API and that expects to call into a series of platform-dependent modules that implement the API for a particular device.
+Nyx is the platform portability layer used to isolate the remainder of
+Open webOS from dependencies on the hardware and core OS upon which it
+is running. It is implemented as a shared library that exposes a uniform
+client API and that expects to call into a series of platform-dependent
+modules that implement the API for a particular device.
 
 This is the repository for nyx-lib, the shared library.
 
@@ -10,7 +14,8 @@ How to Build on Linux
 
 ## Dependencies
 
-Below are the tools and library (and their minimum versions) required to build nyx-lib:
+Below are the tools and library (and their minimum versions) required to 
+build nyx-lib:
 
 * cmake 2.6
 * gcc 4.3
@@ -36,7 +41,8 @@ and the libraries under
 
     /usr/local/lib
 
-You can install it elsewhere by supplying a value for _CMAKE\_INSTALL\_PREFIX_ when invoking _cmake_. For example:
+You can install it elsewhere by supplying a value for _CMAKE\_INSTALL\_PREFIX_
+when invoking _cmake_. For example:
 
     $ cmake -D CMAKE_INSTALL_PREFIX:STRING=$HOME/projects/openwebos ..
     $ make
@@ -54,8 +60,8 @@ directory.
 
 ## Generating documentation
 
-Nyx generates two sets of documentation, reflecting that fact that it the APIs it presents to 
-application and module writers are different.
+Nyx generates two sets of documentation, reflecting that fact that it the APIs
+it presents to application and module writers are different.
 
 The tool required to generate the documentation is:
 
@@ -66,15 +72,17 @@ Once you have run cmake, execute the following to generate the documentation:
 
 $ make docs
 
-To view the generated HTML documentation, point your browser to either of the following
+To view the generated HTML documentation, point your browser to either of the
+following
 
     doc/module_api/html/index.html
     doc/client_api/html/index.html
 
 in your build directory.
 
-Just as you can do out-of-tree builds, Nyx allows you to place the documentation files anywhere
-you wish by overriding the NYX_DOC_LOCATION variable on the cmake command line. For example, 
+Just as you can do out-of-tree builds, Nyx allows you to place the documentation
+files anywhere you wish by overriding the NYX_DOC_LOCATION variable on the cmake 
+command line. For example, 
 
     $ cmake -D NYX_DOC_LOCATION:PATH=$HOME/documentation/nyx-lib ..
     $ make docs
@@ -85,7 +93,8 @@ will place the documentation directories (module_api and client_api) under the
 
 directory.
 
-The provided path may be absolute or relative. Relative paths are 'relative' to the build directory.
+The provided path may be absolute or relative. Relative paths are 'relative' to 
+the build directory.
 
 # Copyright and License Information
 
