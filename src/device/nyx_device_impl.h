@@ -44,8 +44,12 @@
 	nyx_error ("method " #_method " not implemented"); \
 	return NYX_ERROR_NOT_IMPLEMENTED; \
 }}
-#define LOOKUP_METHOD(_d,_method) g_hash_table_lookup ((GHashTable*)_d->method_hash_table, GINT_TO_POINTER(_method))
-
+/* 	FIXME: This null pointer check is a workaround that averts additional
+ 	glib error messages from the output in the case of any badly written
+ 	test logic that passes in a null table (glib returns zero anyway in
+	this same scenario) */
+#define LOOKUP_METHOD(_d,_method) \
+	(((GHashTable*)_d->method_hash_table == NULL) ? 0 : (g_hash_table_lookup ((GHashTable*)_d->method_hash_table, GINT_TO_POINTER(_method))))
 
 #define CHECK_EVENT(_e) {if (0 == _e) { \
 	nyx_error ("invalid handle"); \
@@ -56,7 +60,7 @@
 	return NYX_ERROR_WRONG_DEVICE_TYPE; \
 }}
 #define nyx_execute_return_function(_f,_t,_m,_h,...) \
-	nyx_device_t* d = (nyx_device_t*)_h;\
+	nyx_device_t* d = (nyx_device_t*)_h; \
 	CHECK_DEVICE(d); \
 	CHECK_DEVICE_TYPE(d, NYX_DEVICE_##_t); \
 	nyx_##_f##_function_t _f_ptr = \

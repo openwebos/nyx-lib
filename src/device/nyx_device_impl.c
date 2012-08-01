@@ -340,14 +340,20 @@ nyx_error_t nyx_device_close(nyx_device_handle_t handle)
 	nyx_error_t error = close_ptr(d);
 
 	/*
-	 * let's destroy the method hash table.
+	 * let's destroy the method hash table if necessary.
 	 */
-	if (method_hash_table)
+	if (method_hash_table) {
 		g_hash_table_destroy (method_hash_table);
-	if (name)
+		d->method_hash_table = NULL;
+	}
+	if (name) {
 		free (name);
-	if (desc)
+		name = NULL;
+	}
+	if (desc) {
 		free (desc);
+		desc = NULL;
+	}
 
 	/*
 	 * We are done so, we can close the module.
@@ -418,10 +424,12 @@ nyx_error_t nyx_device_set_report_rate(nyx_device_handle_t handle, nyx_report_ra
 	nyx_device_t* d = (nyx_device_t*)handle;
 	CHECK_DEVICE(d);
 	nyx_set_report_rate_function_t f = LOOKUP_METHOD(d,  NYX_SET_REPORT_RATE_MODULE_METHOD);
-	if (f)
+	if (f) {
 		return f(d,rate);
-	else
+	} 
+	else {
 		return NYX_ERROR_NOT_IMPLEMENTED;
+	}
 }
 
 nyx_error_t nyx_device_get_report_rate(nyx_device_handle_t handle, nyx_report_rate_t *rate_out_ptr)
@@ -429,21 +437,25 @@ nyx_error_t nyx_device_get_report_rate(nyx_device_handle_t handle, nyx_report_ra
 	nyx_device_t* d = (nyx_device_t*)handle;
 	CHECK_DEVICE(d);
 	nyx_get_report_rate_function_t f = LOOKUP_METHOD(d, NYX_GET_REPORT_RATE_MODULE_METHOD);
-	if (f)
+	if (f) {
 		return f(d,rate_out_ptr);
-	else
+	} 
+	else {
 		return NYX_ERROR_NOT_IMPLEMENTED;
+	}
 }
 
 nyx_error_t nyx_device_set_property(nyx_device_handle_t handle, const char* property_name_in, void* property_value_in_ptr)
 {
-    nyx_device_t* d = (nyx_device_t*)handle;
-    CHECK_DEVICE(d);
-    nyx_set_property_function_t f = LOOKUP_METHOD(d, NYX_SET_PROPERTY_MODULE_METHOD);
-    if (f)
-        return f(d,property_name_in, property_value_in_ptr);
-    else
-        return NYX_ERROR_NOT_IMPLEMENTED;
+	nyx_device_t* d = (nyx_device_t*)handle;
+	CHECK_DEVICE(d);
+	nyx_set_property_function_t f = LOOKUP_METHOD(d, NYX_SET_PROPERTY_MODULE_METHOD);
+	if (f) {
+		return f(d,property_name_in, property_value_in_ptr);
+	} 
+	else {
+		return NYX_ERROR_NOT_IMPLEMENTED;
+	}
 }
 
 nyx_error_t nyx_device_get_property(nyx_device_handle_t handle, const char* property_name_in, void** property_value_out_ptr)
