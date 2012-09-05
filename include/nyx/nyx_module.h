@@ -24,7 +24,6 @@
 #ifndef _NYX_MODULE_H_
 #define _NYX_MODULE_H_
 
-#include <nyx/common/nyx_version.h>
 #include <nyx/common/nyx_macros.h>
 #include <nyx/common/nyx_error.h>
 #include <nyx/common/nyx_event.h>
