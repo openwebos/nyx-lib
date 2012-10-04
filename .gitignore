@@ -1,6 +1,6 @@
 # @@@LICENSE
 #
-#      Copyright (c) 2010-2012 Hewlett-Packard Development Company, L.P.
+#      Copyright (c) 2012 Hewlett-Packard Development Company, L.P.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,22 +16,20 @@
 #
 # LICENSE@@@
 
-cscope.out
-*.so
-*.o
-*.d
-*.so
-.cscope.files
-.sc_status
-*.swp
-/Debug
+# .gitignore for components that enforce "out-of-source" builds, (e.g. ones that
+# use "cmake-modules-webos")
+#
+# @@@VERSION
+# r3
+# VERSION@@@
+
+# Common Eclipse project files
 .project
 .cproject
-/patches
-/build*
-/BUILD*
-/doc
-*.DS_Store
-include/nyx/common/nyx_version.h
-src/config/nyx_config.h
-src/config/nyx.pc
+
+# Directory created by OpenEmbedded
+patches/
+
+# Ignore all build directories and their trees. This should exclude all
+# build artifacts.
+BUILD*/

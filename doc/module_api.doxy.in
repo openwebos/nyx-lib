@@ -43,19 +43,19 @@ DOXYFILE_ENCODING      = UTF-8
 # The PROJECT_NAME tag is a single word (or a sequence of words surrounded 
 # by quotes) that should identify the project.
 
-PROJECT_NAME           = "@CMAKE_PROJECT_NAME@ (For Module Authors)"
+PROJECT_NAME           = "@CMAKE_PROJECT_NAME@ (For module authors)"
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. 
 # This could be handy for archiving the generated documentation or 
 # if some version control system is used.
 
-PROJECT_NUMBER         = @NYX_LIBRARY_VERSION@
+PROJECT_NUMBER         = @WEBOS_COMPONENT_VERSION@
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer
 # a quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "Nyx is the webOS portability layer used to isolate the remainder of webOS from dependencies on the hardware and core OS upon which it is running."
+PROJECT_BRIEF          = @WEBOS_PROJECT_SUMMARY@
 
 # With the PROJECT_LOGO tag one can specify an logo or icon that is 
 # included in the documentation. The maximum height of the logo should not 
@@ -630,8 +630,8 @@ WARN_LOGFILE           =
 # directories like "/usr/src/myproject". Separate the files or directories 
 # with spaces.
 
-INPUT                  = @CMAKE_SOURCE_DIR@/include/nyx/module \
-                         @CMAKE_SOURCE_DIR@/include/nyx/common
+INPUT                  = @CMAKE_SOURCE_DIR@/include/public/nyx/module \
+                         @CMAKE_SOURCE_DIR@/include/public/nyx/common
 
 # This tag can be used to specify the character encoding of the source files 
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding, which is 
@@ -1423,7 +1423,7 @@ SEARCH_INCLUDES        = YES
 # contain include files that are not input files but should be processed by 
 # the preprocessor.
 
-INCLUDE_PATH           = @CMAKE_SOURCE_DIR@/include/nyx
+INCLUDE_PATH           = @CMAKE_SOURCE_DIR@/include/public/nyx
 
 # You can use the INCLUDE_FILE_PATTERNS tag to specify one or more wildcard 
 # patterns (like *.h and *.hpp) to filter out the header-files in the 
