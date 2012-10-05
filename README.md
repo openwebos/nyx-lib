@@ -2,7 +2,7 @@ nyx-lib
 =======
 Summary
 -------
-Open webOS Platform Portability Layer 
+Open webOS Platform Portability Layer
 
 Description
 -----------
@@ -26,7 +26,7 @@ Below are the tools and libraries (and their minimum versions) required to build
 * gcc 4.6.3
 * glib-2.0 2.32.1
 * make (any version)
-* openwebos/cmake-modules-webos 1.0.0 RC3
+* openwebos/cmake-modules-webos 1.0.0 RC4
 * pkg-config 0.26
 
 ## Building
@@ -65,6 +65,11 @@ To see a list of the make targets that `cmake` has generated, enter:
 
     $ make help
 
+You may also specify `NYX_MODULE_DIR` and `NYX_MODULE_MOCK_DIR` from
+command line to override the default settings. The default settings
+are extracted from variables `nyx_module_dir` and `nyx_module_mock_dir`
+in nyx.pc.
+
 ## Uninstalling
 
 From the directory where you originally ran `make install`, enter:
@@ -73,9 +78,10 @@ From the directory where you originally ran `make install`, enter:
 
 You will need to use `sudo` if you did not specify `WEBOS_INSTALL_ROOT`.
 
-## Generating documentation
-
 ## Generating Documentation
+
+Nyx generates two sets of documentation, reflecting that fact that the APIs
+it presents to application and module writers are different.
 
 The tools required to generate the documentation are:
 
@@ -86,15 +92,21 @@ Once you have run `cmake`, enter the following to generate the documentation:
 
     $ make docs
 
-To view the generated HTML documentation, point your browser to
-`Documentation/<project-name>/html/index.html`
+To view the generated HTML documentation, point your browser to either of the
+following
+
+    Documentation/nyx/module_api/html/index.html
+    Documentation/nyx/client_api/html/index.html
+
+in your build directory.
 
 To install the generated documentation, enter:
 
     $ [sudo] make install-docs
 
-The documentation will be installed to `usr/share/doc/<project-name>/html` under
-the tree defined by the value of `WEBOS_INSTALL_ROOT` (or its default).
+The documentation will be installed to `usr/share/doc/nyx/module_api/html`and
+`usr/share/doc/nyx/client_api/html` under the tree defined by the value of 
+`WEBOS_INSTALL_ROOT` (or its default).
 
 You will need to use `sudo` if you did not specify `WEBOS_INSTALL_ROOT`.
 

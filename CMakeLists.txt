@@ -16,6 +16,10 @@
 #
 # LICENSE@@@
 
+# The values for following variables can be set from command line
+# NYX_MODULE_DIR - Location of installed nyx modules
+# NYX_MODULE_MOCK_DIR - Location of mock modules (if any)
+
 cmake_minimum_required(VERSION 2.8.7)
 
 project(nyx)
