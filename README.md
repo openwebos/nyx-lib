@@ -65,9 +65,14 @@ To see a list of the make targets that `cmake` has generated, enter:
 
     $ make help
 
-You may also specify `NYX_MODULE_DIR` and `NYX_MODULE_MOCK_DIR` from
-command line to override the default settings. The default settings
-are extracted from variables `nyx_module_dir` and `nyx_module_mock_dir`
+You may also specify the values for `NYX_MODULE_DIR` and `NYX_MODULE_MOCK_DIR` from 
+command line. For example:
+
+    $ cmake -D NYX_MODULE_DIR:PATH=$HOME/nyx/modules ..
+    $ make
+    $ sudo make install
+
+The default settings are extracted from the variables `nyx_module_dir`and `nyx_module_mock_dir`
 in nyx.pc.
 
 ## Uninstalling

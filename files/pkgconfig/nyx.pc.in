@@ -20,6 +20,8 @@ libdir=@WEBOS_INSTALL_LIBDIR@
 includedir=@WEBOS_INSTALL_INCLUDEDIR@
 nyx_module_dir=@NYX_MODULE_DIR@
 nyx_module_mock_dir=@NYX_MODULE_MOCK_DIR@
+nyx_module_prefix=@NYX_MODULE_PREFIX@
+nyx_module_suffix=@NYX_MODULE_SUFFIX@
 
 Name: Nyx
 Description: @WEBOS_PROJECT_SUMMARY@
