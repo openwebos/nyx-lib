@@ -55,9 +55,9 @@ nyx_error_t nyx_system_shutdown(nyx_device_handle_t handle, nyx_system_shutdown_
 	nyx_execute_return_function(system_shutdown, SYSTEM, SHUTDOWN, handle, type);
 }
 
-nyx_error_t nyx_system_reboot(nyx_device_handle_t handle, nyx_system_shutdown_type_t type)
+nyx_error_t nyx_system_reboot(nyx_device_handle_t handle, nyx_system_shutdown_type_t type, const char *reason)
 {
-	nyx_execute_return_function(system_reboot, SYSTEM, REBOOT, handle, type);
+	nyx_execute_return_function(system_reboot, SYSTEM, REBOOT, handle, type, reason);
 }
 
 nyx_error_t nyx_system_set_msm_mode(nyx_device_handle_t handle, nyx_system_msm_action_t action, nyx_system_msm_return_code_t *ret)

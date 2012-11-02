@@ -121,13 +121,14 @@ NYX_API_EXPORT nyx_error_t nyx_system_shutdown(nyx_device_handle_t handle, nyx_s
  *
  * @param[in] handle - the event handle
  * @param[in] type  -  normal or emergency reboot
+ * @param[in] reason - reason for the reboot
  *
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_system_reboot(nyx_device_handle_t handle, nyx_system_shutdown_type_t type);
+NYX_API_EXPORT nyx_error_t nyx_system_reboot(nyx_device_handle_t handle, nyx_system_shutdown_type_t type, const char *reason);
 
 
 /*   MSM APIs   */

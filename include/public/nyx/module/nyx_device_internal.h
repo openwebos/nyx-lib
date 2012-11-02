@@ -188,7 +188,7 @@ typedef nyx_error_t (*nyx_system_query_next_alarm_function_t)(nyx_device_t *, ti
 typedef nyx_error_t (*nyx_system_query_rtc_time_function_t)(nyx_device_t *, time_t *);
 typedef nyx_error_t (*nyx_system_suspend_function_t)(nyx_device_t *, bool *);
 typedef nyx_error_t (*nyx_system_shutdown_function_t)(nyx_device_t *, nyx_system_shutdown_type_t);
-typedef nyx_error_t (*nyx_system_reboot_function_t)(nyx_device_t *, nyx_system_shutdown_type_t);
+typedef nyx_error_t (*nyx_system_reboot_function_t)(nyx_device_t *, nyx_system_shutdown_type_t, const char *);
 typedef nyx_error_t (*nyx_system_set_msm_mode_function_t)(nyx_device_t *, nyx_system_msm_action_t, nyx_system_msm_return_code_t*);
 typedef nyx_error_t (*nyx_system_get_msm_state_function_t)(nyx_device_t *,nyx_system_msm_state_t*);
 typedef nyx_error_t (*nyx_system_register_msm_change_callback_function_t)(nyx_device_t *, nyx_device_callback_function_t, void *);

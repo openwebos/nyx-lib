@@ -24,12 +24,12 @@ cmake_minimum_required(VERSION 2.8.7)
 
 project(nyx)
 
-set(NYX_API_VERSION_MAJOR 2)
+set(NYX_API_VERSION_MAJOR 3)
 set(NYX_API_VERSION_MINOR 0)
 
 include(webOS/webOS)
 webos_modules_init(1 0 0 QUALIFIER RC4)
-webos_component(${NYX_API_VERSION_MAJOR} ${NYX_API_VERSION_MINOR} 0)
+webos_component(${NYX_API_VERSION_MAJOR} ${NYX_API_VERSION_MINOR} 0 QUALIFIER RC1)
 
 set(NYX_MODULE_DIR ${WEBOS_INSTALL_LIBDIR}/nyx/modules CACHE PATH "Nyx modules directory path")
 set(NYX_MODULE_MOCK_DIR ${WEBOS_INSTALL_LIBDIR}/nyx/modules.mock CACHE PATH "Nyx mock modules directory path")
