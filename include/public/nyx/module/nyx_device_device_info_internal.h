@@ -37,7 +37,8 @@ typedef struct {
 	char* nduid_str;
 	char* serial_number;
 	char* hardware_revision;
-	char* product_sku;
+	char* ram_size_str;
+	char* storage_size_str;
 } nyx_device_info_device_t;
 
 #endif /* _NYX_DEVICE_DEVICE_INFO_INTERNAL_H_ */

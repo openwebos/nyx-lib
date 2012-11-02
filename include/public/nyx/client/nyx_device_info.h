@@ -60,11 +60,16 @@ NYX_API_EXPORT nyx_error_t nyx_device_info_get_hardware_id(nyx_device_handle_t h
  *
  * @param[in] 	handle - handle to the device
  * @param[in] 	type - type of information to retrieve
- * @param[out]	dest - location into which the string information is copied; it will always be NULL-terminated
+ *
+ * @param[out]	dest - location into which the string information is copied;
+ *              it will always be NUL-terminated
+ *
  * @param[in]	dest_len - length of destination string (non-zero)
  *
- * @return error code (NYX_ERROR_NONE if operation is successful);
- * returns NYX_ERROR_VALUE_OUT_OF_RANGE if 'dest_len' is too small.
+ * @return error code 
+ *   - NYX_ERROR_NONE if operation is successful
+ *   - NYX_ERROR_VALUE_OUT_OF_RANGE if 'dest_len' is too small to hold the
+ *     return value, including a terminating NUL.
  */
 NYX_API_EXPORT nyx_error_t nyx_device_info_get_info(nyx_device_handle_t handle, nyx_device_info_type_t type, char* dest, size_t dest_len);
 
