@@ -45,7 +45,7 @@ extern "C" {
 /**
  * @brief Set an RTC alarm.
  *
- * @param[in]  handle - the event handle
+ * @param[in]  handle - the handle returned from nyx_device_open
  * @param[in]  time - time to set the alarm for (if 0, any existing RTC alarm present will be cleared)
  * @param[in]  callback_func - callback function to be called when any RTC alarm fires
  * @param[in]  context - context passed to the callback function
@@ -59,7 +59,7 @@ NYX_API_EXPORT nyx_error_t nyx_system_set_alarm(nyx_device_handle_t handle, time
 /**
  * @brief Query RTC time for next alarm.
  *
- * @param[in]  handle - the event handle
+ * @param[in]  handle - the handle returned from nyx_device_open
  * @param[out] time - RTC time for next alarm
  *
  *
@@ -73,7 +73,7 @@ NYX_API_EXPORT nyx_error_t nyx_system_query_next_alarm(nyx_device_handle_t handl
 /**
  * @brief Query current RTC time.
  *
- * @param[in]  handle - the event handle
+ * @param[in]  handle - the handle returned from nyx_device_open
  * @param[out] time - RTC time returned by the RTC driver
  *
  *
@@ -88,7 +88,7 @@ NYX_API_EXPORT nyx_error_t nyx_system_query_rtc_time(nyx_device_handle_t handle,
 /**
  * @brief Suspend the device.
  *
- * @param[in]  handle - the event handle
+ * @param[in]  handle - the handle returned from nyx_device_open
  * @param[out] success - true if device was able to suspend
  *
  *
@@ -105,15 +105,15 @@ NYX_API_EXPORT nyx_error_t nyx_system_suspend(nyx_device_handle_t handle, bool *
 /**
  * @brief Shut down the device.
  *
- * @param[in] handle - the event handle
+ * @param[in] handle - the handle returned from nyx_device_open
  * @param[in] type  - normal or emergency shutdown
- *
+ * @param[in] reason - a (possibly NULL) string indicating the reason for the shutdown 
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_system_shutdown(nyx_device_handle_t handle, nyx_system_shutdown_type_t type);
+NYX_API_EXPORT nyx_error_t nyx_system_shutdown(nyx_device_handle_t handle, nyx_system_shutdown_type_t type, const char *reason);
 
 
 /**
@@ -121,7 +121,7 @@ NYX_API_EXPORT nyx_error_t nyx_system_shutdown(nyx_device_handle_t handle, nyx_s
  *
  * @param[in] handle - the event handle
  * @param[in] type  -  normal or emergency reboot
- * @param[in] reason - reason for the reboot
+ * @param[in] reason - a (possibly NULL) string indicating the reason for the reboot
  *
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
@@ -136,7 +136,7 @@ NYX_API_EXPORT nyx_error_t nyx_system_reboot(nyx_device_handle_t handle, nyx_sys
 /**
  * @brief Enable/disable MSM mode.
  *
- * @param[in] handle - the event handle
+ * @param[in] handle - the handle returned from nyx_device_open
  * @param[in] action - enable/disable MSM mode
  * @param[out] ret - return the error code (if any)
  *
@@ -150,7 +150,7 @@ NYX_API_EXPORT nyx_error_t nyx_system_set_msm_mode(nyx_device_handle_t handle, n
 /**
  * @brief Query current MSM state.
  *
- * @param[in]  handle - the event handle
+ * @param[in]  handle - the handle returned from nyx_device_open
  * @param[out] state  - current MSM state
  *
  *
@@ -163,7 +163,7 @@ NYX_API_EXPORT nyx_error_t nyx_system_get_msm_state(nyx_device_handle_t handle, 
 /**
  * @brief Register callback function for MSM mode changes.
  *
- * @param[in]  handle - the event handle
+ * @param[in]  handle - the handle returned from nyx_device_open
  * @param[in]  callback_func - callback function to handle the event
  * @param[in]  context - for callback function
  *
@@ -177,7 +177,7 @@ NYX_API_EXPORT nyx_error_t nyx_system_register_msm_change_callback(nyx_device_ha
 /**
  * @brief Erase partition.
  *
- * @param[in]  handle - the event handle
+ * @param[in]  handle - the handle returned from nyx_device_open
  * @param[in]  type   - erase type (var/media/all/wipe)
  * @param[out] error_msg - error message in case underlying erase script fails
  *
