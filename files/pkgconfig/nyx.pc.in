@@ -18,6 +18,7 @@
 
 libdir=@WEBOS_INSTALL_LIBDIR@
 includedir=@WEBOS_INSTALL_INCLUDEDIR@
+nyx_cmd_module_dir=@NYX_CMD_MODULE_DIR@
 nyx_module_dir=@NYX_MODULE_DIR@
 nyx_module_mock_dir=@NYX_MODULE_MOCK_DIR@
 nyx_module_prefix=@NYX_MODULE_PREFIX@
