@@ -1,6 +1,6 @@
 /* @@@LICENSE
 *
-*      Copyright (c) 2010-2012 Hewlett-Packard Development Company, L.P.
+*      Copyright (c) 2010-2013 Hewlett-Packard Development Company, L.P.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -129,50 +129,6 @@ NYX_API_EXPORT nyx_error_t nyx_system_shutdown(nyx_device_handle_t handle, nyx_s
  */
 
 NYX_API_EXPORT nyx_error_t nyx_system_reboot(nyx_device_handle_t handle, nyx_system_shutdown_type_t type, const char *reason);
-
-
-/*   MSM APIs   */
-
-/**
- * @brief Enable/disable MSM mode.
- *
- * @param[in] handle - the handle returned from nyx_device_open
- * @param[in] action - enable/disable MSM mode
- * @param[out] ret - return the error code (if any)
- *
- *
- * @return error code (NYX_ERROR_NONE if operation is successful)
- *
- */
-
-NYX_API_EXPORT nyx_error_t nyx_system_set_msm_mode(nyx_device_handle_t handle, nyx_system_msm_action_t action, nyx_system_msm_return_code_t *ret);
-
-/**
- * @brief Query current MSM state.
- *
- * @param[in]  handle - the handle returned from nyx_device_open
- * @param[out] state  - current MSM state
- *
- *
- * @return error code (NYX_ERROR_NONE if operation is successful)
- *
- */
-
-NYX_API_EXPORT nyx_error_t nyx_system_get_msm_state(nyx_device_handle_t handle, nyx_system_msm_state_t *state);
-
-/**
- * @brief Register callback function for MSM mode changes.
- *
- * @param[in]  handle - the handle returned from nyx_device_open
- * @param[in]  callback_func - callback function to handle the event
- * @param[in]  context - for callback function
- *
- *
- * @return error code (NYX_ERROR_NONE if operation is successful)
- *
- */
-
-NYX_API_EXPORT nyx_error_t nyx_system_register_msm_change_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context);
 
 /**
  * @brief Erase partition.

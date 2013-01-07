@@ -1,6 +1,6 @@
 /* @@@LICENSE
 *
-*      Copyright (c) 2010-2012 Hewlett-Packard Development Company, L.P.
+*      Copyright (c) 2010-2013 Hewlett-Packard Development Company, L.P.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -95,9 +95,6 @@ typedef enum {
 	NYX_SYSTEM_SUSPEND_MODULE_METHOD,
 	NYX_SYSTEM_SHUTDOWN_MODULE_METHOD,
 	NYX_SYSTEM_REBOOT_MODULE_METHOD,
-	NYX_SYSTEM_SET_MSM_MODE_MODULE_METHOD,
-	NYX_SYSTEM_GET_MSM_STATE_MODULE_METHOD,
-	NYX_SYSTEM_REGISTER_MSM_CHANGE_CALLBACK_MODULE_METHOD,
 	NYX_SYSTEM_ERASE_PARTITION_MODULE_METHOD,
 	/* bearing sensor module functions */
 	NYX_SENSOR_BEARING_GET_LOCATION_MODULE_METHOD,
@@ -107,6 +104,10 @@ typedef enum {
 	NYX_SENSOR_ORIENTATION_SET_THRESHOLD_MODULE_METHOD,
 	/* device info module functions */
 	NYX_DEVICE_INFO_GET_INFO_MODULE_METHOD,
+	/* Mass Storage Mode module functions */
+	NYX_MASS_STORAGE_MODE_SET_MODE_MODULE_METHOD,
+	NYX_MASS_STORAGE_MODE_GET_STATE_MODULE_METHOD,
+	NYX_MASS_STORAGE_MODE_REGISTER_CHANGE_CALLBACK_MODULE_METHOD,
 } module_method_t;
 
 typedef void* nyx_instance_t;
@@ -189,9 +190,6 @@ typedef nyx_error_t (*nyx_system_query_rtc_time_function_t)(nyx_device_t *, time
 typedef nyx_error_t (*nyx_system_suspend_function_t)(nyx_device_t *, bool *);
 typedef nyx_error_t (*nyx_system_shutdown_function_t)(nyx_device_t *, nyx_system_shutdown_type_t, const char *);
 typedef nyx_error_t (*nyx_system_reboot_function_t)(nyx_device_t *, nyx_system_shutdown_type_t, const char *);
-typedef nyx_error_t (*nyx_system_set_msm_mode_function_t)(nyx_device_t *, nyx_system_msm_action_t, nyx_system_msm_return_code_t*);
-typedef nyx_error_t (*nyx_system_get_msm_state_function_t)(nyx_device_t *,nyx_system_msm_state_t*);
-typedef nyx_error_t (*nyx_system_register_msm_change_callback_function_t)(nyx_device_t *, nyx_device_callback_function_t, void *);
 typedef nyx_error_t (*nyx_system_erase_partition_function_t)(nyx_device_t *, nyx_system_erase_type_t, const char *);
 
 typedef nyx_error_t (*nyx_bearing_get_location_function_t)(nyx_device_t*, nyx_sensor_bearing_location_t*);
@@ -200,6 +198,10 @@ typedef nyx_error_t (*nyx_orientation_get_threshold_function_t)(nyx_device_t*, n
 typedef nyx_error_t (*nyx_orientation_set_threshold_function_t)(nyx_device_t*, const nyx_sensor_orientation_threshold_t*);
 
 typedef nyx_error_t (*nyx_device_info_get_info_function_t)(nyx_device_t*, nyx_device_info_type_t type, char* dest, size_t dest_len);
+
+typedef nyx_error_t (*nyx_mass_storage_mode_set_mode_function_t)(nyx_device_t *, nyx_mass_storage_mode_action_t, nyx_mass_storage_mode_return_code_t*);
+typedef nyx_error_t (*nyx_mass_storage_mode_get_state_function_t)(nyx_device_t *,nyx_mass_storage_mode_state_t*);
+typedef nyx_error_t (*nyx_mass_storage_mode_register_change_callback_function_t)(nyx_device_t *, nyx_device_callback_function_t, void *);
 
 #ifdef __cplusplus
 }

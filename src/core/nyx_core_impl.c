@@ -1,6 +1,6 @@
 /* @@@LICENSE
 *
-*      Copyright (c) 2010-2012 Hewlett-Packard Development Company, L.P.
+*      Copyright (c) 2010-2013 Hewlett-Packard Development Company, L.P.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -62,7 +62,8 @@ static const typeStringPair_t mapTypeToString[] =
 	{NYX_DEVICE_FIRMWARE_UPDATE, 		"FirmwareUpdate"},
 	{NYX_DEVICE_SYSTEM, 			"System"},
 	{NYX_DEVICE_MEMORY,			"Memory"},
-	{NYX_DEVICE_MEDIA_CAMERA, 		"Camera"}
+	{NYX_DEVICE_MEDIA_CAMERA, 		"Camera"},
+	{NYX_DEVICE_MASS_STORAGE_MODE, 		"MassStorageMode"},
 };
 
 const char* nyx_core_device_type_to_string(nyx_device_type_t type)

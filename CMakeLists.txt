@@ -1,6 +1,6 @@
 # @@@LICENSE
 #
-#      Copyright (c) 2010-2012 Hewlett-Packard Development Company, L.P.
+#      Copyright (c) 2010-2013 Hewlett-Packard Development Company, L.P.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ cmake_minimum_required(VERSION 2.8.7)
 project(nyx)
 
 set(NYX_API_VERSION_MAJOR 3)
-set(NYX_API_VERSION_MINOR 1)
+set(NYX_API_VERSION_MINOR 2)
 
 include(webOS/webOS)
 webos_modules_init(1 0 0 QUALIFIER RC4)

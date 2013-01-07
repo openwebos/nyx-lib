@@ -1,6 +1,6 @@
 /* @@@LICENSE
 *
-*      Copyright (c) 2010-2012 Hewlett-Packard Development Company, L.P.
+*      Copyright (c) 2010-2013 Hewlett-Packard Development Company, L.P.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -58,21 +58,6 @@ nyx_error_t nyx_system_shutdown(nyx_device_handle_t handle, nyx_system_shutdown_
 nyx_error_t nyx_system_reboot(nyx_device_handle_t handle, nyx_system_shutdown_type_t type, const char *reason)
 {
 	nyx_execute_return_function(system_reboot, SYSTEM, REBOOT, handle, type, reason);
-}
-
-nyx_error_t nyx_system_set_msm_mode(nyx_device_handle_t handle, nyx_system_msm_action_t action, nyx_system_msm_return_code_t *ret)
-{
-	nyx_execute_return_function(system_set_msm_mode, SYSTEM, SET_MSM_MODE, handle, action, ret);
-}
-
-nyx_error_t nyx_system_get_msm_state(nyx_device_handle_t handle, nyx_system_msm_state_t *state)
-{
-	nyx_execute_return_function(system_get_msm_state, SYSTEM, GET_MSM_STATE, handle, state);
-}
-
-nyx_error_t nyx_system_register_msm_change_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context)
-{
-	nyx_execute_return_function(system_register_msm_change_callback, SYSTEM, REGISTER_MSM_CHANGE_CALLBACK, handle, callback_func, context);
 }
 
 nyx_error_t nyx_system_erase_partition(nyx_device_handle_t handle,  nyx_system_erase_type_t type, const char *error_msg)

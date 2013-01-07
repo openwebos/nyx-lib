@@ -120,7 +120,7 @@ You will need to use `sudo` if you did not specify `WEBOS_INSTALL_ROOT`.
 Unless otherwise specified, all content, including all source code files and
 documentation files in this repository are:
 
-Copyright (c) 2010-2012 Hewlett-Packard Development Company, L.P.
+Copyright (c) 2010-2013 Hewlett-Packard Development Company, L.P.
 
 Unless otherwise specified or set forth in the NOTICE file, all content,
 including all source code files and documentation files in this repository are:
