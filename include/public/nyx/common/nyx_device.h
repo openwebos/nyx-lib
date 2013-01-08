@@ -125,7 +125,7 @@ typedef enum {
 	NYX_CALLBACK_STATUS_HARDWARE_ASYNC,
 	NYX_CALLBACK_STATUS_FAILED,			/**< Worker thread has finished but got an error */
 	NYX_CALLBACK_STATUS_CANCELLED,			/**< Worker thread was cancelled before finishing */
-	NYX_CALLBACK_STATUS_PREMPTIED,			/**< Another request/event arrived that replaces (preempts) the worker thread */
+	NYX_CALLBACK_STATUS_PREEMPTED,			/**< Another request/event arrived that replaces (preempts) the worker thread */
 } nyx_callback_status_t;
 
 /**
