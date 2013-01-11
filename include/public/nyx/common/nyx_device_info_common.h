@@ -1,6 +1,6 @@
 /* @@@LICENSE
 *
-*      Copyright (c) 2010-2012 Hewlett-Packard Development Company, L.P.
+*      Copyright (c) 2010-2013 Hewlett-Packard Development Company, L.P.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ typedef enum {
 	NYX_DEVICE_INFO_STORAGE_FREE,
 	NYX_DEVICE_INFO_STORAGE_SIZE,
 	NYX_DEVICE_INFO_WIFI_ADDR,
+	NYX_DEVICE_INFO_HARDWARE_ID,
 
 	NYX_DEVICE_INFO_END
 } nyx_device_info_type_t;

@@ -1,6 +1,6 @@
 /* @@@LICENSE
 *
-*      Copyright (c) 2010-2012 Hewlett-Packard Development Company, L.P.
+*      Copyright (c) 2010-2013 Hewlett-Packard Development Company, L.P.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -41,19 +41,6 @@ extern "C" {
 * @ingroup nyx_public
 * @{
 */
-
-/**
- * @brief	Get the hardware identification number.
- *      This helps in identifying the hardware type of the device in use
- *      from among the different available types.
- *
- * @param[in] 	handle - handle to the device
- * @param[out]	hw_id_out_ptr - hardware type id 
- *
- * @return error code (NYX_ERROR_NONE if operation is successful)
- *
- */
-NYX_API_EXPORT nyx_error_t nyx_device_info_get_hardware_id(nyx_device_handle_t handle, int32_t* hw_id_out_ptr);
 
 /**
  * @brief	Get the device information.

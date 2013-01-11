@@ -24,8 +24,8 @@ cmake_minimum_required(VERSION 2.8.7)
 
 project(nyx)
 
-set(NYX_API_VERSION_MAJOR 3)
-set(NYX_API_VERSION_MINOR 2)
+set(NYX_API_VERSION_MAJOR 4)
+set(NYX_API_VERSION_MINOR 0)
 
 include(webOS/webOS)
 webos_modules_init(1 0 0 QUALIFIER RC4)
