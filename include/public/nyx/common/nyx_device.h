@@ -56,8 +56,8 @@ typedef enum {
 	NYX_DEVICE_BATTERY = NYX_DEVICE_FIRST_VALID,
 	NYX_DEVICE_BLUETOOTH_INPUT_DETECT,
 	NYX_DEVICE_CHARGER,
-	NYX_DEVICE_DEVICE_INFO, 
-	NYX_DEVICE_DISPLAY, 
+	NYX_DEVICE_DEVICE_INFO,
+	NYX_DEVICE_DISPLAY,
 	NYX_DEVICE_FIRMWARE_UPDATE,
 	NYX_DEVICE_GENERIC,
 	NYX_DEVICE_HAPTICS,
@@ -83,6 +83,7 @@ typedef enum {
 	NYX_DEVICE_MEDIA_CAMERA,
 	NYX_DEVICE_MASS_STORAGE_MODE,
 	NYX_DEVICE_OS_INFO,
+	NYX_DEVICE_SECURITY,
 	NYX_DEVICE_TYPE_COUNT,	/* should always be the last, used primarly in testing
                                for iterating over all known devices */
 } nyx_device_type_t;

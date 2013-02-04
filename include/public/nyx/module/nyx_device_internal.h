@@ -111,6 +111,18 @@ typedef enum {
 	NYX_MASS_STORAGE_MODE_REGISTER_CHANGE_CALLBACK_MODULE_METHOD,
 	/* OS info module function*/
 	NYX_OS_INFO_QUERY_MODULE_METHOD,
+	/* security module functions */
+	NYX_SECURITY_CREATE_AES_KEY_MODULE_METHOD,
+	NYX_SECURITY_CRYPT_AES_MODULE_METHOD,
+	NYX_SECURITY_CREATE_RSA_KEY_MODULE_METHOD,
+	NYX_SECURITY_CRYPT_RSA_MODULE_METHOD,
+	NYX_SECURITY_INIT_HASH_MODULE_METHOD,
+	NYX_SECURITY_UPDATE_HASH_MODULE_METHOD,
+	NYX_SECURITY_FINALIZE_HASH_MODULE_METHOD,
+	NYX_SECURITY_FINALIZE_AND_SAVE_HASH_MODULE_METHOD,
+	NYX_SECURITY_LOAD_HASH_MODULE_METHOD,
+	NYX_SECURITY_SAVE_CERTIFICATE_MODULE_METHOD,
+	NYX_SECURITY_LOAD_CERTIFICATE_MODULE_METHOD,
 } module_method_t;
 
 typedef void* nyx_instance_t;
@@ -207,6 +219,17 @@ typedef nyx_error_t (*nyx_mass_storage_mode_get_state_function_t)(nyx_device_t *
 typedef nyx_error_t (*nyx_mass_storage_mode_register_change_callback_function_t)(nyx_device_t *, nyx_device_callback_function_t, void *);
 
 typedef nyx_error_t (*nyx_os_info_query_function_t)(nyx_device_t *, nyx_os_info_query_t type, const char ** val);
+typedef nyx_error_t (*nyx_security_create_aes_key_function_t)(nyx_device_handle_t handle, int keylen, int *key_index);
+typedef nyx_error_t (*nyx_security_crypt_aes_function_t)(nyx_device_handle_t handle, int key_index, nyx_security_aes_block_mode_t mode, int encrypt, const char *src, int srclen, char *dest, int *destlen, int *ivlen);
+typedef nyx_error_t (*nyx_security_create_rsa_key_function_t)(nyx_device_handle_t handle, int keylen, int *key_index);
+typedef nyx_error_t (*nyx_security_crypt_rsa_function_t)(nyx_device_handle_t handle, int key_index, int encrypt, const char *src, int srclen, char *dest, int *destlen);
+typedef nyx_error_t (*nyx_security_init_hash_function_t)(nyx_device_handle_t handle, const char *hash_algo);
+typedef nyx_error_t (*nyx_security_update_hash_function_t)(nyx_device_handle_t handle, const char *src, int srclen);
+typedef nyx_error_t (*nyx_security_finalize_hash_function_t)(nyx_device_handle_t handle, char *dest);
+typedef nyx_error_t (*nyx_security_finalize_and_save_hash_function_t)(nyx_device_handle_t handle, int *index);
+typedef nyx_error_t (*nyx_security_load_hash_function_t)(nyx_device_handle_t handle, const char *hash_algo, int index, char *dest);
+typedef nyx_error_t (*nyx_security_save_certificate_function_t)(nyx_device_handle_t handle, int *index, const char *x509);
+typedef nyx_error_t (*nyx_security_load_certificate_function_t)(nyx_device_handle_t handle, int index, char **x509);
 
 #ifdef __cplusplus
 }

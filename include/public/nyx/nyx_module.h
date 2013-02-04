@@ -59,6 +59,7 @@
 #include <nyx/common/nyx_system_common.h>
 #include <nyx/common/nyx_mass_storage_mode_common.h>
 #include <nyx/common/nyx_touchpanel_common.h>
+#include <nyx/common/nyx_security_common.h>
 
 #include <nyx/module/nyx_log.h>
 #include <nyx/module/nyx_device_internal.h>

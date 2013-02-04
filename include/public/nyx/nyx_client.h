@@ -67,4 +67,6 @@
 #include <nyx/client/nyx_sensor_rotation.h>
 #include <nyx/client/nyx_sensor_shake.h>
 
+#include <nyx/client/nyx_security.h>
+
 #endif /* _NYX_CLIENT_H_ */
