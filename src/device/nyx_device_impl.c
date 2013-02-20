@@ -344,7 +344,6 @@ nyx_error_t nyx_device_close(nyx_device_handle_t handle)
 	 */
 	if (method_hash_table) {
 		g_hash_table_destroy (method_hash_table);
-		d->method_hash_table = NULL;
 	}
 	if (name) {
 		free (name);
