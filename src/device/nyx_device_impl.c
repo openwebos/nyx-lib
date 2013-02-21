@@ -322,43 +322,32 @@ nyx_error_t nyx_device_close(nyx_device_handle_t handle)
 	CHECK_DEVICE(d);
 
 	/*
-	 * we need to cache method hash table as it might be
-	 * used during the close, we will destroy it after
-	 * a call to close.
+	 * cleanup device local members after call to close because members
+	 * might be used during the close.
+	 *
+	 * need to setup copy from device because call to close will deallocate
+	 * device (d) structure (cant access device members through pointer d)
 	 */
-	GHashTable* method_hash_table = (GHashTable*)d->method_hash_table;
-	char* name = d->name;
-	char* desc = d->description;
+	nyx_device_t cache;
+	memcpy(&cache, d, sizeof(cache));
+
+	nyx_error_t error = cache.close_ptr(d);
 
 	/*
-	 * Don't know if necessary but since we are deallocating
-	 * the device structure during the call to close method
-	 * let's first cache the pointer to close method.
+	 * do rest of the cleanup using cache
 	 */
-	void* module_ptr = d->module_ptr;
-	nyx_close_function_t close_ptr = d->close_ptr;
-	nyx_error_t error = close_ptr(d);
 
-	/*
-	 * let's destroy the method hash table if necessary.
-	 */
-	if (method_hash_table) {
-		g_hash_table_destroy (method_hash_table);
+	if (NULL != cache.method_hash_table) {
+		g_hash_table_destroy ((GHashTable*)cache.method_hash_table);
 	}
-	if (name) {
-		free (name);
-		name = NULL;
-	}
-	if (desc) {
-		free (desc);
-		desc = NULL;
-	}
+
+	g_free(cache.name);
+	g_free(cache.description);
 
 	/*
 	 * We are done so, we can close the module.
 	 */
-	dlclose(module_ptr);
-
+	dlclose(cache.module_ptr);
 
 	return error;
 }
