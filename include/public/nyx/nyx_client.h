@@ -1,6 +1,7 @@
 /* @@@LICENSE
 *
 *      Copyright (c) 2010-2013 Hewlett-Packard Development Company, L.P.
+*      Copyright (c) 2013 LG Electronics
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -52,6 +53,7 @@
 #include <nyx/client/nyx_mass_storage_mode.h>
 #include <nyx/client/nyx_display.h>
 #include <nyx/client/nyx_device_info.h>
+#include <nyx/client/nyx_os_info.h>
 
 #include <nyx/client/nyx_sensor_acceleration.h>
 #include <nyx/client/nyx_sensor_als.h>

@@ -1,6 +1,7 @@
 /* @@@LICENSE
 *
 *      Copyright (c) 2010-2013 Hewlett-Packard Development Company, L.P.
+*      Copyright (c) 2013 LG Electronics
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -81,6 +82,7 @@ typedef enum {
 	NYX_DEVICE_SYSTEM,
 	NYX_DEVICE_MEDIA_CAMERA,
 	NYX_DEVICE_MASS_STORAGE_MODE,
+	NYX_DEVICE_OS_INFO,
 	NYX_DEVICE_TYPE_COUNT,	/* should always be the last, used primarly in testing
                                for iterating over all known devices */
 } nyx_device_type_t;

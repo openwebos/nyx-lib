@@ -1,6 +1,7 @@
 /* @@@LICENSE
 *
 *      Copyright (c) 2010-2013 Hewlett-Packard Development Company, L.P.
+*      Copyright (c) 2013 LG Electronics
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -108,6 +109,8 @@ typedef enum {
 	NYX_MASS_STORAGE_MODE_SET_MODE_MODULE_METHOD,
 	NYX_MASS_STORAGE_MODE_GET_STATE_MODULE_METHOD,
 	NYX_MASS_STORAGE_MODE_REGISTER_CHANGE_CALLBACK_MODULE_METHOD,
+	/* OS info module function*/
+	NYX_OS_INFO_QUERY_MODULE_METHOD,
 } module_method_t;
 
 typedef void* nyx_instance_t;
@@ -202,6 +205,8 @@ typedef nyx_error_t (*nyx_device_info_get_info_function_t)(nyx_device_t*, nyx_de
 typedef nyx_error_t (*nyx_mass_storage_mode_set_mode_function_t)(nyx_device_t *, nyx_mass_storage_mode_action_t, nyx_mass_storage_mode_return_code_t*);
 typedef nyx_error_t (*nyx_mass_storage_mode_get_state_function_t)(nyx_device_t *,nyx_mass_storage_mode_state_t*);
 typedef nyx_error_t (*nyx_mass_storage_mode_register_change_callback_function_t)(nyx_device_t *, nyx_device_callback_function_t, void *);
+
+typedef nyx_error_t (*nyx_os_info_query_function_t)(nyx_device_t *, nyx_os_info_query_t type, const char ** val);
 
 #ifdef __cplusplus
 }

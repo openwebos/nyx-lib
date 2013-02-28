@@ -1,6 +1,7 @@
 /* @@@LICENSE
 *
 *      Copyright (c) 2010-2013 Hewlett-Packard Development Company, L.P.
+*      Copyright (c) 2013 LG Electronics
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -38,6 +39,8 @@
 #include <nyx/common/nyx_bluetooth_input_detect_common.h>
 #include <nyx/common/nyx_charger_common.h>
 #include <nyx/common/nyx_device_info_common.h>
+#include <nyx/common/nyx_os_info_common.h>
+
 #include <nyx/common/nyx_display_common.h>
 #include <nyx/common/nyx_firmware_update_common.h>
 #include <nyx/common/nyx_haptics_common.h>
