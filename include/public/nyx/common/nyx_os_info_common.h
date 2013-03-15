@@ -37,8 +37,6 @@ extern "C" {
 */
 
 typedef enum {
-	NYX_OS_INFO_START = 0,
-
 	NYX_OS_INFO_CORE_OS_NAME,
 	NYX_OS_INFO_CORE_OS_RELEASE,
 	NYX_OS_INFO_CORE_OS_RELEASE_CODENAME,
@@ -53,8 +51,6 @@ typedef enum {
 	NYX_OS_INFO_WEBOS_IMAGENAME,
 	NYX_OS_INFO_WEBOS_API_VERSION,
 	NYX_OS_INFO_WEBOS_PRERELEASE,
-
-	NYX_OS_INFO_END
 } nyx_os_info_query_t;
 
 /** @} */

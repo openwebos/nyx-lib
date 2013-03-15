@@ -52,8 +52,7 @@ extern "C" {
  */
 typedef enum {
 	NYX_DEVICE_ILLEGAL_DEVICE = 0,
-	NYX_DEVICE_FIRST_VALID,
-	NYX_DEVICE_BATTERY = NYX_DEVICE_FIRST_VALID,
+	NYX_DEVICE_BATTERY,
 	NYX_DEVICE_BLUETOOTH_INPUT_DETECT,
 	NYX_DEVICE_CHARGER,
 	NYX_DEVICE_DEVICE_INFO,
@@ -84,8 +83,6 @@ typedef enum {
 	NYX_DEVICE_MASS_STORAGE_MODE,
 	NYX_DEVICE_OS_INFO,
 	NYX_DEVICE_SECURITY,
-	NYX_DEVICE_TYPE_COUNT,	/* should always be the last, used primarly in testing
-                               for iterating over all known devices */
 } nyx_device_type_t;
 
 /**

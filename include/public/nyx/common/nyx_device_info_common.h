@@ -37,7 +37,6 @@ extern "C" {
 */
 
 typedef enum {
-	NYX_DEVICE_INFO_START = 0,
 	NYX_DEVICE_INFO_BATT_CH,
 	NYX_DEVICE_INFO_BATT_RSP,
 	NYX_DEVICE_INFO_BOARD_TYPE,
@@ -63,8 +62,6 @@ typedef enum {
 	NYX_DEVICE_INFO_STORAGE_SIZE,
 	NYX_DEVICE_INFO_WIFI_ADDR,
 	NYX_DEVICE_INFO_HARDWARE_ID,
-
-	NYX_DEVICE_INFO_END
 } nyx_device_info_type_t;
 
 /** @} */
