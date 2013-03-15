@@ -24,12 +24,12 @@ cmake_minimum_required(VERSION 2.8.7)
 
 project(nyx)
 
-set(NYX_API_VERSION_MAJOR 4)
+set(NYX_API_VERSION_MAJOR 5)
 set(NYX_API_VERSION_MINOR 0)
 
 include(webOS/webOS)
 webos_modules_init(1 0 0 QUALIFIER RC4)
-webos_component(${NYX_API_VERSION_MAJOR} ${NYX_API_VERSION_MINOR} 0 QUALIFIER RC1)
+webos_component(${NYX_API_VERSION_MAJOR} ${NYX_API_VERSION_MINOR} 0)
 
 set(NYX_LIB_ROOT ${WEBOS_INSTALL_LIBDIR}/nyx CACHE PATH "Nyx internal executables install root path")
 set(NYX_CMD_MODULE_DIR ${NYX_LIB_ROOT}/nyxcmd CACHE PATH "nyx-cmd modules directory path")
