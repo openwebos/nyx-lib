@@ -36,32 +36,37 @@ extern "C" {
 * @{
 */
 
+/**
+* Enumerants for selecting an information field when calling nyx_device_info_get_info
+*
+* Except where indicated, all returned values are constant while a device is running
+* (i.e. between reboots).
+*/
+
 typedef enum {
-	NYX_DEVICE_INFO_BATT_CH,
-	NYX_DEVICE_INFO_BATT_RSP,
-	NYX_DEVICE_INFO_BOARD_TYPE,
-	NYX_DEVICE_INFO_BT_ADDR,
+	NYX_DEVICE_INFO_BATT_CH,        /**< Battery challenge */
+	NYX_DEVICE_INFO_BATT_RSP,       /**< Battery response */
 
-	/**
-	 * The value of WEBOS_TARGET_MACHINE for the device, as provided by
-	 * cmake-modules-webos.
-	 */
-	NYX_DEVICE_INFO_DEVICE_NAME,
+	NYX_DEVICE_INFO_BOARD_TYPE,     /**< Board type, e.g. "topaz-3G" */
+	NYX_DEVICE_INFO_BT_ADDR,        /**< Bluetooth address */
 
-	NYX_DEVICE_INFO_HARDWARE_REVISION,
-	NYX_DEVICE_INFO_INSTALLER,
-	NYX_DEVICE_INFO_KEYBOARD_TYPE,
-	NYX_DEVICE_INFO_LAST_RESET_TYPE,
-	NYX_DEVICE_INFO_MODEM_PRESENT,
-	NYX_DEVICE_INFO_NDUID,
-	NYX_DEVICE_INFO_PRODUCT_ID,
-	NYX_DEVICE_INFO_RADIO_TYPE,
-	NYX_DEVICE_INFO_RAM_SIZE,
-	NYX_DEVICE_INFO_SERIAL_NUMBER,
-	NYX_DEVICE_INFO_STORAGE_FREE,
-	NYX_DEVICE_INFO_STORAGE_SIZE,
-	NYX_DEVICE_INFO_WIFI_ADDR,
-	NYX_DEVICE_INFO_HARDWARE_ID,
+	NYX_DEVICE_INFO_DEVICE_NAME,    /**< The value of WEBOS_TARGET_MACHINE for
+                                         the device, as provided by cmake-modules-webos. */
+
+	NYX_DEVICE_INFO_HARDWARE_REVISION, /**< Revision number for the hardware */
+	NYX_DEVICE_INFO_INSTALLER,      /**< Tool used to install the image */
+	NYX_DEVICE_INFO_KEYBOARD_TYPE,  /**< Refers to the keyboard built into the device */
+	NYX_DEVICE_INFO_LAST_RESET_TYPE, /**< Reason code for last reboot (may come from /proc/cmdline) */
+	NYX_DEVICE_INFO_MODEM_PRESENT,  /**< Cellular modem built into the device: "Y" or "N" */
+	NYX_DEVICE_INFO_NDUID,          /**< Unique identifier for the device */
+	NYX_DEVICE_INFO_PRODUCT_ID,     /**< Internal ID code for the product line */
+	NYX_DEVICE_INFO_RADIO_TYPE,     /**< Internal ID code for the radio type */
+	NYX_DEVICE_INFO_RAM_SIZE,       /**< Value as specified on the product data sheet */
+	NYX_DEVICE_INFO_SERIAL_NUMBER,  /**< Unique serial number for the device */
+	NYX_DEVICE_INFO_STORAGE_FREE,   /**< Amount of free storage available to apps, will not be constant */
+	NYX_DEVICE_INFO_STORAGE_SIZE,   /**< Value as specified on the product data sheet */
+	NYX_DEVICE_INFO_WIFI_ADDR,      /**< WiFi MAC Address */
+	NYX_DEVICE_INFO_HARDWARE_ID,    /**< Internal ID code for the specific MACHINE */
 } nyx_device_info_type_t;
 
 /** @} */
