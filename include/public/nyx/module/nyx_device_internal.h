@@ -37,7 +37,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
+/* NOTE: always add new methods to the end */
 typedef enum {
 	NYX_NONE_MODULE_METHOD,
 	/* generic module functions */
@@ -123,6 +123,8 @@ typedef enum {
 	NYX_SECURITY_LOAD_HASH_MODULE_METHOD,
 	NYX_SECURITY_SAVE_CERTIFICATE_MODULE_METHOD,
 	NYX_SECURITY_LOAD_CERTIFICATE_MODULE_METHOD,
+	/* device info module function */
+	NYX_DEVICE_INFO_QUERY_MODULE_METHOD,
 } module_method_t;
 
 typedef void* nyx_instance_t;
@@ -213,6 +215,7 @@ typedef nyx_error_t (*nyx_orientation_get_threshold_function_t)(nyx_device_t*, n
 typedef nyx_error_t (*nyx_orientation_set_threshold_function_t)(nyx_device_t*, const nyx_sensor_orientation_threshold_t*);
 
 typedef nyx_error_t (*nyx_device_info_get_info_function_t)(nyx_device_t*, nyx_device_info_type_t type, char* dest, size_t dest_len);
+typedef nyx_error_t (*nyx_device_info_query_function_t)(nyx_device_t*, nyx_device_info_type_t type, const char** dest);
 
 typedef nyx_error_t (*nyx_mass_storage_mode_set_mode_function_t)(nyx_device_t *, nyx_mass_storage_mode_action_t, nyx_mass_storage_mode_return_code_t*);
 typedef nyx_error_t (*nyx_mass_storage_mode_get_state_function_t)(nyx_device_t *,nyx_mass_storage_mode_state_t*);

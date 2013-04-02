@@ -53,8 +53,11 @@ extern "C" {
  *
  * @return error code
  *   - NYX_ERROR_NONE if operation is successful
- *   - NYX_ERROR_VALUE_OUT_OF_RANGE if 'dest_len' is too small to hold the
- *     return value, including a terminating NUL.
+ *   - NYX_ERROR_INVALID_HANDLE if given handle is NULL
+ *   - NYX_ERROR_NOT_IMPLEMENTED if query for given 'type' is not implemented
+ *   - NYX_ERROR_INVALID_VALUE if 'type' is not valid
+ *   - NYX_ERROR_DEVICE_UNAVAILABLE if value or device for given 'type' is not available
+
  */
 NYX_API_EXPORT nyx_error_t nyx_os_info_query(nyx_device_handle_t handle, nyx_os_info_query_t type, const char ** val);
 

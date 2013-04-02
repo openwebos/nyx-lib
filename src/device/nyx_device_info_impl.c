@@ -1,6 +1,7 @@
 /* @@@LICENSE
 *
 *      Copyright (c) 2010-2013 Hewlett-Packard Development Company, L.P.
+*      Copyright (c) 2013 LG Electronics
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -32,5 +33,10 @@
 nyx_error_t nyx_device_info_get_info(nyx_device_handle_t handle, nyx_device_info_type_t type, char* dest, size_t dest_len)
 {
 	nyx_execute_return_function(device_info_get_info, DEVICE_INFO, GET_INFO, handle, type, dest, dest_len);
+}
+
+nyx_error_t nyx_device_info_query(nyx_device_handle_t handle, nyx_device_info_type_t type, const char** dest)
+{
+	nyx_execute_return_function(device_info_query, DEVICE_INFO, QUERY, handle, type, dest);
 }
 
