@@ -65,19 +65,21 @@ end:
 void nyx_utils_write_value (char* path, int32_t val)
 {
 	int32_t fd = open (path, O_WRONLY);
-	if (fd <= -1) {
-		goto end;
-	}
-
-	char buffer[READ_BUFFER_SIZE];
-	sprintf(buffer, "%i", val);
-
-	int32_t l = strlen (buffer);
-	write (fd, buffer, l);
-
-end:
-
 	if (fd >= 0) {
+		char buffer[READ_BUFFER_SIZE];
+		sprintf(buffer, "%i", val);
+
+		int32_t l = strlen (buffer);
+
+// Suppress the "unused result" warning generated for the following write.
+//
+// TODO: When we switch to PmLogLib, log the fact as a warning and delete
+//       the pragmas.
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-result"
+		write (fd, buffer, l);
+#pragma GCC diagnostic pop
+
 		close (fd);
 	}
 }
