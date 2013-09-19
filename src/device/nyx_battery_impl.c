@@ -20,32 +20,43 @@
  * @file nyx_battery_impl.c
  *
  * @brief This is the nyx battery lib implementation
- ********************************************************************************/ 
+ ********************************************************************************/
 
 #include "nyx_device_impl.h"
 #include <nyx/module/nyx_device_internal.h>
 
-nyx_error_t nyx_battery_query_battery_status(nyx_device_handle_t handle, nyx_battery_status_t *status)
+nyx_error_t nyx_battery_query_battery_status(nyx_device_handle_t handle,
+        nyx_battery_status_t *status)
 {
-	nyx_execute_return_function(battery_query_battery_status, BATTERY, QUERY_BATTERY_STATUS, handle, status);
+	nyx_execute_return_function(battery_query_battery_status, BATTERY,
+	                            QUERY_BATTERY_STATUS, handle, status);
 }
 
-nyx_error_t nyx_battery_register_battery_status_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context)
+nyx_error_t nyx_battery_register_battery_status_callback(
+    nyx_device_handle_t handle, nyx_device_callback_function_t callback_func,
+    void *context)
 {
-	nyx_execute_return_function(battery_register_battery_status_callback, BATTERY, REGISTER_BATTERY_STATUS_CALLBACK, handle, callback_func, context);
+	nyx_execute_return_function(battery_register_battery_status_callback, BATTERY,
+	                            REGISTER_BATTERY_STATUS_CALLBACK, handle, callback_func, context);
 }
 
-nyx_error_t nyx_battery_authenticate_battery(nyx_device_handle_t handle, bool *result)
+nyx_error_t nyx_battery_authenticate_battery(nyx_device_handle_t handle,
+        bool *result)
 {
-	nyx_execute_return_function(battery_authenticate_battery, BATTERY, AUTHENTICATE_BATTERY, handle, result);
+	nyx_execute_return_function(battery_authenticate_battery, BATTERY,
+	                            AUTHENTICATE_BATTERY, handle, result);
 }
 
-nyx_error_t nyx_battery_get_ctia_parameters(nyx_device_handle_t handle, nyx_battery_ctia_t *params)
+nyx_error_t nyx_battery_get_ctia_parameters(nyx_device_handle_t handle,
+        nyx_battery_ctia_t *params)
 {
-	nyx_execute_return_function(battery_get_ctia_parameters, BATTERY, GET_CTIA_PARAMETERS, handle, params);
+	nyx_execute_return_function(battery_get_ctia_parameters, BATTERY,
+	                            GET_CTIA_PARAMETERS, handle, params);
 }
 
-nyx_error_t nyx_battery_set_wakeup_percentage(nyx_device_handle_t handle, int32_t percentage)
+nyx_error_t nyx_battery_set_wakeup_percentage(nyx_device_handle_t handle,
+        int32_t percentage)
 {
-	nyx_execute_return_function(battery_set_wakeup_percentage, BATTERY, SET_WAKEUP_PARAMETERS, handle, percentage);
+	nyx_execute_return_function(battery_set_wakeup_percentage, BATTERY,
+	                            SET_WAKEUP_PARAMETERS, handle, percentage);
 }

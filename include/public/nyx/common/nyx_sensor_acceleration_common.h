@@ -39,7 +39,8 @@ extern "C" {
 /**
  * Definition of acceleration event type.
  */
-typedef struct {
+typedef struct
+{
 
 	float x;    /**< acceleration value for x-axis as a fraction of "g" */
 	float y;    /**< acceleration value for y-axis as a fraction of "g" */

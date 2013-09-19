@@ -31,7 +31,8 @@
 extern "C" {
 #endif
 
-typedef struct {
+typedef struct
+{
 	int32_t horizontal_pixels;
 	int32_t vertical_pixels;
 	int32_t horizontal_dpi;

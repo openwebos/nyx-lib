@@ -42,28 +42,30 @@ extern "C" {
 /**
  * Struct to get current battery readings
  */
-typedef struct {
-	bool present;		/** True if the battery is present */
-	bool charging;		/** True if the battery is being charged currently */
-	int32_t percentage;	/** Battery capacity in percentage */
-	int32_t temperature;	/** In celsius */
-	int32_t current;	/** In mA */
-	int32_t voltage;	/** In mV */
-	float capacity;		/** In mAh*/
-	int32_t avg_current;	/** In mA */
-	float capacity_raw;	/** In mAh*/
-	float capacity_full40;	/** In mAh*/
+typedef struct
+{
+	bool present;       /** True if the battery is present */
+	bool charging;      /** True if the battery is being charged currently */
+	int32_t percentage; /** Battery capacity in percentage */
+	int32_t temperature;    /** In celsius */
+	int32_t current;    /** In mA */
+	int32_t voltage;    /** In mV */
+	float capacity;     /** In mAh*/
+	int32_t avg_current;    /** In mA */
+	float capacity_raw; /** In mAh*/
+	float capacity_full40;  /** In mAh*/
 	int32_t age;
 } nyx_battery_status_t;
 
 /**
  * Battery Charging Parameters
  */
-typedef struct {
-	int32_t charge_min_temp_c; 		/** Temperature below which charging is turned off */
-	int32_t charge_max_temp_c; 		/** Temperature above which charging is turned off */
-	int32_t battery_crit_max_temp; 		/** Temperature above which device is shut down */
-	bool skip_battery_authentication; 	/** Is battery authentication required (True/False) */
+typedef struct
+{
+	int32_t charge_min_temp_c;      /** Temperature below which charging is turned off */
+	int32_t charge_max_temp_c;      /** Temperature above which charging is turned off */
+	int32_t battery_crit_max_temp;      /** Temperature above which device is shut down */
+	bool skip_battery_authentication;   /** Is battery authentication required (True/False) */
 } nyx_battery_ctia_t;
 
 /** @} */

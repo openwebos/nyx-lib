@@ -44,51 +44,55 @@ extern "C" {
 /**
  * Execute an effect on the LED controller.
  *
- * @param[in] 	handle - the device handle
- * @param[in] 	effect - effect description and parameters
+ * @param[in]   handle - the device handle
+ * @param[in]   effect - effect description and parameters
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_led_controller_execute_effect(nyx_device_handle_t handle, nyx_led_controller_effect_t effect);
+NYX_API_EXPORT nyx_error_t nyx_led_controller_execute_effect(
+    nyx_device_handle_t handle, nyx_led_controller_effect_t effect);
 
 /**
  * Stop effect(s) on given LEDs.
  *
- * @param[in] 	handle - the device handle
- * @param[in] 	led - LED mask for LEDs to stop
+ * @param[in]   handle - the device handle
+ * @param[in]   led - LED mask for LEDs to stop
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_led_controller_stop(nyx_device_handle_t handle, nyx_led_controller_led_t led);
+NYX_API_EXPORT nyx_error_t nyx_led_controller_stop(nyx_device_handle_t handle,
+        nyx_led_controller_led_t led);
 
 /**
  * Get the state of LEDs.
  *
- * @param[in] 	handle - the device handle
- * @param[in] 	led - LED whose state you want to get
- * @param[out] 	state_out_ptr - pointer to hold state of LED
+ * @param[in]   handle - the device handle
+ * @param[in]   led - LED whose state you want to get
+ * @param[out]  state_out_ptr - pointer to hold state of LED
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_led_controller_get_state(nyx_device_handle_t handle,
-	nyx_led_controller_led_t led, nyx_led_controller_state_t* state_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_led_controller_get_state(
+    nyx_device_handle_t handle,
+    nyx_led_controller_led_t led, nyx_led_controller_state_t *state_out_ptr);
 
 
 /**
  * Set the state of abl -- enabled or disabled for LED.
  *
- * @param[in] 	handle - the device handle
- * @param[in] 	led - LED whose abl state you want to set
- * @param[in] 	abl_state - state to set to
+ * @param[in]   handle - the device handle
+ * @param[in]   led - LED whose abl state you want to set
+ * @param[in]   abl_state - state to set to
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_led_controller_set_abl_state(nyx_device_handle_t handle,
-	nyx_led_controller_led_t led, nyx_led_controller_abl_state_t abl_state);
+NYX_API_EXPORT nyx_error_t nyx_led_controller_set_abl_state(
+    nyx_device_handle_t handle,
+    nyx_led_controller_led_t led, nyx_led_controller_abl_state_t abl_state);
 
 /** @} */
 #ifdef __cplusplus

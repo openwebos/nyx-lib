@@ -46,13 +46,15 @@ extern "C" {
 /**
  * Get the event items for the current event.
  *
- * @param[in] 	handle - the event handle
- * @param[out] 	event_out_ptr - pointer to the magnetic_field event item
+ * @param[in]   handle - the event handle
+ * @param[out]  event_out_ptr - pointer to the magnetic_field event item
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_sensor_magnetic_field_event_get_item(nyx_event_handle_t handle, nyx_sensor_magnetic_field_event_item_t *event_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_sensor_magnetic_field_event_get_item(
+    nyx_event_handle_t handle,
+    nyx_sensor_magnetic_field_event_item_t *event_out_ptr);
 
 /** @} */
 #ifdef __cplusplus

@@ -53,7 +53,8 @@ extern "C" {
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_touchpanel_get_active_scan_rate(nyx_device_handle_t handle, uint32_t* active_scan_rate_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_touchpanel_get_active_scan_rate(
+    nyx_device_handle_t handle, uint32_t *active_scan_rate_out_ptr);
 
 /**
  * Get the idle scan rate of the touchpanel.
@@ -64,7 +65,8 @@ NYX_API_EXPORT nyx_error_t nyx_touchpanel_get_active_scan_rate(nyx_device_handle
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_touchpanel_get_idle_scan_rate(nyx_device_handle_t handle, uint32_t* idle_scan_rate_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_touchpanel_get_idle_scan_rate(
+    nyx_device_handle_t handle, uint32_t *idle_scan_rate_out_ptr);
 
 /**
  * Set the active scan rate of the touchpanel.
@@ -75,7 +77,8 @@ NYX_API_EXPORT nyx_error_t nyx_touchpanel_get_idle_scan_rate(nyx_device_handle_t
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_touchpanel_set_active_scan_rate(nyx_device_handle_t handle, uint32_t active_scan_rate_in);
+NYX_API_EXPORT nyx_error_t nyx_touchpanel_set_active_scan_rate(
+    nyx_device_handle_t handle, uint32_t active_scan_rate_in);
 
 /**
  * Set the idle scan rate of the touchpanel.
@@ -86,7 +89,8 @@ NYX_API_EXPORT nyx_error_t nyx_touchpanel_set_active_scan_rate(nyx_device_handle
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_touchpanel_set_idle_scan_rate(nyx_device_handle_t handle, uint32_t idle_scan_rate_in);
+NYX_API_EXPORT nyx_error_t nyx_touchpanel_set_idle_scan_rate(
+    nyx_device_handle_t handle, uint32_t idle_scan_rate_in);
 
 /**
  * Get the current mode of the touchpanel.
@@ -97,7 +101,8 @@ NYX_API_EXPORT nyx_error_t nyx_touchpanel_set_idle_scan_rate(nyx_device_handle_t
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_touchpanel_get_mode(nyx_device_handle_t handle, int32_t *mode_mask_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_touchpanel_get_mode(nyx_device_handle_t handle,
+        int32_t *mode_mask_out_ptr);
 
 /**
  * Set the current mode of the touchpanel.
@@ -108,31 +113,34 @@ NYX_API_EXPORT nyx_error_t nyx_touchpanel_get_mode(nyx_device_handle_t handle, i
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_touchpanel_set_mode(nyx_device_handle_t handle, int32_t mode_mask);
+NYX_API_EXPORT nyx_error_t nyx_touchpanel_set_mode(nyx_device_handle_t handle,
+        int32_t mode_mask);
 
 /**
  * Get the type of a touchpanel event.
  *
- * @param[in] 	handle - the event handle
- * @param[out] 	type_out_ptr - pointer to store type of touchpanel event
+ * @param[in]   handle - the event handle
+ * @param[out]  type_out_ptr - pointer to store type of touchpanel event
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_touchpanel_event_get_type(nyx_event_handle_t handle, nyx_touchpanel_event_type_t *type_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_touchpanel_event_get_type(
+    nyx_event_handle_t handle, nyx_touchpanel_event_type_t *type_out_ptr);
 
 /**
  * Get the array of touches associated with the touchpanel event.
  *
- * @param[in] 	handle - the event handle
- * @param[out] 	touches_out_ptr - pointer to store array of touches
- * @param[out] 	count_out_ptr - number of valid touches in the array
+ * @param[in]   handle - the event handle
+ * @param[out]  touches_out_ptr - pointer to store array of touches
+ * @param[out]  count_out_ptr - number of valid touches in the array
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_touchpanel_event_get_touches(nyx_event_handle_t handle, nyx_touchpanel_event_item_t** touches_out_ptr,
-	int32_t *count_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_touchpanel_event_get_touches(
+    nyx_event_handle_t handle, nyx_touchpanel_event_item_t **touches_out_ptr,
+    int32_t *count_out_ptr);
 
 /** @} */
 #ifdef __cplusplus

@@ -54,7 +54,8 @@ extern "C" {
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_system_set_alarm(nyx_device_handle_t handle, time_t time, nyx_device_callback_function_t callback_func, void *context);
+NYX_API_EXPORT nyx_error_t nyx_system_set_alarm(nyx_device_handle_t handle,
+        time_t time, nyx_device_callback_function_t callback_func, void *context);
 
 /**
  * @brief Query RTC time for next alarm.
@@ -67,7 +68,8 @@ NYX_API_EXPORT nyx_error_t nyx_system_set_alarm(nyx_device_handle_t handle, time
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_system_query_next_alarm(nyx_device_handle_t handle, time_t *time);
+NYX_API_EXPORT nyx_error_t nyx_system_query_next_alarm(nyx_device_handle_t
+        handle, time_t *time);
 
 
 /**
@@ -81,7 +83,8 @@ NYX_API_EXPORT nyx_error_t nyx_system_query_next_alarm(nyx_device_handle_t handl
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_system_query_rtc_time(nyx_device_handle_t handle, time_t *time);
+NYX_API_EXPORT nyx_error_t nyx_system_query_rtc_time(nyx_device_handle_t handle,
+        time_t *time);
 
 
 
@@ -99,7 +102,8 @@ NYX_API_EXPORT nyx_error_t nyx_system_query_rtc_time(nyx_device_handle_t handle,
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_system_suspend(nyx_device_handle_t handle, bool *success);
+NYX_API_EXPORT nyx_error_t nyx_system_suspend(nyx_device_handle_t handle,
+        bool *success);
 
 
 /**
@@ -107,13 +111,14 @@ NYX_API_EXPORT nyx_error_t nyx_system_suspend(nyx_device_handle_t handle, bool *
  *
  * @param[in] handle - the handle returned from nyx_device_open
  * @param[in] type  - normal or emergency shutdown
- * @param[in] reason - a (possibly NULL) string indicating the reason for the shutdown 
+ * @param[in] reason - a (possibly NULL) string indicating the reason for the shutdown
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_system_shutdown(nyx_device_handle_t handle, nyx_system_shutdown_type_t type, const char *reason);
+NYX_API_EXPORT nyx_error_t nyx_system_shutdown(nyx_device_handle_t handle,
+        nyx_system_shutdown_type_t type, const char *reason);
 
 
 /**
@@ -128,7 +133,8 @@ NYX_API_EXPORT nyx_error_t nyx_system_shutdown(nyx_device_handle_t handle, nyx_s
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_system_reboot(nyx_device_handle_t handle, nyx_system_shutdown_type_t type, const char *reason);
+NYX_API_EXPORT nyx_error_t nyx_system_reboot(nyx_device_handle_t handle,
+        nyx_system_shutdown_type_t type, const char *reason);
 
 /**
  * @brief Erase partition.
@@ -142,7 +148,8 @@ NYX_API_EXPORT nyx_error_t nyx_system_reboot(nyx_device_handle_t handle, nyx_sys
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_system_erase_partition(nyx_device_handle_t handle, nyx_system_erase_type_t type, const char *error_msg);
+NYX_API_EXPORT nyx_error_t nyx_system_erase_partition(nyx_device_handle_t
+        handle, nyx_system_erase_type_t type, const char *error_msg);
 
 /**
  * @brief Load a new QOS profile.
@@ -154,7 +161,8 @@ NYX_API_EXPORT nyx_error_t nyx_system_erase_partition(nyx_device_handle_t handle
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_system_qos_request_profile(nyx_device_handle_t handle, nyx_qos_profile_t *profile);
+NYX_API_EXPORT nyx_error_t nyx_system_qos_request_profile(
+    nyx_device_handle_t handle, nyx_qos_profile_t *profile);
 
 
 /**
@@ -167,7 +175,8 @@ NYX_API_EXPORT nyx_error_t nyx_system_qos_request_profile(nyx_device_handle_t ha
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_system_qos_release_profile(nyx_device_handle_t handle, nyx_qos_profile_t *profile);
+NYX_API_EXPORT nyx_error_t nyx_system_qos_release_profile(
+    nyx_device_handle_t handle, nyx_qos_profile_t *profile);
 
 /**
  * @brief Enable the system tickle mode (set system cpu frequency to max value) for
@@ -181,7 +190,8 @@ NYX_API_EXPORT nyx_error_t nyx_system_qos_release_profile(nyx_device_handle_t ha
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_system_qos_tickle(nyx_device_handle_t handle, int32_t duration);
+NYX_API_EXPORT nyx_error_t nyx_system_qos_tickle(nyx_device_handle_t handle,
+        int32_t duration);
 
 /** @} */
 #ifdef __cplusplus

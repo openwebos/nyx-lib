@@ -54,7 +54,8 @@ typedef enum {
 	NYX_OS_INFO_WEBOS_API_VERSION,
 	NYX_OS_INFO_WEBOS_PRERELEASE,
 	NYX_OS_INFO_MANUFACTURING_VERSION
-} nyx_os_info_query_t;
+}
+nyx_os_info_query_t;
 
 /** @} */
 

@@ -21,19 +21,20 @@
  *
  * @brief implementation of NYX's public API for accessing bluetooth_input_detect
  * and events it generates.
- ********************************************************************************/ 
+ ********************************************************************************/
 
 #include <nyx/nyx_client.h>
 #include <nyx/nyx_module.h>
 
 #include "nyx_bluetooth_input_detect_impl.h"
 
-nyx_error_t nyx_bluetooth_input_detect_event_get_data(nyx_event_handle_t handle, nyx_bluetooth_input_detect_event_item_t* item_out_ptr)
+nyx_error_t nyx_bluetooth_input_detect_event_get_data(nyx_event_handle_t handle,
+        nyx_bluetooth_input_detect_event_item_t *item_out_ptr)
 {
-	nyx_event_t* e = (nyx_event_t*)handle;
+	nyx_event_t *e = (nyx_event_t *)handle;
 	CHECK_EVENT(e);
 	CHECK_EVENT_TYPE(e, NYX_EVENT_BLUETOOTH_INPUT_DETECT);
-	nyx_event_bluetooth_input_detect_t* a = (nyx_event_bluetooth_input_detect_t*)e;
+	nyx_event_bluetooth_input_detect_t *a = (nyx_event_bluetooth_input_detect_t *)e;
 	*item_out_ptr = a->item;
 	return NYX_ERROR_NONE;
 }

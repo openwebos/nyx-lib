@@ -44,30 +44,31 @@ extern "C" {
  * Nyx event types
  */
 typedef enum {
-	NYX_EVENT_UNDEFINED,			/**< Undefined device type */
-	NYX_EVENT_BLUETOOTH_INPUT_DETECT,	 /**< Bluetooth Input Detect*/
-	NYX_EVENT_KEYS,				/**< Keys */
-	NYX_EVENT_TOUCHPANEL,			/**< Touchpanel */
-	NYX_EVENT_SENSOR_ACCELERATION,		/**< Acceleration */
-	NYX_EVENT_SENSOR_ALS,			/**< Ambient light sensor */
-	NYX_EVENT_SENSOR_ANGULAR_VELOCITY,	/**< Angular velocity */
-	NYX_EVENT_SENSOR_BEARING,		/**< Bearing (heading) */
-	NYX_EVENT_SENSOR_GRAVITY,		/**< Gravity */
-	NYX_EVENT_SENSOR_LINEAR_ACCELERATION,	/**< Linear Acceleration */
-	NYX_EVENT_SENSOR_MAGNETIC_FIELD,	/**< Magnetic field */
-	NYX_EVENT_SENSOR_ORIENTATION,		/**< Orientation */
-	NYX_EVENT_SENSOR_PROXIMITY,		/**< Proximity */
-	NYX_EVENT_SENSOR_ROTATION,		/**< Rotation */
-	NYX_EVENT_SENSOR_SHAKE,			/**< Shake */
-	NYX_EVENT_CUSTOM,			/**< Custom */
-} nyx_event_type_t;
+	NYX_EVENT_UNDEFINED,            /**< Undefined device type */
+	NYX_EVENT_BLUETOOTH_INPUT_DETECT,    /**< Bluetooth Input Detect*/
+	NYX_EVENT_KEYS,             /**< Keys */
+	NYX_EVENT_TOUCHPANEL,           /**< Touchpanel */
+	NYX_EVENT_SENSOR_ACCELERATION,      /**< Acceleration */
+	NYX_EVENT_SENSOR_ALS,           /**< Ambient light sensor */
+	NYX_EVENT_SENSOR_ANGULAR_VELOCITY,  /**< Angular velocity */
+	NYX_EVENT_SENSOR_BEARING,       /**< Bearing (heading) */
+	NYX_EVENT_SENSOR_GRAVITY,       /**< Gravity */
+	NYX_EVENT_SENSOR_LINEAR_ACCELERATION,   /**< Linear Acceleration */
+	NYX_EVENT_SENSOR_MAGNETIC_FIELD,    /**< Magnetic field */
+	NYX_EVENT_SENSOR_ORIENTATION,       /**< Orientation */
+	NYX_EVENT_SENSOR_PROXIMITY,     /**< Proximity */
+	NYX_EVENT_SENSOR_ROTATION,      /**< Rotation */
+	NYX_EVENT_SENSOR_SHAKE,         /**< Shake */
+	NYX_EVENT_CUSTOM,           /**< Custom */
+}
+nyx_event_type_t;
 
 struct nyx_event;
 
 /**
  * Nyx handle to the event. Events are opaque to clients.
  */
-typedef struct nyx_event* nyx_event_handle_t;
+typedef struct nyx_event *nyx_event_handle_t;
 
 /** @} */
 #ifdef __cplusplus

@@ -47,50 +47,54 @@ extern "C" {
  * to look up in keymap.
  * No keys are consumed.
  *
- * @param[in] 	handle - the event handle
- * @param[out] 	key_out_ptr - pointer to store key value
+ * @param[in]   handle - the event handle
+ * @param[out]  key_out_ptr - pointer to store key value
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_keys_event_get_key(nyx_event_handle_t handle, int32_t* key_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_keys_event_get_key(nyx_event_handle_t handle,
+        int32_t *key_out_ptr);
 
 /**
  * Get the key type for the current event.
  * Key type will be standard or custom (webOS-specific type)
  *
- * @param[in] 	handle - the event handle
- * @param[out] 	key_type_out_ptr - pointer to store key type
+ * @param[in]   handle - the event handle
+ * @param[out]  key_type_out_ptr - pointer to store key type
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_keys_event_get_key_type(nyx_event_handle_t handle, nyx_key_type_t* key_type_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_keys_event_get_key_type(nyx_event_handle_t
+        handle, nyx_key_type_t *key_type_out_ptr);
 
 /**
  * Get the is_key_press value for the current event.
  * Value is 1 if it is a down event; 0 if it is an up event
  *
- * @param[in] 	handle - the event handle
- * @param[out] 	key_is_press_out_ptr - pointer to store is_press value
+ * @param[in]   handle - the event handle
+ * @param[out]  key_is_press_out_ptr - pointer to store is_press value
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_keys_event_get_key_is_press(nyx_event_handle_t handle, bool* key_is_press_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_keys_event_get_key_is_press(
+    nyx_event_handle_t handle, bool *key_is_press_out_ptr);
 
 /**
  * Get the is_auto_repeat value for the current event.
  * If is_auto_repeat is true for the current key, it means this key was
  * previously in a down state and the new event is the same key in a down state.
  *
- * @param[in] 	handle - the event handle
- * @param[out] 	key_is_auto_repeat_out_ptr - pointer to store is_auto_repeat value
+ * @param[in]   handle - the event handle
+ * @param[out]  key_is_auto_repeat_out_ptr - pointer to store is_auto_repeat value
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_keys_event_get_key_is_auto_repeat(nyx_event_handle_t handle, bool* key_is_auto_repeat_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_keys_event_get_key_is_auto_repeat(
+    nyx_event_handle_t handle, bool *key_is_auto_repeat_out_ptr);
 
 /** @} */
 #ifdef __cplusplus

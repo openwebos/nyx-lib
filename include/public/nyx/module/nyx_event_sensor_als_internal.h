@@ -29,12 +29,14 @@
 
 #include "nyx_event_internal.h"
 
-typedef struct {
-	int32_t intensity_in_lux; 
+typedef struct
+{
+	int32_t intensity_in_lux;
 } nyx_sensor_als_event_item_t;
 
 
-typedef struct {
+typedef struct
+{
 	nyx_event_t _parent;
 	nyx_sensor_als_event_item_t item;
 

@@ -29,15 +29,17 @@
 
 #include <stdint.h>
 
-struct nyx_event {
+struct nyx_event
+{
 	nyx_event_type_t type;
 	int64_t timestamp;
-	void* _device;
+	void *_device;
 };
 typedef struct nyx_event nyx_event_t;
 
 
-typedef struct nyx_event_keys {
+typedef struct nyx_event_keys
+{
 	nyx_event_t _parent;
 
 	nyx_key_type_t key_type;
@@ -47,62 +49,72 @@ typedef struct nyx_event_keys {
 
 } nyx_event_keys_t;
 
-typedef struct nyx_event_bluetooth_input_detect {
+typedef struct nyx_event_bluetooth_input_detect
+{
 
 	nyx_event_t _parent;
 	nyx_bluetooth_input_detect_event_item_t item;
 
 } nyx_event_bluetooth_input_detect_t;
 
-typedef struct {
+typedef struct
+{
 	nyx_event_t _parent;
 	nyx_sensor_acceleration_event_item_t item;
 
 } nyx_event_sensor_acceleration_t;
 
-typedef struct nyx_event_sensor_angular_velocity {
+typedef struct nyx_event_sensor_angular_velocity
+{
 	nyx_event_t _parent;
 	nyx_sensor_angular_velocity_event_item_t item;
 
 } nyx_event_sensor_angular_velocity_t;
 
-typedef struct nyx_event_sensor_bearing {
+typedef struct nyx_event_sensor_bearing
+{
 	nyx_event_t _parent;
 	nyx_sensor_bearing_event_item_t item;
 
 } nyx_event_sensor_bearing_t;
 
-typedef struct nyx_event_sensor_gravity {
+typedef struct nyx_event_sensor_gravity
+{
 	nyx_event_t _parent;
 	nyx_sensor_gravity_event_item_t item;
 
 } nyx_event_sensor_gravity_t;
 
-typedef struct nyx_event_sensor_linear_acceleration {
+typedef struct nyx_event_sensor_linear_acceleration
+{
 	nyx_event_t _parent;
 	nyx_sensor_linear_acceleration_event_item_t item;
 
 } nyx_event_sensor_linear_acceleration_t;
 
-typedef struct nyx_event_sensor_magnetic_field {
+typedef struct nyx_event_sensor_magnetic_field
+{
 	nyx_event_t _parent;
 	nyx_sensor_magnetic_field_event_item_t item;
 
 } nyx_event_sensor_magnetic_field_t;
 
-typedef struct nyx_event_sensor_orientation {
+typedef struct nyx_event_sensor_orientation
+{
 	nyx_event_t _parent;
 	nyx_sensor_orientation_event_item_t item;
 
 } nyx_event_sensor_orientation_t;
 
-typedef struct nyx_event_sensor_rotation {
+typedef struct nyx_event_sensor_rotation
+{
 	nyx_event_t _parent;
 	nyx_sensor_rotation_event_item_t item;
 
 } nyx_event_sensor_rotation_t;
 
-typedef struct nyx_event_sensor_shake {
+typedef struct nyx_event_sensor_shake
+{
 	nyx_event_t _parent;
 	nyx_sensor_shake_event_item_t item;
 

@@ -29,12 +29,13 @@
 #include "nyx_device_impl.h"
 #include <nyx/module/nyx_device_internal.h>
 
-nyx_error_t nyx_sensor_als_event_get_intensity(nyx_event_handle_t handle, int32_t* intensity_in_lux_out_ptr)
+nyx_error_t nyx_sensor_als_event_get_intensity(nyx_event_handle_t handle,
+        int32_t *intensity_in_lux_out_ptr)
 {
-	nyx_event_t* e = (nyx_event_t*)handle;
+	nyx_event_t *e = (nyx_event_t *)handle;
 	CHECK_EVENT(e);
 	CHECK_EVENT_TYPE(e, NYX_EVENT_SENSOR_ALS);
-	nyx_event_sensor_als_t* a = (nyx_event_sensor_als_t*)e;
+	nyx_event_sensor_als_t *a = (nyx_event_sensor_als_t *)e;
 	*intensity_in_lux_out_ptr = a->item.intensity_in_lux;
 	return NYX_ERROR_NONE;
 }

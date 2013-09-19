@@ -48,29 +48,31 @@ extern "C" {
  * an effect that the device already has preconfigured), or contain values
  * for the period, duration, and direction fields.
  *
- * @param[in] 	handle - the device handle
- * @param[in] 	configuration - structure containing effect data
+ * @param[in]   handle - the device handle
+ * @param[in]   configuration - structure containing effect data
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_haptics_vibrate(nyx_device_handle_t handle, nyx_haptics_configuration_t configuration);
+NYX_API_EXPORT nyx_error_t nyx_haptics_vibrate(nyx_device_handle_t handle,
+        nyx_haptics_configuration_t configuration);
 
 /**
  * Cancel a specified haptics effect.
  *
- * @param[in] 	handle - the device handle
- * @param[in] 	haptics_id - id of the haptics effect to cancel
+ * @param[in]   handle - the device handle
+ * @param[in]   haptics_id - id of the haptics effect to cancel
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_haptics_cancel(nyx_device_handle_t handle, int32_t haptics_id);
+NYX_API_EXPORT nyx_error_t nyx_haptics_cancel(nyx_device_handle_t handle,
+        int32_t haptics_id);
 
 /**
  * Cancel all haptics effects.
  *
- * @param[in] 	handle - the device handle
+ * @param[in]   handle - the device handle
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
@@ -80,13 +82,14 @@ NYX_API_EXPORT nyx_error_t nyx_haptics_cancel_all(nyx_device_handle_t handle);
 /**
  * Get the haptics effect id associated with this device.
  *
- * @param[in] 	handle - the device handle.
- * @param[out] 	haptics_effect_id_out_ptr - pointer to store the haptics effect id
+ * @param[in]   handle - the device handle.
+ * @param[out]  haptics_effect_id_out_ptr - pointer to store the haptics effect id
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_haptics_get_effect_id(nyx_device_handle_t handle, int32_t* haptics_effect_id_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_haptics_get_effect_id(nyx_device_handle_t handle,
+        int32_t *haptics_effect_id_out_ptr);
 
 /**
  * Set the dampening factor associated with this device handle.
@@ -96,13 +99,14 @@ NYX_API_EXPORT nyx_error_t nyx_haptics_get_effect_id(nyx_device_handle_t handle,
  * to 50, the magnitude of the effect will be 50% of the originally specified
  * magnitude.  This can be used for tuning the effect.
  *
- * @param[in] 	handle - the device handle
- * @param[in] 	dampening_factor - value of new dampening factor
+ * @param[in]   handle - the device handle
+ * @param[in]   dampening_factor - value of new dampening factor
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_haptics_set_dampening_factor(nyx_device_handle_t handle, int32_t dampening_factor);
+NYX_API_EXPORT nyx_error_t nyx_haptics_set_dampening_factor(
+    nyx_device_handle_t handle, int32_t dampening_factor);
 
 /**
  * Get the dampening factor associated with this device handle.
@@ -112,14 +116,15 @@ NYX_API_EXPORT nyx_error_t nyx_haptics_set_dampening_factor(nyx_device_handle_t 
  * to 50, the magnitude of the effect will be 50% of the originally specified
  * magnitude.  This can be used for tuning the effect.
  *
- * @param[in] 	handle - the device handle
- * @param[out] 	dampening_factor_out_ptr - pointer to store value
+ * @param[in]   handle - the device handle
+ * @param[out]  dampening_factor_out_ptr - pointer to store value
  *          of dampening factor
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_haptics_get_dampening_factor(nyx_device_handle_t handle, int32_t* dampening_factor_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_haptics_get_dampening_factor(
+    nyx_device_handle_t handle, int32_t *dampening_factor_out_ptr);
 
 /** @} */
 

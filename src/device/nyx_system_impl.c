@@ -30,19 +30,24 @@
 #include <nyx/nyx_module.h>
 
 
-nyx_error_t nyx_system_set_alarm(nyx_device_handle_t handle, time_t time, nyx_device_callback_function_t callback_func, void *context)
+nyx_error_t nyx_system_set_alarm(nyx_device_handle_t handle, time_t time,
+                                 nyx_device_callback_function_t callback_func, void *context)
 {
-	nyx_execute_return_function(system_set_alarm, SYSTEM, SET_ALARM, handle, time, callback_func, context);
+	nyx_execute_return_function(system_set_alarm, SYSTEM, SET_ALARM, handle, time,
+	                            callback_func, context);
 }
 
-nyx_error_t nyx_system_query_next_alarm(nyx_device_handle_t handle, time_t *time)
+nyx_error_t nyx_system_query_next_alarm(nyx_device_handle_t handle,
+                                        time_t *time)
 {
-	nyx_execute_return_function(system_query_rtc_time, SYSTEM, QUERY_NEXT_ALARM, handle, time);
+	nyx_execute_return_function(system_query_rtc_time, SYSTEM, QUERY_NEXT_ALARM,
+	                            handle, time);
 }
 
 nyx_error_t nyx_system_query_rtc_time(nyx_device_handle_t handle, time_t *time)
 {
-	nyx_execute_return_function(system_query_rtc_time, SYSTEM, QUERY_RTC_TIME, handle, time);
+	nyx_execute_return_function(system_query_rtc_time, SYSTEM, QUERY_RTC_TIME,
+	                            handle, time);
 }
 
 nyx_error_t nyx_system_suspend(nyx_device_handle_t handle, bool *success)
@@ -50,17 +55,23 @@ nyx_error_t nyx_system_suspend(nyx_device_handle_t handle, bool *success)
 	nyx_execute_return_function(system_suspend, SYSTEM, SUSPEND, handle, success);
 }
 
-nyx_error_t nyx_system_shutdown(nyx_device_handle_t handle, nyx_system_shutdown_type_t type, const char *reason)
+nyx_error_t nyx_system_shutdown(nyx_device_handle_t handle,
+                                nyx_system_shutdown_type_t type, const char *reason)
 {
-	nyx_execute_return_function(system_shutdown, SYSTEM, SHUTDOWN, handle, type, reason);
+	nyx_execute_return_function(system_shutdown, SYSTEM, SHUTDOWN, handle, type,
+	                            reason);
 }
 
-nyx_error_t nyx_system_reboot(nyx_device_handle_t handle, nyx_system_shutdown_type_t type, const char *reason)
+nyx_error_t nyx_system_reboot(nyx_device_handle_t handle,
+                              nyx_system_shutdown_type_t type, const char *reason)
 {
-	nyx_execute_return_function(system_reboot, SYSTEM, REBOOT, handle, type, reason);
+	nyx_execute_return_function(system_reboot, SYSTEM, REBOOT, handle, type,
+	                            reason);
 }
 
-nyx_error_t nyx_system_erase_partition(nyx_device_handle_t handle,  nyx_system_erase_type_t type, const char *error_msg)
+nyx_error_t nyx_system_erase_partition(nyx_device_handle_t handle,
+                                       nyx_system_erase_type_t type, const char *error_msg)
 {
-	nyx_execute_return_function(system_erase_partition, SYSTEM, ERASE_PARTITION, handle, type, error_msg);
+	nyx_execute_return_function(system_erase_partition, SYSTEM, ERASE_PARTITION,
+	                            handle, type, error_msg);
 }

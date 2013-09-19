@@ -29,32 +29,45 @@
 #include <nyx/nyx_module.h>
 #include "nyx_device_impl.h"
 
-nyx_error_t nyx_charger_query_charger_status(nyx_device_handle_t handle, nyx_charger_status_t *status)
+nyx_error_t nyx_charger_query_charger_status(nyx_device_handle_t handle,
+        nyx_charger_status_t *status)
 {
-	nyx_execute_return_function(charger_query_charger_status, CHARGER, QUERY_CHARGER_STATUS, handle, status);
+	nyx_execute_return_function(charger_query_charger_status, CHARGER,
+	                            QUERY_CHARGER_STATUS, handle, status);
 }
 
-nyx_error_t nyx_charger_register_charger_status_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context)
+nyx_error_t nyx_charger_register_charger_status_callback(
+    nyx_device_handle_t handle, nyx_device_callback_function_t callback_func,
+    void *context)
 {
-	nyx_execute_return_function(charger_register_charger_status_callback, CHARGER, REGISTER_CHARGER_STATUS_CALLBACK, handle, callback_func, context);
+	nyx_execute_return_function(charger_register_charger_status_callback, CHARGER,
+	                            REGISTER_CHARGER_STATUS_CALLBACK, handle, callback_func, context);
 }
 
-nyx_error_t nyx_charger_enable_charging(nyx_device_handle_t handle, nyx_charger_status_t *status)
+nyx_error_t nyx_charger_enable_charging(nyx_device_handle_t handle,
+                                        nyx_charger_status_t *status)
 {
-	nyx_execute_return_function(charger_enable_charging, CHARGER, ENABLE_CHARGING, handle, status);
+	nyx_execute_return_function(charger_enable_charging, CHARGER, ENABLE_CHARGING,
+	                            handle, status);
 }
 
-nyx_error_t nyx_charger_disable_charging(nyx_device_handle_t handle, nyx_charger_status_t *status)
+nyx_error_t nyx_charger_disable_charging(nyx_device_handle_t handle,
+        nyx_charger_status_t *status)
 {
-	nyx_execute_return_function(charger_disable_charging, CHARGER, DISABLE_CHARGING, handle, status);
+	nyx_execute_return_function(charger_disable_charging, CHARGER, DISABLE_CHARGING,
+	                            handle, status);
 }
 
-nyx_error_t nyx_charger_register_state_change_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context)
+nyx_error_t nyx_charger_register_state_change_callback(nyx_device_handle_t
+        handle, nyx_device_callback_function_t callback_func, void *context)
 {
-	nyx_execute_return_function(charger_register_state_change_callback, CHARGER, REGISTER_STATE_CHANGE_CALLBACK, handle, callback_func, context);
+	nyx_execute_return_function(charger_register_state_change_callback, CHARGER,
+	                            REGISTER_STATE_CHANGE_CALLBACK, handle, callback_func, context);
 }
 
-nyx_error_t nyx_charger_query_charger_event(nyx_device_handle_t handle, nyx_charger_event_t *event)
+nyx_error_t nyx_charger_query_charger_event(nyx_device_handle_t handle,
+        nyx_charger_event_t *event)
 {
-	nyx_execute_return_function(charger_query_charger_event, CHARGER, QUERY_CHARGER_EVENT, handle, event);
+	nyx_execute_return_function(charger_query_charger_event, CHARGER,
+	                            QUERY_CHARGER_EVENT, handle, event);
 }

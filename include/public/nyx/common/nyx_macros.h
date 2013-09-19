@@ -33,15 +33,15 @@
 
 #if _GNUC__
 
-	#define NYX_FORMAT_ARG(index) __attribute__((format_arg(index)))
-	#define NYX_FORMAT_FUNC(archetype, stringIndex, firstToCheck) __attribute__((format(archetype, stringIndex, firstToCheck)))
-	#define NYX_PRINTF_FORMAT_FUNC(stringIndex, firstToCheck) NYX_FORMAT_FUNC(printf, stringIndex, firstToCheck)
+#define NYX_FORMAT_ARG(index) __attribute__((format_arg(index)))
+#define NYX_FORMAT_FUNC(archetype, stringIndex, firstToCheck) __attribute__((format(archetype, stringIndex, firstToCheck)))
+#define NYX_PRINTF_FORMAT_FUNC(stringIndex, firstToCheck) NYX_FORMAT_FUNC(printf, stringIndex, firstToCheck)
 
 #else
 
-	#define NYX_FORMAT_ARG(index)
-	#define NYX_FORMAT_FUNC(archetype, stringIndex, firstToCheck)
-	#define NYX_PRINTF_FORMAT_FUNC(stringIndex, firstToCheck)
+#define NYX_FORMAT_ARG(index)
+#define NYX_FORMAT_FUNC(archetype, stringIndex, firstToCheck)
+#define NYX_PRINTF_FORMAT_FUNC(stringIndex, firstToCheck)
 
 #endif
 

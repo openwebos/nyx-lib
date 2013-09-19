@@ -29,8 +29,9 @@
 #include <inttypes.h>
 #include "nyx_os_info_impl.h"
 
-nyx_error_t nyx_os_info_query(nyx_device_handle_t handle, nyx_os_info_query_t type, const char**  val)
+nyx_error_t nyx_os_info_query(nyx_device_handle_t handle,
+                              nyx_os_info_query_t type, const char  **val)
 {
-        nyx_execute_return_function(os_info_query, OS_INFO, QUERY, handle, type, val);
+	nyx_execute_return_function(os_info_query, OS_INFO, QUERY, handle, type, val);
 }
 

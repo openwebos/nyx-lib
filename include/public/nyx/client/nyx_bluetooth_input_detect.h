@@ -46,13 +46,15 @@ extern "C" {
 /**
  * Get the data associated with the nyx_bluetooth_input_detect event.
  *
- * @param[in] 	handle - the event handle
- * @param[out] 	item_out_ptr - pointer to bluetooth_input_detect_event_item of ALS event
+ * @param[in]   handle - the event handle
+ * @param[out]  item_out_ptr - pointer to bluetooth_input_detect_event_item of ALS event
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_bluetooth_input_detect_event_get_data(nyx_event_handle_t handle, nyx_bluetooth_input_detect_event_item_t* item_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_bluetooth_input_detect_event_get_data(
+    nyx_event_handle_t handle,
+    nyx_bluetooth_input_detect_event_item_t *item_out_ptr);
 
 /** @} */
 #ifdef __cplusplus

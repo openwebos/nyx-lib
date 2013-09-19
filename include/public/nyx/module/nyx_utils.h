@@ -29,10 +29,11 @@
 #include <nyx/module/nyx_device_internal.h>
 
 /* Utility functions to write and read an integer value to/from a file */
-void nyx_utils_write_value (char* path, int32_t val);
-int32_t nyx_utils_read_value (char* path);
+void nyx_utils_write_value(char *path, int32_t val);
+int32_t nyx_utils_read_value(char *path);
 
-nyx_error_t nyx_utils_async_callback (nyx_device_t* device_in_ptr, nyx_device_callback_function_t callback,
-	nyx_callback_status_t status,void* context);
+nyx_error_t nyx_utils_async_callback(nyx_device_t *device_in_ptr,
+                                     nyx_device_callback_function_t callback,
+                                     nyx_callback_status_t status, void *context);
 
 #endif /* _NYX_UTILS_H_ */

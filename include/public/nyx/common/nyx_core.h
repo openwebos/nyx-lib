@@ -69,7 +69,7 @@ NYX_API_EXPORT nyx_error_t nyx_deinit(void);
  *
  * @return pointer to string containing Nyx version
  */
-NYX_API_EXPORT const char* nyx_get_library_version(void);
+NYX_API_EXPORT const char *nyx_get_library_version(void);
 
 /**
  * @brief Returns Nyx's major API version.

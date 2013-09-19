@@ -39,15 +39,16 @@ extern "C" {
 /**
  * Definition of magnetic field event type.
  */
-typedef struct {
+typedef struct
+{
 
-	int32_t x;	/**< strength of magnetic field for x-axis in micro Teslas */
-	int32_t y;	/**< strength of magnetic field for y-axis in micro Teslas */
-	int32_t z;	/**< strength of magnetic field for z-axis in micro Teslas */
+	int32_t x;  /**< strength of magnetic field for x-axis in micro Teslas */
+	int32_t y;  /**< strength of magnetic field for y-axis in micro Teslas */
+	int32_t z;  /**< strength of magnetic field for z-axis in micro Teslas */
 
-	int32_t raw_x;	/**< raw strength of magnetic field for x-axis in micro Teslas */
-	int32_t raw_y;	/**< raw strength of magnetic field for y-axis in micro Teslas */
-	int32_t raw_z;	/**< raw strength of magnetic field for z-axis in micro Teslas */
+	int32_t raw_x;  /**< raw strength of magnetic field for x-axis in micro Teslas */
+	int32_t raw_y;  /**< raw strength of magnetic field for y-axis in micro Teslas */
+	int32_t raw_z;  /**< raw strength of magnetic field for z-axis in micro Teslas */
 
 } nyx_sensor_magnetic_field_event_item_t;
 

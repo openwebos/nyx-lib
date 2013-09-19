@@ -46,13 +46,14 @@ extern "C" {
 /**
  * Get the event items for the current event.
  *
- * @param[in] 	handle - the event handle
- * @param[out] 	present_out_ptr - pointer to the proximity presence value of the proximity event
+ * @param[in]   handle - the event handle
+ * @param[out]  present_out_ptr - pointer to the proximity presence value of the proximity event
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_sensor_proximity_event_get_presence(nyx_event_handle_t handle, int32_t* present_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_sensor_proximity_event_get_presence(
+    nyx_event_handle_t handle, int32_t *present_out_ptr);
 
 /** @} */
 #ifdef __cplusplus

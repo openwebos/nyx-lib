@@ -44,14 +44,15 @@ extern "C" {
 /**
  * @brief Query charger status.
  *
- * @param[in] 	handle - the event handle
+ * @param[in]   handle - the event handle
  * @param[out]  status_out_ptr - (max) charger status (needs to be allocated by caller)
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_charger_query_charger_status(nyx_device_handle_t handle, nyx_charger_status_t *status_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_charger_query_charger_status(
+    nyx_device_handle_t handle, nyx_charger_status_t *status_out_ptr);
 
 
 /**
@@ -65,30 +66,34 @@ NYX_API_EXPORT nyx_error_t nyx_charger_query_charger_status(nyx_device_handle_t 
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_charger_register_charger_status_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context);
+NYX_API_EXPORT nyx_error_t nyx_charger_register_charger_status_callback(
+    nyx_device_handle_t handle, nyx_device_callback_function_t callback_func,
+    void *context);
 
 
 /**
  * @brief Enable device charging.
  *
- * @param[in] 	handle - the event handle
+ * @param[in]   handle - the event handle
  * @param[out]  status - charger information used for enabling charging
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_charger_enable_charging(nyx_device_handle_t handle, nyx_charger_status_t *status);
+NYX_API_EXPORT nyx_error_t nyx_charger_enable_charging(nyx_device_handle_t
+        handle, nyx_charger_status_t *status);
 
 /**
  * @brief Disable device charging.
  *
- * @param[in] 	handle - the event handle
+ * @param[in]   handle - the event handle
  * @param[out]  status - charger information used for disabling charging
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_charger_disable_charging(nyx_device_handle_t handle, nyx_charger_status_t *status);
+NYX_API_EXPORT nyx_error_t nyx_charger_disable_charging(
+    nyx_device_handle_t handle, nyx_charger_status_t *status);
 
 /**
  * @brief Register callback function for any change in charging state.
@@ -101,7 +106,9 @@ NYX_API_EXPORT nyx_error_t nyx_charger_disable_charging(nyx_device_handle_t hand
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_charger_register_state_change_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context);
+NYX_API_EXPORT nyx_error_t nyx_charger_register_state_change_callback(
+    nyx_device_handle_t handle, nyx_device_callback_function_t callback_func,
+    void *context);
 
 /**
  * @brief Query charging event.
@@ -112,13 +119,14 @@ NYX_API_EXPORT nyx_error_t nyx_charger_register_state_change_callback(nyx_device
  * even if this API is called once after multiple callbacks, it returns back
  * all the pending events, and only then clears these events in charger module.
  *
- * @param[in] 	handle - the event handle
+ * @param[in]   handle - the event handle
  * @param[out]  event  - ORing of all the pending charging events
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_charger_query_charger_event(nyx_device_handle_t handle, nyx_charger_event_t *event);
+NYX_API_EXPORT nyx_error_t nyx_charger_query_charger_event(
+    nyx_device_handle_t handle, nyx_charger_event_t *event);
 
 /** @} */
 #ifdef __cplusplus

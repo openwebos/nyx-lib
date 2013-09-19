@@ -29,7 +29,8 @@
 
 #include <nyx/module/nyx_device_internal.h>
 
-typedef struct {
+typedef struct
+{
 	nyx_device_t original;
 	nyx_display_metrics_t display_metrics;
 

@@ -46,13 +46,14 @@ extern "C" {
 /**
  * Get the event items for the current event.
  *
- * @param[in] 	handle - the event handle
- * @param[out] 	event_out_ptr - pointer to the orientation event item
+ * @param[in]   handle - the event handle
+ * @param[out]  event_out_ptr - pointer to the orientation event item
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_sensor_orientation_event_get_item(nyx_event_handle_t handle, nyx_sensor_orientation_event_item_t *event_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_sensor_orientation_event_get_item(
+    nyx_event_handle_t handle, nyx_sensor_orientation_event_item_t *event_out_ptr);
 
 /**
  * Get the threshold values for the orientation sensor.
@@ -62,7 +63,8 @@ NYX_API_EXPORT nyx_error_t nyx_sensor_orientation_event_get_item(nyx_event_handl
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  */
-NYX_API_EXPORT nyx_error_t nyx_sensor_orientation_get_threshold(nyx_device_handle_t handle, nyx_sensor_orientation_threshold_t* threshold);
+NYX_API_EXPORT nyx_error_t nyx_sensor_orientation_get_threshold(
+    nyx_device_handle_t handle, nyx_sensor_orientation_threshold_t *threshold);
 
 /**
  * Set the threshold values for the orientation sensor.
@@ -73,7 +75,9 @@ NYX_API_EXPORT nyx_error_t nyx_sensor_orientation_get_threshold(nyx_device_handl
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_sensor_orientation_set_threshold(nyx_device_handle_t handle, const nyx_sensor_orientation_threshold_t* new_threshold);
+NYX_API_EXPORT nyx_error_t nyx_sensor_orientation_set_threshold(
+    nyx_device_handle_t handle,
+    const nyx_sensor_orientation_threshold_t *new_threshold);
 
 /** @} */
 #ifdef __cplusplus

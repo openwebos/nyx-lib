@@ -28,12 +28,16 @@
 
 #include "nyx_led_impl.h"
 
-nyx_error_t nyx_led_set_brightness(nyx_device_handle_t handle, int32_t brightness)
+nyx_error_t nyx_led_set_brightness(nyx_device_handle_t handle,
+                                   int32_t brightness)
 {
-	nyx_execute_return_function(led_set_brightness, LED, SET_BRIGHTNESS, handle, brightness);
+	nyx_execute_return_function(led_set_brightness, LED, SET_BRIGHTNESS, handle,
+	                            brightness);
 }
 
-nyx_error_t nyx_led_get_brightness (nyx_device_handle_t handle, int32_t *brightness_out_ptr)
+nyx_error_t nyx_led_get_brightness(nyx_device_handle_t handle,
+                                   int32_t *brightness_out_ptr)
 {
-	nyx_execute_return_function(led_get_brightness, LED, GET_BRIGHTNESS, handle, brightness_out_ptr);
+	nyx_execute_return_function(led_get_brightness, LED, GET_BRIGHTNESS, handle,
+	                            brightness_out_ptr);
 }

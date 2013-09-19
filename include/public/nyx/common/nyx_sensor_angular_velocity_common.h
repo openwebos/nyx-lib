@@ -40,11 +40,12 @@ extern "C" {
 /**
  * Definition of angular velocity event type.
  */
-typedef struct {
+typedef struct
+{
 
-	float x;	/**< angular velocity around x-axis in radians per second */
-	float y;	/**< angular velocity around y-axis in radians per second */
-	float z;	/**< angular velocity around z-axis in radians per second */
+	float x;    /**< angular velocity around x-axis in radians per second */
+	float y;    /**< angular velocity around y-axis in radians per second */
+	float z;    /**< angular velocity around z-axis in radians per second */
 
 } nyx_sensor_angular_velocity_event_item_t;
 

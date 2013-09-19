@@ -45,13 +45,14 @@ extern "C" {
 /**
  * Get the light intensity value of the ambient light sensor (ALS) event.
  *
- * @param[in] 	handle - the event handle
- * @param[out] 	intensity_in_lux_out_ptr - pointer to light intensity value (in lux) of the ALS event
+ * @param[in]   handle - the event handle
+ * @param[out]  intensity_in_lux_out_ptr - pointer to light intensity value (in lux) of the ALS event
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_sensor_als_event_get_intensity(nyx_event_handle_t handle, int32_t* intensity_in_lux_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_sensor_als_event_get_intensity(
+    nyx_event_handle_t handle, int32_t *intensity_in_lux_out_ptr);
 
 /** @} */
 #ifdef __cplusplus

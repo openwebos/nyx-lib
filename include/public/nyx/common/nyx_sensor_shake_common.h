@@ -40,16 +40,19 @@ extern "C" {
  * An enum that describes the state of shaking on device.
  */
 typedef enum {
-	NYX_SENSOR_SHAKE_NONE,		/**< Device is not shaking */
-	NYX_SENSOR_SHAKE_START,		/**< Device has started shaking */
-	NYX_SENSOR_SHAKE_SHAKING,	/**< Device continues to shake */
-	NYX_SENSOR_SHAKE_STOP,		/**< Device has stopped shaking */
-} nyx_sensor_shake_state_t;
+	NYX_SENSOR_SHAKE_NONE,      /**< Device is not shaking */
+	NYX_SENSOR_SHAKE_START,     /**< Device has started shaking */
+	NYX_SENSOR_SHAKE_SHAKING,   /**< Device continues to shake */
+	NYX_SENSOR_SHAKE_STOP,      /**< Device has stopped shaking */
+}
+nyx_sensor_shake_state_t;
 
-typedef struct {
+typedef struct
+{
 
-	nyx_sensor_shake_state_t  state;	/**< shaking state of type @ref nyx_sensor_shake_state_t. */
-	float  magnitude;			/**< magnitude of shaking in meters per (second)^2 ?? */
+	nyx_sensor_shake_state_t
+	state;    /**< shaking state of type @ref nyx_sensor_shake_state_t. */
+	float  magnitude;           /**< magnitude of shaking in meters per (second)^2 ?? */
 
 } nyx_sensor_shake_event_item_t;
 

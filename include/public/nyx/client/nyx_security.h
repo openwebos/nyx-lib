@@ -61,7 +61,8 @@ extern "C" {
  *   - NYX_ERROR_NONE if operation is successful
  */
 NYX_API_EXPORT nyx_error_t
-nyx_security_create_aes_key(nyx_device_handle_t handle, int keylen, int *key_index);
+nyx_security_create_aes_key(nyx_device_handle_t handle, int keylen,
+                            int *key_index);
 
 /**
  * @brief Encrypt/decrypt data
@@ -84,7 +85,9 @@ nyx_security_create_aes_key(nyx_device_handle_t handle, int keylen, int *key_ind
  *   - NYX_ERROR_NONE if operation is successful
  */
 NYX_API_EXPORT nyx_error_t
-nyx_security_crypt_aes(nyx_device_handle_t handle, int key_index, nyx_security_aes_block_mode_t mode, int encrypt, const char *src, int srclen, char *dest, int *destlen, int *ivlen);
+nyx_security_crypt_aes(nyx_device_handle_t handle, int key_index,
+                       nyx_security_aes_block_mode_t mode, int encrypt, const char *src, int srclen,
+                       char *dest, int *destlen, int *ivlen);
 
 /** @} */
 
@@ -107,7 +110,8 @@ nyx_security_crypt_aes(nyx_device_handle_t handle, int key_index, nyx_security_a
  *   - NYX_ERROR_NONE if operation is successful
  */
 NYX_API_EXPORT nyx_error_t
-nyx_security_create_rsa_key(nyx_device_handle_t handle, int keylen, int *key_index);
+nyx_security_create_rsa_key(nyx_device_handle_t handle, int keylen,
+                            int *key_index);
 
 /**
  * @brief Encrypt/decrypt data
@@ -124,7 +128,8 @@ nyx_security_create_rsa_key(nyx_device_handle_t handle, int keylen, int *key_ind
  *   - NYX_ERROR_NONE if operation is successful
  */
 NYX_API_EXPORT nyx_error_t
-nyx_security_crypt_rsa(nyx_device_handle_t handle, int key_index, int encrypt, const char *src, int srclen, char *dest, int *destlen);
+nyx_security_crypt_rsa(nyx_device_handle_t handle, int key_index, int encrypt,
+                       const char *src, int srclen, char *dest, int *destlen);
 
 /** @} */
 
@@ -157,7 +162,8 @@ nyx_security_init_hash(nyx_device_handle_t handle, const char *hash_algo);
  *   - NYX_ERROR_NONE if operation is successful
  */
 NYX_API_EXPORT nyx_error_t
-nyx_security_update_hash(nyx_device_handle_t handle, const char *src, int srclen);
+nyx_security_update_hash(nyx_device_handle_t handle, const char *src,
+                         int srclen);
 
 /**
  * @brief Finalize hash calculation and write result to memory
@@ -195,7 +201,8 @@ nyx_security_finalize_and_save_hash(nyx_device_handle_t handle, int *index);
  *   - NYX_ERROR_NONE if operation is successful
  */
 NYX_API_EXPORT nyx_error_t
-nyx_security_load_hash(nyx_device_handle_t handle, const char *hash_algo, int index, char *dest);
+nyx_security_load_hash(nyx_device_handle_t handle, const char *hash_algo,
+                       int index, char *dest);
 
 /** @} */
 
@@ -216,7 +223,8 @@ nyx_security_load_hash(nyx_device_handle_t handle, const char *hash_algo, int in
  *   - NYX_ERROR_NONE if operation is successful
  */
 NYX_API_EXPORT nyx_error_t
-nyx_security_save_certificate(nyx_device_handle_t handle, int *index, const char *x509);
+nyx_security_save_certificate(nyx_device_handle_t handle, int *index,
+                              const char *x509);
 
 /**
  * @brief Get certificate
@@ -229,7 +237,8 @@ nyx_security_save_certificate(nyx_device_handle_t handle, int *index, const char
  *   - NYX_ERROR_NONE if operation is successful
  */
 NYX_API_EXPORT nyx_error_t
-nyx_security_load_certificate(nyx_device_handle_t handle, int index, char **x509);
+nyx_security_load_certificate(nyx_device_handle_t handle, int index,
+                              char **x509);
 
 /** @} */
 

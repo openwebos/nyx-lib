@@ -30,6 +30,6 @@
 
 nyx_error_t nyx_core_init(void);
 nyx_error_t nyx_core_deinit(void);
-const char* nyx_core_device_type_to_string(nyx_device_type_t type);
+const char *nyx_core_device_type_to_string(nyx_device_type_t type);
 
 #endif /* _NYX_CORE_IMPL_H_ */

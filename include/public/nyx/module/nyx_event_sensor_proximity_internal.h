@@ -29,11 +29,13 @@
 
 #include "nyx_event_internal.h"
 
-typedef struct {
-	int32_t presence; 
+typedef struct
+{
+	int32_t presence;
 } nyx_sensor_proximity_event_item_t;
 
-typedef struct {
+typedef struct
+{
 	nyx_event_t _parent;
 	nyx_sensor_proximity_event_item_t item;
 

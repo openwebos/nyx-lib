@@ -29,12 +29,13 @@
 #include "nyx_device_impl.h"
 #include <nyx/module/nyx_device_internal.h>
 
-nyx_error_t nyx_sensor_magnetic_field_event_get_item(nyx_event_handle_t handle, nyx_sensor_magnetic_field_event_item_t *event_out_ptr)
+nyx_error_t nyx_sensor_magnetic_field_event_get_item(nyx_event_handle_t handle,
+        nyx_sensor_magnetic_field_event_item_t *event_out_ptr)
 {
-	nyx_event_t* e = (nyx_event_t*)handle;
+	nyx_event_t *e = (nyx_event_t *)handle;
 	CHECK_EVENT(e);
 	CHECK_EVENT_TYPE(e, NYX_EVENT_SENSOR_MAGNETIC_FIELD);
-	nyx_event_sensor_magnetic_field_t* a = (nyx_event_sensor_magnetic_field_t*)e;
+	nyx_event_sensor_magnetic_field_t *a = (nyx_event_sensor_magnetic_field_t *)e;
 	*event_out_ptr = a->item;
 	return NYX_ERROR_NONE;
 }

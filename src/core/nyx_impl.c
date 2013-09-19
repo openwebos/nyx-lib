@@ -40,23 +40,23 @@ nyx_error_t nyx_deinit(void)
 {
 	nyx_error_t error = NYX_ERROR_NONE;
 
-	error = nyx_core_deinit ();
+	error = nyx_core_deinit();
 
 	return error;
 }
 
-const char* nyx_get_library_version(void)
+const char *nyx_get_library_version(void)
 {
-    return NYX_LIBRARY_VERSION;
+	return NYX_LIBRARY_VERSION;
 }
 
 int32_t nyx_get_api_version_major(void)
 {
-    return NYX_API_VERSION_MAJOR;
+	return NYX_API_VERSION_MAJOR;
 }
 
 int32_t nyx_get_api_version_minor(void)
 {
-    return NYX_API_VERSION_MINOR;
+	return NYX_API_VERSION_MINOR;
 }
 

@@ -48,7 +48,8 @@ typedef enum {
 	NYX_SECURITY_AES_OFB,
 	NYX_SECURITY_AES_CFB,
 	NYX_SECURITY_AES_CTR
-} nyx_security_aes_block_mode_t;
+}
+nyx_security_aes_block_mode_t;
 
 /** @} */
 #ifdef __cplusplus

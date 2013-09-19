@@ -44,26 +44,28 @@ extern "C" {
 /**
  * Set the brightness of the LED device. The range is 0-100%.
  *
- * @param[in] 	handle - the device handle
- * @param[in] 	brightness - brightness to set
+ * @param[in]   handle - the device handle
+ * @param[in]   brightness - brightness to set
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_led_set_brightness(nyx_device_handle_t handle, int32_t brightness);
+NYX_API_EXPORT nyx_error_t nyx_led_set_brightness(nyx_device_handle_t handle,
+        int32_t brightness);
 
 /**
  * Get the brightness of the LED device. The range is 0-100%.
  *
- * @param[in] 	handle - the device handle
- * @param[out] 	brightness_out_ptr - pointer to store current brightness of the LED device
+ * @param[in]   handle - the device handle
+ * @param[out]  brightness_out_ptr - pointer to store current brightness of the LED device
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_led_get_brightness(nyx_device_handle_t handle, int32_t *brightness_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_led_get_brightness(nyx_device_handle_t handle,
+        int32_t *brightness_out_ptr);
 
-/** @} */ 
+/** @} */
 
 #ifdef __cplusplus
 }

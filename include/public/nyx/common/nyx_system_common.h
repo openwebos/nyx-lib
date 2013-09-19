@@ -41,20 +41,22 @@ extern "C" {
  * Shutdown/Reboot type.
  */
 typedef enum {
-	NYX_SYSTEM_NORMAL_SHUTDOWN=0,
+	NYX_SYSTEM_NORMAL_SHUTDOWN = 0,
 	NYX_SYSTEM_EMERG_SHUTDOWN,
 	NYX_SYSTEM_TEST_SHUTDOWN,
-} nyx_system_shutdown_type_t;
+}
+nyx_system_shutdown_type_t;
 
 /**
  * Erase types
  */
-typedef enum {
-	NYX_SYSTEM_ERASE_VAR=0,
-	NYX_SYSTEM_ERASE_ALL,
-	NYX_SYSTEM_ERASE_MEDIA,
-	NYX_SYSTEM_WIPE,
-	NYX_SYSTEM_TEST_ERASE,
+typedef enum
+{
+    NYX_SYSTEM_ERASE_VAR = 0,
+    NYX_SYSTEM_ERASE_ALL,
+    NYX_SYSTEM_ERASE_MEDIA,
+    NYX_SYSTEM_WIPE,
+    NYX_SYSTEM_TEST_ERASE,
 } nyx_system_erase_type_t;
 
 /**
@@ -62,9 +64,10 @@ typedef enum {
  * (Any field set to -1 will mean that field is not applicable)
  */
 
-typedef struct nyx_qos_profile {
-	uint32_t floor_freq;			/**< Floor (min) frequency */
-	int32_t min_cpus;			/**< Min. number of cpus required */
+typedef struct nyx_qos_profile
+{
+	uint32_t floor_freq;            /**< Floor (min) frequency */
+	int32_t min_cpus;           /**< Min. number of cpus required */
 } nyx_qos_profile_t;
 
 /** @} */

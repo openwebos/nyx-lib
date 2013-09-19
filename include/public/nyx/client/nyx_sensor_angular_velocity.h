@@ -46,13 +46,15 @@ extern "C" {
 /**
  * Get the event item for the current event.
  *
- * @param[in] 	handle - the event handle
- * @param[out] 	event_out_ptr - pointer to the angular_velocity event item
+ * @param[in]   handle - the event handle
+ * @param[out]  event_out_ptr - pointer to the angular_velocity event item
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_sensor_angular_velocity_event_get_item(nyx_event_handle_t handle, nyx_sensor_angular_velocity_event_item_t *event_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_sensor_angular_velocity_event_get_item(
+    nyx_event_handle_t handle,
+    nyx_sensor_angular_velocity_event_item_t *event_out_ptr);
 
 /** @} */
 #ifdef __cplusplus

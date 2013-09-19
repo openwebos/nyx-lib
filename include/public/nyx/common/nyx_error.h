@@ -44,26 +44,27 @@ extern "C" {
  * Error codes returned from Nyx API functions.
  */
 typedef enum {
-	NYX_ERROR_NONE,				/**< Operation successful */
-	NYX_ERROR_INVALID_HANDLE,		/**< Invalid handle passed to an API function */
-	NYX_ERROR_WRONG_DEVICE_TYPE,		/**< Operation not defined for the supplied device */
-	NYX_ERROR_DEVICE_NOT_EXIST,		/**< Device does not exist */
-	NYX_ERROR_TOO_MANY_OPENS,		/**< Reached maximum opens allowed on device */
-	NYX_ERROR_OUT_OF_MEMORY,		/**< Out of memory */
-	NYX_ERROR_DEVICE_UNAVAILABLE,		/**< Device not present OR Connection to device not available */
-	NYX_ERROR_UNSUPPORTED_DEVICE_TYPE,	/**< No support for this device type currently */
-	NYX_ERROR_INVALID_VALUE,		/**< Value passed to an API function is not valid */
-	NYX_ERROR_NOT_IMPLEMENTED,		/**< The method/function has not been implemented by module */
-	NYX_ERROR_INVALID_EVENT_TYPE,		/**< Event is of a wrong type for this operation */
-	NYX_ERROR_INVALID_OPERATION,		/**< This operation cannot be performed at this time */
-	NYX_ERROR_INVALID_FILE_ACCESS,		/**< The requested access to the file is not allowed >**/
-	NYX_ERROR_VALUE_OUT_OF_RANGE,		/**< The resulting value was out of range >**/
-	NYX_ERROR_NOT_FOUND,			/**< Could not find the requested value >**/
-	NYX_ERROR_GENERIC,			/**< Generic NYX_LOG_ERROR */
-	NYX_ERROR_ALREADY_UP_TO_DATE,		/**< Firmware is already up-to-date */
-	NYX_ERROR_BAD_CHECKSUM,			/**< Bad checksum */
-	NYX_ERROR_INCOMPATIBLE_LIBRARY,		/**< The available nyx-lib is incompatible with the ABI the caller or module expects */
-} nyx_error_t;
+	NYX_ERROR_NONE,             /**< Operation successful */
+	NYX_ERROR_INVALID_HANDLE,       /**< Invalid handle passed to an API function */
+	NYX_ERROR_WRONG_DEVICE_TYPE,        /**< Operation not defined for the supplied device */
+	NYX_ERROR_DEVICE_NOT_EXIST,     /**< Device does not exist */
+	NYX_ERROR_TOO_MANY_OPENS,       /**< Reached maximum opens allowed on device */
+	NYX_ERROR_OUT_OF_MEMORY,        /**< Out of memory */
+	NYX_ERROR_DEVICE_UNAVAILABLE,       /**< Device not present OR Connection to device not available */
+	NYX_ERROR_UNSUPPORTED_DEVICE_TYPE,  /**< No support for this device type currently */
+	NYX_ERROR_INVALID_VALUE,        /**< Value passed to an API function is not valid */
+	NYX_ERROR_NOT_IMPLEMENTED,      /**< The method/function has not been implemented by module */
+	NYX_ERROR_INVALID_EVENT_TYPE,       /**< Event is of a wrong type for this operation */
+	NYX_ERROR_INVALID_OPERATION,        /**< This operation cannot be performed at this time */
+	NYX_ERROR_INVALID_FILE_ACCESS,      /**< The requested access to the file is not allowed >**/
+	NYX_ERROR_VALUE_OUT_OF_RANGE,       /**< The resulting value was out of range >**/
+	NYX_ERROR_NOT_FOUND,            /**< Could not find the requested value >**/
+	NYX_ERROR_GENERIC,          /**< Generic NYX_LOG_ERROR */
+	NYX_ERROR_ALREADY_UP_TO_DATE,       /**< Firmware is already up-to-date */
+	NYX_ERROR_BAD_CHECKSUM,         /**< Bad checksum */
+	NYX_ERROR_INCOMPATIBLE_LIBRARY,     /**< The available nyx-lib is incompatible with the ABI the caller or module expects */
+}
+nyx_error_t;
 
 /** @} */
 

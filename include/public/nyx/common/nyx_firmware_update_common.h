@@ -41,7 +41,8 @@ extern "C" {
 #define NYX_FIRMWARE_VERSION_MAX_SIZE 60
 
 struct nyx_firmware_update_iterator;
-typedef struct nyx_firmware_update_iterator* nyx_firmware_update_iterator_handle_t;
+typedef struct nyx_firmware_update_iterator
+		*nyx_firmware_update_iterator_handle_t;
 
 /**
  * nyx_firmware_version_info
@@ -51,11 +52,12 @@ typedef struct nyx_firmware_update_iterator* nyx_firmware_update_iterator_handle
  * may be NULL (but not both).  If both values are specified, then the #uri will be used and the #version string
  * ignored.
  */
-struct nyx_firmware_version_info {
-	char* version;		/**< Version string of a firmware image */
-	char* uri;		/**< Location of the image (typically a filename path) */
+struct nyx_firmware_version_info
+{
+	char *version;      /**< Version string of a firmware image */
+	char *uri;      /**< Location of the image (typically a filename path) */
 };
-typedef struct nyx_firmware_version_info* nyx_firmware_version_info_handle_t;
+typedef struct nyx_firmware_version_info *nyx_firmware_version_info_handle_t;
 
 /** @} */
 

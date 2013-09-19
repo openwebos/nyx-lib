@@ -45,30 +45,31 @@ extern "C" {
 /* nyx_device_info_get_info is deprecated */
 /**
  * @deprecated  Use nyx_device_info_query instead.
- * @brief	Get the device information.
+ * @brief   Get the device information.
  *
- * @param[in] 	handle - handle to the device
- * @param[in] 	type - type of information to retrieve
+ * @param[in]   handle - handle to the device
+ * @param[in]   type - type of information to retrieve
  *
- * @param[out]	dest - location into which the string information is copied;
+ * @param[out]  dest - location into which the string information is copied;
  *              it will always be NUL-terminated
  *
- * @param[in]	dest_len - length of destination string (non-zero)
+ * @param[in]   dest_len - length of destination string (non-zero)
  *
  * @return error code
  *   - NYX_ERROR_NONE if operation is successful
  *   - NYX_ERROR_VALUE_OUT_OF_RANGE if 'dest_len' is too small to hold the
  *     return value, including a terminating NUL.
  */
-NYX_API_EXPORT nyx_error_t nyx_device_info_get_info(nyx_device_handle_t handle, nyx_device_info_type_t type, char* dest, size_t dest_len);
+NYX_API_EXPORT nyx_error_t nyx_device_info_get_info(nyx_device_handle_t handle,
+        nyx_device_info_type_t type, char *dest, size_t dest_len);
 
 /**
- * @brief	Query the device information.
+ * @brief   Query the device information.
  *
- * @param[in] 	handle - handle to the device
- * @param[in] 	type - type of information to retrieve
+ * @param[in]   handle - handle to the device
+ * @param[in]   type - type of information to retrieve
  *
- * @param[out]	dest - location into which the pointer to the string information
+ * @param[out]  dest - location into which the pointer to the string information
  *              is copied; it will always be NUL-terminated
  *
  * @return error code
@@ -77,7 +78,8 @@ NYX_API_EXPORT nyx_error_t nyx_device_info_get_info(nyx_device_handle_t handle, 
  *   - NYX_ERROR_NOT_IMPLEMENTED if query for given 'type' is not implemented
  *   - NYX_ERROR_INVALID_VALUE if 'type' is not valid */
 
-NYX_API_EXPORT nyx_error_t nyx_device_info_query(nyx_device_handle_t handle, nyx_device_info_type_t type, const char** dest);
+NYX_API_EXPORT nyx_error_t nyx_device_info_query(nyx_device_handle_t handle,
+        nyx_device_info_type_t type, const char **dest);
 
 
 /** @} */

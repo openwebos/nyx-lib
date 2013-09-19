@@ -41,15 +41,16 @@ extern "C" {
 /**
  * Create an LED core configuration.
  *
- * @param[in] 	effect_type - effect type for core configuration
- * @param[out] 	handle_ptr - pointer to a handle to store handle for the
+ * @param[in]   effect_type - effect type for core configuration
+ * @param[out]  handle_ptr - pointer to a handle to store handle for the
  *              newly created configuration
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_controller_effect_type_t effect_type,
-	nyx_led_controller_core_configuration_handle_t* handle_ptr);
+NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(
+    nyx_led_controller_effect_type_t effect_type,
+    nyx_led_controller_core_configuration_handle_t *handle_ptr);
 
 /*
  * Set a parameter in an LED core configuration.
@@ -76,14 +77,14 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  *           SideLED    _____________/      \     (in ms)
  *                                           \
  *                                            \____(brightness = 0)
- *	requires:
+ *  requires:
  *      brightness,
  *      center_fade_in
  *      center_fade_out
  *      side_fade_in,
  *      side_fade_out
  *
- *	default values:
+ *  default values:
  *      center_fade_in = 200
  *      center_fade_out = 300
  *      side_fade_in = 200
@@ -120,7 +121,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  *                           \____(brightness = 0)
  *
  *
- *	requires:
+ *  requires:
  *      brightness,
  *      first_in,
  *      first_out,
@@ -131,7 +132,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  *                -- if direction is RIGHT, then Led1 is RightLED and Led3 is LeftLED.
  *
  *
- *	default values:
+ *  default values:
  *      first_in = 100
  *      first_out = 500
  *      second_in = 100
@@ -156,7 +157,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  *                                                                 repeat_delay
  *                                                                  (in ms)
  *
- *	requires:
+ *  requires:
  *     brightness,
  *     start_delay,
  *     fade_in,
@@ -165,7 +166,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  *     repeat_delay,
  *     repeat
  *
- *	default values:
+ *  default values:
  *     start_delay = 0
  *     fade_in = 1500
  *     fade_out = 1500
@@ -187,7 +188,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  *                                    \________________/                            \______________
  *                                      pulse_delay                                    repeat_delay
  *                                      (in ms)                                          (in ms)
- *	requires:
+ *  requires:
  *      brightness,
  *      pulse_ramp,
  *      pulse_duration,
@@ -195,7 +196,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  *      repeat_delay,
  *      repeat
  *
- *	default values:
+ *  default values:
  *      pulse_ramp = 150
  *      pulse_duration = 100
  *      pulse_delay = 100
@@ -213,13 +214,13 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  *     /
  *    /
  *
- *	requires:
+ *  requires:
  *     brightness
  *     duration
  *
  *  NYX_LED_CONTROLLER_EFFECT_LED_SET
  *      set led to specified brightness
- *	requires:
+ *  requires:
  *     brightness
  *
  *  NYX_LED_CONTROLLER_EFFECT_WATERDROP
@@ -243,7 +244,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  *            (LED 2 starts when LED 1__________/      \     (in ms)
  *                  finishes first ramp)                \
  *                                                       \____(brightness = 0)
- *	requires:
+ *  requires:
  *     brightness,
  *     center_fade_in
  *     center_fade_out
@@ -260,7 +261,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  *  if direction is not reverse, then LED1 = center led, LED2 = side leds
  *  if direction is reverse, then LED1 = side leds, LED2 = center led
  *
- *	requires:
+ *  requires:
  *     brightness,
  *     duration,
  *     direction
@@ -274,7 +275,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  * if direction is left, then LED1 = right, LED2 = center, LED3 = left
  * if direction is not left, then LED1 = left, LED2 = center, LED3 = right
  *
- *	requires:
+ *  requires:
  *     brightness,
  *     duration,
  *     direction
@@ -288,7 +289,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  *      RAMP5:  LED3 ramps from (brightness = 0) to brightness in duration (ms).
  * if direction is left, then LED1 = right, LED2 = center, LED3 = left
  * if direction is not left, then LED1 = left, LED2 = center, LED3 = right
- *	requires:
+ *  requires:
  *     brightness,
  *     duration,
  *     direction
@@ -302,7 +303,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  * if direction is left, then LED1 = right, LED2 = center, LED3 = left
  * if direction is not left, then LED1 = left, LED2 = center, LED3 = right
  *
- *	requires:
+ *  requires:
  *     brightness,
  *     duration,
  *     direction
@@ -316,7 +317,7 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  *      RAMP5:  LED3 ramps from brightness to (brightness = 0) in duration (ms).
  * if direction is left, then LED1 = right, LED2 = center, LED3 = left
  * if direction is not left, then LED1 = left, LED2 = center, LED3 = right
- *	requires:
+ *  requires:
  *     brightness,
  *     duration,
  *     direction
@@ -328,8 +329,8 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
  *      RAMP3:  LED3 ramps from brightness to (brightness = 0) in duration (ms)
  * if direction is left, then LED1 = right, LED2 = center, LED3 = left
  * if direction is not left, then LED1 = left, LED2 = center, LED3 = right
- *	requires:
- *	requires:
+ *  requires:
+ *  requires:
  *     brightness,
  *     duration,
  *     direction
@@ -337,15 +338,16 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_create(nyx_led_
 /**
  * @brief Set a parameter in an LED core configuration.
  *
- * @param[in] 	handle - the configuration handle
- * @param[in] 	param - the parameter to modify
- * @param[in] 	new_value - the new value to set parameter to
+ * @param[in]   handle - the configuration handle
+ * @param[in]   param - the parameter to modify
+ * @param[in]   new_value - the new value to set parameter to
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
 NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_set_param(
-	nyx_led_controller_core_configuration_handle_t handle, nyx_led_controller_parameter_type_t param, int32_t new_value);
+    nyx_led_controller_core_configuration_handle_t handle,
+    nyx_led_controller_parameter_type_t param, int32_t new_value);
 
 /**
  * Finalize an LED core configuration.
@@ -353,25 +355,25 @@ NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_set_param(
  * An LED core execute command cannot be completed unless the configuration
  * is finalized.
  *
- * @param[in] 	handle - the configuration handle
+ * @param[in]   handle - the configuration handle
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
 NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_finalize(
-	nyx_led_controller_core_configuration_handle_t handle);
+    nyx_led_controller_core_configuration_handle_t handle);
 
 /**
  * Release memory associated with a handle.
  * Should be called when the handle is no longer needed.
  *
- * @param[in] 	handle - the configuration handle
+ * @param[in]   handle - the configuration handle
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
 NYX_API_EXPORT nyx_error_t nyx_led_controller_core_configuration_release(
-	nyx_led_controller_core_configuration_handle_t handle);
+    nyx_led_controller_core_configuration_handle_t handle);
 
 
 

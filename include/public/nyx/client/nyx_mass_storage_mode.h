@@ -53,7 +53,9 @@ extern "C" {
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_mass_storage_mode_set_mode(nyx_device_handle_t handle, nyx_mass_storage_mode_action_t action, nyx_mass_storage_mode_return_code_t *ret);
+NYX_API_EXPORT nyx_error_t nyx_mass_storage_mode_set_mode(
+    nyx_device_handle_t handle, nyx_mass_storage_mode_action_t action,
+    nyx_mass_storage_mode_return_code_t *ret);
 
 /**
  * @brief Query current Mass Storage Mode state.
@@ -66,7 +68,8 @@ NYX_API_EXPORT nyx_error_t nyx_mass_storage_mode_set_mode(nyx_device_handle_t ha
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_mass_storage_mode_get_state(nyx_device_handle_t handle, nyx_mass_storage_mode_state_t *state);
+NYX_API_EXPORT nyx_error_t nyx_mass_storage_mode_get_state(
+    nyx_device_handle_t handle, nyx_mass_storage_mode_state_t *state);
 
 /**
  * @brief Register callback function for Mass Storage Mode mode changes.
@@ -80,7 +83,9 @@ NYX_API_EXPORT nyx_error_t nyx_mass_storage_mode_get_state(nyx_device_handle_t h
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_mass_storage_mode_register_change_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context);
+NYX_API_EXPORT nyx_error_t nyx_mass_storage_mode_register_change_callback(
+    nyx_device_handle_t handle, nyx_device_callback_function_t callback_func,
+    void *context);
 
 /** @} */
 #ifdef __cplusplus

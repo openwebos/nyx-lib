@@ -43,16 +43,18 @@
  */
 static nyx_log_level_t nyx_log_level = NYX_LOG_WARNING;
 static bool use_colors = true;
-static const char* _logged_file;
+static const char *_logged_file;
 static int32_t _logged_line;
 
-struct log_level_mapping {
+struct log_level_mapping
+{
 	int32_t syslog_level;
 	GLogLevelFlags glib_level;
-	const char* name_level;
+	const char *name_level;
 };
 
-static struct log_level_mapping level_map[] = {
+static struct log_level_mapping level_map[] =
+{
 	[NYX_LOG_NONE]     = { 0, 0, "" },
 	[NYX_LOG_ERROR]    = { LOG_ERR, G_LOG_LEVEL_CRITICAL, "Error" },
 	[NYX_LOG_CRITICAL] = { LOG_CRIT, G_LOG_LEVEL_CRITICAL, "Critical" },
@@ -64,7 +66,8 @@ static struct log_level_mapping level_map[] = {
 
 
 #define COLOR_NORMAL "\033[0m"
-static const char* color_escape[] = {
+static const char *color_escape[] =
+{
 	"\033[m",        /* NYX_LOG_NONE */
 	"\033[1;31m",    /* NYX_LOG_ERROR (red) */
 	"\033[1;33m",    /* NYX_LOG_CRITICAL (yellow) */
@@ -78,29 +81,35 @@ static const char* color_escape[] = {
 static int32_t print_error_wrapper(const char *msg, ...);
 
 
-int32_t _nyx_log_console_printer(nyx_log_level_t level, const char *msg, va_list args)
+int32_t _nyx_log_console_printer(nyx_log_level_t level, const char *msg,
+                                 va_list args)
 {
-	const char* level_name = level_map[level].name_level;
+	const char *level_name = level_map[level].name_level;
 	int32_t printed;
 
 	if (use_colors)
 		printed = fprintf(stderr, "%s" NYX_LOG_DOMAIN ":%s:%s:%d: ",
-						  color_escape[level], level_name, _logged_file, _logged_line);
+		                  color_escape[level], level_name, _logged_file, _logged_line);
 	else
 		printed = fprintf(stderr, NYX_LOG_DOMAIN ":%s:%s:%d: ",
-						  level_name, _logged_file, _logged_line);
+		                  level_name, _logged_file, _logged_line);
 
 	printed += vfprintf(stderr, msg, args);
 
 	if (use_colors)
+	{
 		fputs(COLOR_NORMAL "\n", stderr);
+	}
 	else
+	{
 		fputs("\n", stderr);
+	}
 
 	return printed;
 }
 
-int32_t _nyx_log_syslog_printer(nyx_log_level_t level, const char *msg, va_list args)
+int32_t _nyx_log_syslog_printer(nyx_log_level_t level, const char *msg,
+                                va_list args)
 {
 	int32_t syslog_level = level_map[level].syslog_level;
 
@@ -125,16 +134,22 @@ static int32_t print_error_wrapper(const char *msg, ...)
 
 void nyx_log_set_printer(nyx_log_printer_function_t new_log_printer)
 {
-	if (new_log_printer == NULL) {
+	if (new_log_printer == NULL)
+	{
 		print_error_wrapper("Attempt to set a NULL logger");
 		return;
 	}
 
 	nyx_printer = new_log_printer;
+
 	if (nyx_printer == _nyx_log_console_printer)
+	{
 		use_colors = true;
+	}
 	else
+	{
 		use_colors = false;
+	}
 }
 
 void nyx_log_set_level(nyx_log_level_t level)
@@ -146,59 +161,86 @@ void nyx_log_set_level(nyx_log_level_t level)
 
 void nyx_log_init()
 {
-	char* level_str = getenv("NYX_LOG_LEVEL");
+	char *level_str = getenv("NYX_LOG_LEVEL");
 	nyx_log_level_t new_level = NYX_LOG_WARNING;
 	nyx_log_destination_t printer = NYX_LOG_PRINTER_SYSLOG;
 
-	if (NULL != level_str) {
+	if (NULL != level_str)
+	{
 		/* level_letters contains first character of the various log levels:
 		 * none,error,critical,warning,message,info,debug
 		 */
 		char firstch = *level_str;
-		static const char* level_letters = "necwmid";
-		char* straddr = strchr(level_letters, tolower(firstch));
+		static const char *level_letters = "necwmid";
+		char *straddr = strchr(level_letters, tolower(firstch));
+
 		if (NULL != straddr)
+		{
 			new_level = straddr - level_letters;
+		}
 		else if (isdigit(firstch))
+		{
 			new_level = firstch - '0';
+		}
 		else
+		{
 			new_level = NYX_LOG_WARNING;
+		}
 
 		/* Check if env.variable contains ":" and a printer name (console, syslog, ...) */
 		straddr = strchr(level_str, ':');
-		if (NULL != straddr && *(straddr+1) != '\0') {
-			char chprint = tolower(*(straddr+1));
+
+		if (NULL != straddr && *(straddr + 1) != '\0')
+		{
+			char chprint = tolower(*(straddr + 1));
+
 			if (chprint == 'c' || chprint == 't')
+			{
 				printer = NYX_LOG_PRINTER_CONSOLE;
+			}
 			else if (chprint == 's')
+			{
 				printer = NYX_LOG_PRINTER_SYSLOG;
+			}
 			else
-				print_error_wrapper("Unknown log printer '%s' -- use 'c' or 's'\n", straddr + 1);
+			{
+				print_error_wrapper("Unknown log printer '%s' -- use 'c' or 's'\n",
+				                    straddr + 1);
+			}
 		}
 	}
 
 	if (new_level != nyx_log_level)
+	{
 		nyx_log_set_level(new_level);
+	}
 
-	switch (printer) {
-	case NYX_LOG_PRINTER_CONSOLE:
-		nyx_log_set_printer(_nyx_log_console_printer);
-		break;
-	case NYX_LOG_PRINTER_SYSLOG:
-		nyx_log_set_printer(_nyx_log_syslog_printer);
-		break;
-	default:
-		print_error_wrapper("Invalid log printer given");
+	switch (printer)
+	{
+		case NYX_LOG_PRINTER_CONSOLE:
+			nyx_log_set_printer(_nyx_log_console_printer);
+			break;
+
+		case NYX_LOG_PRINTER_SYSLOG:
+			nyx_log_set_printer(_nyx_log_syslog_printer);
+			break;
+
+		default:
+			print_error_wrapper("Invalid log printer given");
 	}
 }
 
 
-void _nyx_log__(const char *file, int32_t line, nyx_log_level_t level, const char *msg, ...)
+void _nyx_log__(const char *file, int32_t line, nyx_log_level_t level,
+                const char *msg, ...)
 {
-    if (NYX_LOG_NONE == nyx_log_level)
+	if (NYX_LOG_NONE == nyx_log_level)
+	{
 		return;
+	}
 
-	if (NYX_LOG_DEFAULT == nyx_log_level) { /* use glib logging */
+	if (NYX_LOG_DEFAULT == nyx_log_level)   /* use glib logging */
+	{
 		va_list va;
 		GLogLevelFlags glib_log_level;
 
@@ -209,15 +251,17 @@ void _nyx_log__(const char *file, int32_t line, nyx_log_level_t level, const cha
 		g_logv(NYX_LOG_DOMAIN, glib_log_level, msg, va);
 		va_end(va);
 
-	} else if (nyx_log_level >= level && NYX_LOG_LEVEL_MAXIMUM >= level) {
-	    va_list va;
-	    va_start(va, msg);
+	}
+	else if (nyx_log_level >= level && NYX_LOG_LEVEL_MAXIMUM >= level)
+	{
+		va_list va;
+		va_start(va, msg);
 
-		_logged_file = file;	/* Used in the nyx_printer methods */
+		_logged_file = file;    /* Used in the nyx_printer methods */
 		_logged_line = line;
 
 		(*nyx_printer)(level, msg, va);
 
 		va_end(va);
-    }
+	}
 }

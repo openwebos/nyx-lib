@@ -48,18 +48,23 @@ typedef enum {
 	NYX_LED_CONTROLLER_KEYPAD               = 0x08,
 	NYX_LED_CONTROLLER_LCD                  = 0x10,
 	NYX_LED_CONTROLLER_CORE_LEDS            =
-		NYX_LED_CONTROLLER_LEFT_LED | NYX_LED_CONTROLLER_CENTER_LED | NYX_LED_CONTROLLER_RIGHT_LED,
-	NYX_LED_CONTROLLER_BACKLIGHT_LEDS =
-		NYX_LED_CONTROLLER_KEYPAD | NYX_LED_CONTROLLER_LCD,
-	NYX_LED_CONTROLLER_ALL_LEDS =
-		NYX_LED_CONTROLLER_LEFT_LED | NYX_LED_CONTROLLER_CENTER_LED | NYX_LED_CONTROLLER_RIGHT_LED |
-		NYX_LED_CONTROLLER_KEYPAD | NYX_LED_CONTROLLER_LCD,
-} nyx_led_controller_led_t;
+	    NYX_LED_CONTROLLER_LEFT_LED | NYX_LED_CONTROLLER_CENTER_LED |
+	    NYX_LED_CONTROLLER_RIGHT_LED,
+	    NYX_LED_CONTROLLER_BACKLIGHT_LEDS =
+	        NYX_LED_CONTROLLER_KEYPAD | NYX_LED_CONTROLLER_LCD,
+	        NYX_LED_CONTROLLER_ALL_LEDS =
+	            NYX_LED_CONTROLLER_LEFT_LED | NYX_LED_CONTROLLER_CENTER_LED |
+	            NYX_LED_CONTROLLER_RIGHT_LED |
+	            NYX_LED_CONTROLLER_KEYPAD | NYX_LED_CONTROLLER_LCD,
+}
+nyx_led_controller_led_t;
 
 
 
-typedef struct {
-	struct {
+typedef struct
+{
+	struct
+	{
 		nyx_led_controller_led_t led;
 		nyx_led_controller_effect_type_t effect;
 		uint32_t effect_length;
@@ -69,11 +74,12 @@ typedef struct {
 	 * backlight structure is used to provide parameters of the lcd/keypad
 	 * backlight control.
 	 */
-	struct {
+	struct
+	{
 		int32_t brightness_lcd;
 		int32_t brightness_keypad;
 		nyx_device_callback_function_t callback;
-		void* callback_context;
+		void *callback_context;
 	} backlight;
 
 
@@ -85,15 +91,17 @@ typedef struct {
 
 } nyx_led_controller_effect_t;
 
-typedef enum {
-	NYX_LED_CONTROLLER_STATE_UNKNOWN,
-	NYX_LED_CONTROLLER_STATE_OFF,
-	NYX_LED_CONTROLLER_STATE_ON,
+typedef enum
+{
+    NYX_LED_CONTROLLER_STATE_UNKNOWN,
+    NYX_LED_CONTROLLER_STATE_OFF,
+    NYX_LED_CONTROLLER_STATE_ON,
 } nyx_led_controller_state_t;
 
-typedef enum {
-	NYX_LED_CONTROLLER_ABL_STATE_OFF,
-	NYX_LED_CONTROLLER_ABL_STATE_ON,
+typedef enum
+{
+    NYX_LED_CONTROLLER_ABL_STATE_OFF,
+    NYX_LED_CONTROLLER_ABL_STATE_ON,
 } nyx_led_controller_abl_state_t;
 
 /** @} */

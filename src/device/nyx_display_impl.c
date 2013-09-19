@@ -30,12 +30,13 @@
 
 #include "nyx_display_impl.h"
 
-nyx_error_t nyx_display_get_metrics(nyx_device_handle_t handle, nyx_display_metrics_t* out_metrics)
+nyx_error_t nyx_display_get_metrics(nyx_device_handle_t handle,
+                                    nyx_display_metrics_t *out_metrics)
 {
-	nyx_device_t* d = (nyx_device_t*)handle;
+	nyx_device_t *d = (nyx_device_t *)handle;
 	CHECK_DEVICE(d);
 	CHECK_DEVICE_TYPE(d, NYX_DEVICE_DISPLAY);
-	nyx_display_device_t* dev = (nyx_display_device_t*)d;
+	nyx_display_device_t *dev = (nyx_display_device_t *)d;
 	*out_metrics = dev->display_metrics;
 	return NYX_ERROR_NONE;
 }

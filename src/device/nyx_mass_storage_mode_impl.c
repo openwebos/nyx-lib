@@ -29,18 +29,25 @@
 #include "nyx_core_impl.h"
 #include <nyx/nyx_module.h>
 
-nyx_error_t nyx_mass_storage_mode_set_mode(nyx_device_handle_t handle, nyx_mass_storage_mode_action_t action, nyx_mass_storage_mode_return_code_t *ret)
+nyx_error_t nyx_mass_storage_mode_set_mode(nyx_device_handle_t handle,
+        nyx_mass_storage_mode_action_t action, nyx_mass_storage_mode_return_code_t *ret)
 {
-	nyx_execute_return_function(mass_storage_mode_set_mode, MASS_STORAGE_MODE, SET_MODE, handle, action, ret);
+	nyx_execute_return_function(mass_storage_mode_set_mode, MASS_STORAGE_MODE,
+	                            SET_MODE, handle, action, ret);
 }
 
-nyx_error_t nyx_mass_storage_mode_get_state(nyx_device_handle_t handle, nyx_mass_storage_mode_state_t *state)
+nyx_error_t nyx_mass_storage_mode_get_state(nyx_device_handle_t handle,
+        nyx_mass_storage_mode_state_t *state)
 {
-	nyx_execute_return_function(mass_storage_mode_get_state, MASS_STORAGE_MODE, GET_STATE, handle, state);
+	nyx_execute_return_function(mass_storage_mode_get_state, MASS_STORAGE_MODE,
+	                            GET_STATE, handle, state);
 }
 
-nyx_error_t nyx_mass_storage_mode_register_change_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context)
+nyx_error_t nyx_mass_storage_mode_register_change_callback(
+    nyx_device_handle_t handle, nyx_device_callback_function_t callback_func,
+    void *context)
 {
-	nyx_execute_return_function(mass_storage_mode_register_change_callback, MASS_STORAGE_MODE, REGISTER_CHANGE_CALLBACK, handle, callback_func, context);
+	nyx_execute_return_function(mass_storage_mode_register_change_callback,
+	                            MASS_STORAGE_MODE, REGISTER_CHANGE_CALLBACK, handle, callback_func, context);
 }
 

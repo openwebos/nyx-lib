@@ -41,13 +41,14 @@ extern "C" {
 /**
  * @brief Query battery status.
  *
- * @param[in] 	handle - the event handle
+ * @param[in]   handle - the event handle
  * @param[out]  status_out_ptr - current battery readings (needs to be allocated by caller)
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_battery_query_battery_status(nyx_device_handle_t handle, nyx_battery_status_t *status_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_battery_query_battery_status(
+    nyx_device_handle_t handle, nyx_battery_status_t *status_out_ptr);
 
 
 /**
@@ -60,44 +61,49 @@ NYX_API_EXPORT nyx_error_t nyx_battery_query_battery_status(nyx_device_handle_t 
  * @return error code (NYX_ERROR_NONE if operation is successful
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_battery_register_battery_status_callback(nyx_device_handle_t handle, nyx_device_callback_function_t callback_func, void *context);
+NYX_API_EXPORT nyx_error_t nyx_battery_register_battery_status_callback(
+    nyx_device_handle_t handle, nyx_device_callback_function_t callback_func,
+    void *context);
 
 
 /**
  * @brief Authenticate battery.
  *
- * @param[in] 	handle - the device handle
+ * @param[in]   handle - the device handle
  * @param[out]  result - authentication result (true/false).
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_battery_authenticate_battery(nyx_device_handle_t handle, bool *result);
+NYX_API_EXPORT nyx_error_t nyx_battery_authenticate_battery(
+    nyx_device_handle_t handle, bool *result);
 
 /**
  * @brief Get CTIA parameters for the battery.
  *
- * @param[in] 	handle - the device handle
+ * @param[in]   handle - the device handle
  * @param[out]  param  - CTIA parameters
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_battery_get_ctia_parameters(nyx_device_handle_t handle, nyx_battery_ctia_t *param);
+NYX_API_EXPORT nyx_error_t nyx_battery_get_ctia_parameters(
+    nyx_device_handle_t handle, nyx_battery_ctia_t *param);
 
 /**
  * @brief Set battery percentage at which to wake up the device if it suspends.
  *
- * @param[in] 	handle - the device handle
+ * @param[in]   handle - the device handle
  * @param[in]  percentage  - battery percentage at which to wake up
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
  *
  */
 
-NYX_API_EXPORT nyx_error_t nyx_battery_set_wakeup_percentage(nyx_device_handle_t handle, int32_t percentage);
+NYX_API_EXPORT nyx_error_t nyx_battery_set_wakeup_percentage(
+    nyx_device_handle_t handle, int32_t percentage);
 
 /** @} */
 #ifdef __cplusplus

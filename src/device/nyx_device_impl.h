@@ -33,41 +33,41 @@
 #include <nyx/nyx_module.h>
 
 #define CHECK_DEVICE(_d) {if (0 == _d) { \
-	nyx_error ("invalid handle"); \
-	return NYX_ERROR_INVALID_HANDLE; \
+    nyx_error ("invalid handle"); \
+    return NYX_ERROR_INVALID_HANDLE; \
 }}
 #define CHECK_DEVICE_TYPE(_d,_t) {if ((_d)->type != _t) { \
-	nyx_error ("wrong device type"); \
-	return NYX_ERROR_WRONG_DEVICE_TYPE; \
+    nyx_error ("wrong device type"); \
+    return NYX_ERROR_WRONG_DEVICE_TYPE; \
 }}
 #define CHECK_DEVICE_METHOD(_d,_method) {if (0 == _d->method_ptr[_method]) { \
-	nyx_error ("method " #_method " not implemented"); \
-	return NYX_ERROR_NOT_IMPLEMENTED; \
+    nyx_error ("method " #_method " not implemented"); \
+    return NYX_ERROR_NOT_IMPLEMENTED; \
 }}
-/* 	FIXME: This null pointer check is a workaround that averts additional
- 	glib error messages from the output in the case of any badly written
- 	test logic that passes in a null table (glib returns zero anyway in
-	this same scenario) */
+/*  FIXME: This null pointer check is a workaround that averts additional
+    glib error messages from the output in the case of any badly written
+    test logic that passes in a null table (glib returns zero anyway in
+    this same scenario) */
 #define LOOKUP_METHOD(_d,_method) \
-	(((GHashTable*)_d->method_hash_table == NULL) ? 0 : (g_hash_table_lookup ((GHashTable*)_d->method_hash_table, GINT_TO_POINTER(_method))))
+    (((GHashTable*)_d->method_hash_table == NULL) ? 0 : (g_hash_table_lookup ((GHashTable*)_d->method_hash_table, GINT_TO_POINTER(_method))))
 
 #define CHECK_EVENT(_e) {if (0 == _e) { \
-	nyx_error ("invalid handle"); \
-	return NYX_ERROR_INVALID_HANDLE; \
+    nyx_error ("invalid handle"); \
+    return NYX_ERROR_INVALID_HANDLE; \
 }}
 #define CHECK_EVENT_TYPE(_e,_t) {if ((_e)->type != _t) { \
-	nyx_error ("wrong event type"); \
-	return NYX_ERROR_WRONG_DEVICE_TYPE; \
+    nyx_error ("wrong event type"); \
+    return NYX_ERROR_WRONG_DEVICE_TYPE; \
 }}
 #define nyx_execute_return_function(_f,_t,_m,_h,...) \
-	nyx_device_t* d = (nyx_device_t*)_h; \
-	CHECK_DEVICE(d); \
-	CHECK_DEVICE_TYPE(d, NYX_DEVICE_##_t); \
-	nyx_##_f##_function_t _f_ptr = \
-		LOOKUP_METHOD(d, NYX_##_t##_##_m##_MODULE_METHOD); \
-	if(_f_ptr) \
-		return _f_ptr(d, __VA_ARGS__); \
-	else \
-		return NYX_ERROR_NOT_IMPLEMENTED;
+    nyx_device_t* d = (nyx_device_t*)_h; \
+    CHECK_DEVICE(d); \
+    CHECK_DEVICE_TYPE(d, NYX_DEVICE_##_t); \
+    nyx_##_f##_function_t _f_ptr = \
+        LOOKUP_METHOD(d, NYX_##_t##_##_m##_MODULE_METHOD); \
+    if(_f_ptr) \
+        return _f_ptr(d, __VA_ARGS__); \
+    else \
+        return NYX_ERROR_NOT_IMPLEMENTED;
 
 #endif /* _NYX_DEVICE_IMPL_H_ */

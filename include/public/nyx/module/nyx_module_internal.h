@@ -35,56 +35,59 @@
 /**
  * declare the module type and name
  *
- * @param[in]	_type - device type this module implements
- * @param[in]	_name - name of the module
+ * @param[in]   _type - device type this module implements
+ * @param[in]   _name - name of the module
  *
  */
 
 #define NYX_DECLARE_MODULE(_type, _name) \
-	int32_t _nyx_module_get_api_version_major () { return NYX_API_VERSION_MAJOR; } \
-	int32_t _nyx_module_get_api_version_minor () { return NYX_API_VERSION_MINOR; } \
-	const char* _nyx_module_get_name () { return _name; } \
-	nyx_device_type_t _nyx_module_get_type () { return _type; }
+    int32_t _nyx_module_get_api_version_major () { return NYX_API_VERSION_MAJOR; } \
+    int32_t _nyx_module_get_api_version_minor () { return NYX_API_VERSION_MINOR; } \
+    const char* _nyx_module_get_name () { return _name; } \
+    nyx_device_type_t _nyx_module_get_type () { return _type; }
 
 /**
  * set the name of the newly created device.
  *
- * @param[in] 	instance - instance passed into nyx_open_function.
- * @param[in] 	device_in_ptr - pointer to the device on which to set the name
- * @param[in]	name_str - name to set.
+ * @param[in]   instance - instance passed into nyx_open_function.
+ * @param[in]   device_in_ptr - pointer to the device on which to set the name
+ * @param[in]   name_str - name to set.
  *
  * @return nyx_error_t that will be NYX_ERROR_NONE if operation is
  * successful or an actual error if operation did not succeed.
  *
  */
-nyx_error_t nyx_module_set_name(nyx_instance_t instance, nyx_device_t* device_in_ptr, const char* name_str);
+nyx_error_t nyx_module_set_name(nyx_instance_t instance,
+                                nyx_device_t *device_in_ptr, const char *name_str);
 
 /**
  * set the description of the newly created device.
  *
- * @param[in] 	instance - instance passed into nyx_open_function.
- * @param[in] 	device_in_ptr - pointer to the device on which to set the description
- * @param[in]	description_str - description string to set on the device.
+ * @param[in]   instance - instance passed into nyx_open_function.
+ * @param[in]   device_in_ptr - pointer to the device on which to set the description
+ * @param[in]   description_str - description string to set on the device.
  *
  * @return nyx_error_t that will be NYX_ERROR_NONE if operation is
  * successful or an actual error if operation did not succeed.
  *
  */
-nyx_error_t nyx_module_set_description(nyx_instance_t instance, nyx_device_t* device_in_ptr, const char* description_str);
+nyx_error_t nyx_module_set_description(nyx_instance_t instance,
+                                       nyx_device_t *device_in_ptr, const char *description_str);
 
 /**
  * set the method for the newly created device.
  *
- * @param[in] 	instance - instance passed into nyx_open_function.
- * @param[in] 	device_in_ptr - pointer to the device on which to set the method
- * @param[in]	method - method to be set
- * @param[in]	symbol_str - symbol for the method to use.
+ * @param[in]   instance - instance passed into nyx_open_function.
+ * @param[in]   device_in_ptr - pointer to the device on which to set the method
+ * @param[in]   method - method to be set
+ * @param[in]   symbol_str - symbol for the method to use.
  *
  * @return nyx_error_t that will be NYX_ERROR_NONE if operation is
  * successful or an actual error if operation did not succeed.
  *
  */
-nyx_error_t nyx_module_register_method(nyx_instance_t instance, nyx_device_t* device_in_ptr, module_method_t method, const char* symbol_str);
+nyx_error_t nyx_module_register_method(nyx_instance_t instance,
+                                       nyx_device_t *device_in_ptr, module_method_t method, const char *symbol_str);
 
 /**
  * retrieves the argument count of the currently opened module.
@@ -96,7 +99,8 @@ nyx_error_t nyx_module_register_method(nyx_instance_t instance, nyx_device_t* de
  * successful or an actual error if operation did not succeed.
  *
  */
-nyx_error_t nyx_module_get_argument_count(nyx_instance_t instance, int32_t *argument_count_out_ptr);
+nyx_error_t nyx_module_get_argument_count(nyx_instance_t instance,
+        int32_t *argument_count_out_ptr);
 
 /**
  * retrieves the argument at the index.
@@ -109,6 +113,7 @@ nyx_error_t nyx_module_get_argument_count(nyx_instance_t instance, int32_t *argu
  * successful or an actual error if operation did not succeed.
  *
  */
-nyx_error_t nyx_module_get_argument_value(nyx_instance_t instance, int32_t argument_index, char** argument_value_out_ptr);
+nyx_error_t nyx_module_get_argument_value(nyx_instance_t instance,
+        int32_t argument_index, char **argument_value_out_ptr);
 
 #endif /* _NYX_MODULE_INTERNAL_H_ */

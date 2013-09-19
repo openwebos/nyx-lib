@@ -28,9 +28,10 @@
 #include <nyx/module/nyx_device_internal.h>
 
 struct nyx_haptics_data;
-typedef struct nyx_haptics_data* nyx_haptics_data_handle_t;
+typedef struct nyx_haptics_data *nyx_haptics_data_handle_t;
 
-typedef struct {
+typedef struct
+{
 	nyx_device_t original;
 	int32_t haptic_effect_id;
 	int32_t dampening_factor;

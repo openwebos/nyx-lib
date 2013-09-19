@@ -44,24 +44,27 @@ If NYX_LOG_LEVEL is not set, then log level is set to NYX_LOG_DEFAULT, meaning:
 
 #define NYX_LOG_DOMAIN "Nyx"
 
-typedef enum {
-	NYX_LOG_DEFAULT = -1,
-	NYX_LOG_NONE = 0,
-	NYX_LOG_ERROR,
-	NYX_LOG_CRITICAL,
-	NYX_LOG_WARNING,
-	NYX_LOG_MESSAGE,
-	NYX_LOG_INFO,
-	NYX_LOG_DEBUG,
-	NYX_LOG_LEVEL_MAXIMUM = NYX_LOG_DEBUG,
+typedef enum
+{
+    NYX_LOG_DEFAULT = -1,
+    NYX_LOG_NONE = 0,
+    NYX_LOG_ERROR,
+    NYX_LOG_CRITICAL,
+    NYX_LOG_WARNING,
+    NYX_LOG_MESSAGE,
+    NYX_LOG_INFO,
+    NYX_LOG_DEBUG,
+    NYX_LOG_LEVEL_MAXIMUM = NYX_LOG_DEBUG,
 } nyx_log_level_t;
 
-typedef enum {
-	NYX_LOG_PRINTER_CONSOLE = 1,
-	NYX_LOG_PRINTER_SYSLOG,
+typedef enum
+{
+    NYX_LOG_PRINTER_CONSOLE = 1,
+    NYX_LOG_PRINTER_SYSLOG,
 } nyx_log_destination_t;
 
-typedef int32_t (*nyx_log_printer_function_t)(nyx_log_level_t level, const char *msg, va_list args);
+typedef int32_t (*nyx_log_printer_function_t)(nyx_log_level_t level,
+        const char *msg, va_list args);
 
 
 void nyx_log_init();
@@ -77,10 +80,11 @@ void nyx_log_set_printer(nyx_log_printer_function_t new_logger);
 #define nyx_print(l, m, args...) nyx_msg(l, (m), ##args)
 
 #define nyx_msg(msg_level, msg, args...)                                 \
-	do {                                                             \
-	  _nyx_log__(__FILE__, __LINE__, (msg_level), (msg), ##args);    \
-	} while(0)
+    do {                                                             \
+      _nyx_log__(__FILE__, __LINE__, (msg_level), (msg), ##args);    \
+    } while(0)
 
-void _nyx_log__(const char *file, int32_t line, nyx_log_level_t level, const char *msg, ...) NYX_PRINTF_FORMAT_FUNC(4, 5);
+void _nyx_log__(const char *file, int32_t line, nyx_log_level_t level,
+                const char *msg, ...) NYX_PRINTF_FORMAT_FUNC(4, 5);
 
 #endif /* _NYX_LOG_H_ */

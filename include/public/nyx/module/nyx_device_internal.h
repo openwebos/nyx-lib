@@ -124,20 +124,22 @@ typedef enum {
 	NYX_SECURITY_LOAD_CERTIFICATE_MODULE_METHOD,
 	/* device info module function */
 	NYX_DEVICE_INFO_QUERY_MODULE_METHOD,
-} module_method_t;
+}
+module_method_t;
 
-typedef void* nyx_instance_t;
+typedef void *nyx_instance_t;
 typedef struct nyx_device nyx_device_t;
 
-typedef nyx_error_t (*nyx_open_function_t)(nyx_instance_t, nyx_device_t**);
-typedef nyx_error_t (*nyx_close_function_t)(nyx_device_t*);
+typedef nyx_error_t (*nyx_open_function_t)(nyx_instance_t, nyx_device_t **);
+typedef nyx_error_t (*nyx_close_function_t)(nyx_device_t *);
 
-struct nyx_device {
+struct nyx_device
+{
 	nyx_device_type_t type;
-	char* name;
-	char* description;
+	char *name;
+	char *description;
 
-	void* module_ptr;
+	void *module_ptr;
 	nyx_open_function_t open_ptr;
 	nyx_close_function_t close_ptr;
 
@@ -146,92 +148,158 @@ struct nyx_device {
 	 * implementation but we need to convey the size we will
 	 * give it a void* definition.
 	 */
-	void* method_hash_table;
+	void *method_hash_table;
 };
 
-typedef nyx_error_t (*nyx_set_operating_mode_function_t)(nyx_device_t*, nyx_operating_mode_t);
-typedef nyx_error_t (*nyx_get_operating_mode_function_t)(nyx_device_t*, nyx_operating_mode_t*);
-typedef nyx_error_t (*nyx_get_event_source_function_t)(nyx_device_t*, int32_t*);
-typedef nyx_error_t (*nyx_get_event_function_t)(nyx_device_t*, nyx_event_t**);
-typedef nyx_error_t (*nyx_release_event_function_t)(nyx_device_t*, nyx_event_t*);
-typedef nyx_error_t (*nyx_set_event_report_rate_function_t)(nyx_device_t*, nyx_report_rate_t);
-typedef nyx_error_t (*nyx_get_event_report_rate_function_t)(nyx_device_t*, nyx_report_rate_t*);
+typedef nyx_error_t (*nyx_set_operating_mode_function_t)(nyx_device_t *,
+        nyx_operating_mode_t);
+typedef nyx_error_t (*nyx_get_operating_mode_function_t)(nyx_device_t *,
+        nyx_operating_mode_t *);
+typedef nyx_error_t (*nyx_get_event_source_function_t)(nyx_device_t *,
+        int32_t *);
+typedef nyx_error_t (*nyx_get_event_function_t)(nyx_device_t *, nyx_event_t **);
+typedef nyx_error_t (*nyx_release_event_function_t)(nyx_device_t *,
+        nyx_event_t *);
+typedef nyx_error_t (*nyx_set_event_report_rate_function_t)(nyx_device_t *,
+        nyx_report_rate_t);
+typedef nyx_error_t (*nyx_get_event_report_rate_function_t)(nyx_device_t *,
+        nyx_report_rate_t *);
 
-typedef nyx_error_t (*nyx_set_report_rate_function_t)(nyx_device_t*, nyx_report_rate_t);
-typedef nyx_error_t (*nyx_get_report_rate_function_t)(nyx_device_t*, nyx_report_rate_t*);
+typedef nyx_error_t (*nyx_set_report_rate_function_t)(nyx_device_t *,
+        nyx_report_rate_t);
+typedef nyx_error_t (*nyx_get_report_rate_function_t)(nyx_device_t *,
+        nyx_report_rate_t *);
 
-typedef nyx_error_t (*nyx_set_scan_rate_function_t)(nyx_device_t*, uint32_t);
-typedef nyx_error_t (*nyx_get_scan_rate_function_t)(nyx_device_t*, uint32_t*);
+typedef nyx_error_t (*nyx_set_scan_rate_function_t)(nyx_device_t *, uint32_t);
+typedef nyx_error_t (*nyx_get_scan_rate_function_t)(nyx_device_t *, uint32_t *);
 
-typedef nyx_error_t (*nyx_set_int_function_t)(nyx_device_t*, int32_t);
-typedef nyx_error_t (*nyx_get_int_function_t)(nyx_device_t*, int32_t*);
+typedef nyx_error_t (*nyx_set_int_function_t)(nyx_device_t *, int32_t);
+typedef nyx_error_t (*nyx_get_int_function_t)(nyx_device_t *, int32_t *);
 
-typedef nyx_error_t (*nyx_led_set_brightness_function_t)(nyx_device_t*, int32_t);
-typedef nyx_error_t (*nyx_led_get_brightness_function_t)(nyx_device_t*, int32_t*);
+typedef nyx_error_t (*nyx_led_set_brightness_function_t)(nyx_device_t *,
+        int32_t);
+typedef nyx_error_t (*nyx_led_get_brightness_function_t)(nyx_device_t *,
+        int32_t *);
 
-typedef nyx_error_t (*nyx_set_property_function_t)(nyx_device_t*, const char*, void*);
-typedef nyx_error_t (*nyx_get_property_function_t)(nyx_device_t*, const char*, void**);
+typedef nyx_error_t (*nyx_set_property_function_t)(nyx_device_t *, const char *,
+        void *);
+typedef nyx_error_t (*nyx_get_property_function_t)(nyx_device_t *, const char *,
+        void **);
 
-typedef nyx_error_t (*nyx_led_controller_execute_effect_function_t)(nyx_device_t*,  nyx_led_controller_effect_t);
-typedef nyx_error_t (*nyx_led_controller_stop_function_t)(nyx_device_t*, nyx_led_controller_led_t);
-typedef nyx_error_t (*nyx_led_controller_get_state_function_t)(nyx_device_t*, nyx_led_controller_led_t, nyx_led_controller_state_t*);
-typedef nyx_error_t (*nyx_led_controller_set_abl_state_function_t)(nyx_device_t*, nyx_led_controller_led_t, nyx_led_controller_abl_state_t);
+typedef nyx_error_t (*nyx_led_controller_execute_effect_function_t)(
+    nyx_device_t *,  nyx_led_controller_effect_t);
+typedef nyx_error_t (*nyx_led_controller_stop_function_t)(nyx_device_t *,
+        nyx_led_controller_led_t);
+typedef nyx_error_t (*nyx_led_controller_get_state_function_t)(nyx_device_t *,
+        nyx_led_controller_led_t, nyx_led_controller_state_t *);
+typedef nyx_error_t (*nyx_led_controller_set_abl_state_function_t)(
+    nyx_device_t *, nyx_led_controller_led_t, nyx_led_controller_abl_state_t);
 
 
-typedef nyx_error_t (*nyx_haptics_vibrate_function_t)(nyx_device_t*, nyx_haptics_configuration_t configuration);
-typedef nyx_error_t (*nyx_haptics_cancel_function_t)(nyx_device_t*, int32_t);
-typedef nyx_error_t (*nyx_haptics_cancel_all_function_t)(nyx_device_t*);
+typedef nyx_error_t (*nyx_haptics_vibrate_function_t)(nyx_device_t *,
+        nyx_haptics_configuration_t configuration);
+typedef nyx_error_t (*nyx_haptics_cancel_function_t)(nyx_device_t *, int32_t);
+typedef nyx_error_t (*nyx_haptics_cancel_all_function_t)(nyx_device_t *);
 
-typedef nyx_error_t (*nyx_charger_query_charger_status_function_t)(nyx_device_t*, nyx_charger_status_t *);
-typedef nyx_error_t (*nyx_charger_register_charger_status_callback_function_t)(nyx_device_t*, nyx_device_callback_function_t,void *context);
-typedef nyx_error_t (*nyx_charger_enable_charging_function_t)(nyx_device_t*, nyx_charger_status_t *);
-typedef nyx_error_t (*nyx_charger_disable_charging_function_t)(nyx_device_t*, nyx_charger_status_t *);
-typedef nyx_error_t (*nyx_charger_register_state_change_callback_function_t)(nyx_device_t* ,nyx_device_callback_function_t, void *context);
-typedef nyx_error_t (*nyx_charger_query_charger_event_function_t)(nyx_device_t*, nyx_charger_event_t *);
+typedef nyx_error_t (*nyx_charger_query_charger_status_function_t)(
+    nyx_device_t *, nyx_charger_status_t *);
+typedef nyx_error_t (*nyx_charger_register_charger_status_callback_function_t)(
+    nyx_device_t *, nyx_device_callback_function_t, void *context);
+typedef nyx_error_t (*nyx_charger_enable_charging_function_t)(nyx_device_t *,
+        nyx_charger_status_t *);
+typedef nyx_error_t (*nyx_charger_disable_charging_function_t)(nyx_device_t *,
+        nyx_charger_status_t *);
+typedef nyx_error_t (*nyx_charger_register_state_change_callback_function_t)(
+    nyx_device_t * , nyx_device_callback_function_t, void *context);
+typedef nyx_error_t (*nyx_charger_query_charger_event_function_t)(
+    nyx_device_t *, nyx_charger_event_t *);
 
-typedef nyx_error_t (*nyx_battery_query_battery_status_function_t)(nyx_device_t*, nyx_battery_status_t *);
-typedef nyx_error_t (*nyx_battery_register_battery_status_callback_function_t)(nyx_device_t*, nyx_device_callback_function_t, void *context);
-typedef nyx_error_t (*nyx_battery_authenticate_battery_function_t)(nyx_device_t *, bool *);
-typedef nyx_error_t (*nyx_battery_get_ctia_parameters_function_t)(nyx_device_t *, nyx_battery_ctia_t *);
-typedef nyx_error_t (*nyx_battery_set_wakeup_percentage_function_t)(nyx_device_t *, int32_t);
-typedef nyx_error_t (*nyx_firmware_update_query_current_version_function_t)(nyx_device_t*, char**);
-typedef nyx_error_t (*nyx_firmware_update_get_available_versions_iterator_function_t)(nyx_device_t*, nyx_firmware_update_iterator_handle_t*);
-typedef nyx_error_t (*nyx_firmware_update_get_next_available_version_function_t)(nyx_device_t*, nyx_firmware_update_iterator_handle_t, nyx_firmware_version_info_handle_t*);
-typedef nyx_error_t (*nyx_firmware_update_release_available_versions_iterator_function_t)(nyx_device_t*, nyx_firmware_update_iterator_handle_t);
-typedef nyx_error_t (*nyx_firmware_update_flash_function_t)(nyx_device_t*, nyx_firmware_version_info_handle_t, bool, int32_t*, nyx_device_callback_function_t, void*);
+typedef nyx_error_t (*nyx_battery_query_battery_status_function_t)(
+    nyx_device_t *, nyx_battery_status_t *);
+typedef nyx_error_t (*nyx_battery_register_battery_status_callback_function_t)(
+    nyx_device_t *, nyx_device_callback_function_t, void *context);
+typedef nyx_error_t (*nyx_battery_authenticate_battery_function_t)(
+    nyx_device_t *, bool *);
+typedef nyx_error_t (*nyx_battery_get_ctia_parameters_function_t)(
+    nyx_device_t *, nyx_battery_ctia_t *);
+typedef nyx_error_t (*nyx_battery_set_wakeup_percentage_function_t)(
+    nyx_device_t *, int32_t);
+typedef nyx_error_t (*nyx_firmware_update_query_current_version_function_t)(
+    nyx_device_t *, char **);
+typedef nyx_error_t (
+    *nyx_firmware_update_get_available_versions_iterator_function_t)(nyx_device_t *,
+            nyx_firmware_update_iterator_handle_t *);
+typedef nyx_error_t (*nyx_firmware_update_get_next_available_version_function_t)
+(nyx_device_t *, nyx_firmware_update_iterator_handle_t,
+ nyx_firmware_version_info_handle_t *);
+typedef nyx_error_t (
+    *nyx_firmware_update_release_available_versions_iterator_function_t)(
+        nyx_device_t *, nyx_firmware_update_iterator_handle_t);
+typedef nyx_error_t (*nyx_firmware_update_flash_function_t)(nyx_device_t *,
+        nyx_firmware_version_info_handle_t, bool, int32_t *,
+        nyx_device_callback_function_t, void *);
 
-typedef nyx_error_t (*nyx_system_set_alarm_function_t)(nyx_device_t *, time_t, nyx_device_callback_function_t, void *);
-typedef nyx_error_t (*nyx_system_query_next_alarm_function_t)(nyx_device_t *, time_t *);
-typedef nyx_error_t (*nyx_system_query_rtc_time_function_t)(nyx_device_t *, time_t *);
+typedef nyx_error_t (*nyx_system_set_alarm_function_t)(nyx_device_t *, time_t,
+        nyx_device_callback_function_t, void *);
+typedef nyx_error_t (*nyx_system_query_next_alarm_function_t)(nyx_device_t *,
+        time_t *);
+typedef nyx_error_t (*nyx_system_query_rtc_time_function_t)(nyx_device_t *,
+        time_t *);
 typedef nyx_error_t (*nyx_system_suspend_function_t)(nyx_device_t *, bool *);
-typedef nyx_error_t (*nyx_system_shutdown_function_t)(nyx_device_t *, nyx_system_shutdown_type_t, const char *);
-typedef nyx_error_t (*nyx_system_reboot_function_t)(nyx_device_t *, nyx_system_shutdown_type_t, const char *);
-typedef nyx_error_t (*nyx_system_erase_partition_function_t)(nyx_device_t *, nyx_system_erase_type_t, const char *);
+typedef nyx_error_t (*nyx_system_shutdown_function_t)(nyx_device_t *,
+        nyx_system_shutdown_type_t, const char *);
+typedef nyx_error_t (*nyx_system_reboot_function_t)(nyx_device_t *,
+        nyx_system_shutdown_type_t, const char *);
+typedef nyx_error_t (*nyx_system_erase_partition_function_t)(nyx_device_t *,
+        nyx_system_erase_type_t, const char *);
 
-typedef nyx_error_t (*nyx_bearing_get_location_function_t)(nyx_device_t*, nyx_sensor_bearing_location_t*);
-typedef nyx_error_t (*nyx_bearing_set_location_function_t)(nyx_device_t*, const nyx_sensor_bearing_location_t*);
-typedef nyx_error_t (*nyx_orientation_get_threshold_function_t)(nyx_device_t*, nyx_sensor_orientation_threshold_t*);
-typedef nyx_error_t (*nyx_orientation_set_threshold_function_t)(nyx_device_t*, const nyx_sensor_orientation_threshold_t*);
+typedef nyx_error_t (*nyx_bearing_get_location_function_t)(nyx_device_t *,
+        nyx_sensor_bearing_location_t *);
+typedef nyx_error_t (*nyx_bearing_set_location_function_t)(nyx_device_t *,
+        const nyx_sensor_bearing_location_t *);
+typedef nyx_error_t (*nyx_orientation_get_threshold_function_t)(nyx_device_t *,
+        nyx_sensor_orientation_threshold_t *);
+typedef nyx_error_t (*nyx_orientation_set_threshold_function_t)(nyx_device_t *,
+        const nyx_sensor_orientation_threshold_t *);
 
-typedef nyx_error_t (*nyx_device_info_get_info_function_t)(nyx_device_t*, nyx_device_info_type_t type, char* dest, size_t dest_len);
-typedef nyx_error_t (*nyx_device_info_query_function_t)(nyx_device_t*, nyx_device_info_type_t type, const char** dest);
+typedef nyx_error_t (*nyx_device_info_get_info_function_t)(nyx_device_t *,
+        nyx_device_info_type_t type, char *dest, size_t dest_len);
+typedef nyx_error_t (*nyx_device_info_query_function_t)(nyx_device_t *,
+        nyx_device_info_type_t type, const char **dest);
 
-typedef nyx_error_t (*nyx_mass_storage_mode_set_mode_function_t)(nyx_device_t *, nyx_mass_storage_mode_action_t, nyx_mass_storage_mode_return_code_t*);
-typedef nyx_error_t (*nyx_mass_storage_mode_get_state_function_t)(nyx_device_t *,nyx_mass_storage_mode_state_t*);
-typedef nyx_error_t (*nyx_mass_storage_mode_register_change_callback_function_t)(nyx_device_t *, nyx_device_callback_function_t, void *);
+typedef nyx_error_t (*nyx_mass_storage_mode_set_mode_function_t)(nyx_device_t *,
+        nyx_mass_storage_mode_action_t, nyx_mass_storage_mode_return_code_t *);
+typedef nyx_error_t (*nyx_mass_storage_mode_get_state_function_t)(
+    nyx_device_t *, nyx_mass_storage_mode_state_t *);
+typedef nyx_error_t (*nyx_mass_storage_mode_register_change_callback_function_t)
+(nyx_device_t *, nyx_device_callback_function_t, void *);
 
-typedef nyx_error_t (*nyx_os_info_query_function_t)(nyx_device_t *, nyx_os_info_query_t type, const char ** val);
-typedef nyx_error_t (*nyx_security_create_aes_key_function_t)(nyx_device_handle_t handle, int keylen, int *key_index);
-typedef nyx_error_t (*nyx_security_crypt_aes_function_t)(nyx_device_handle_t handle, int key_index, nyx_security_aes_block_mode_t mode, int encrypt, const char *src, int srclen, char *dest, int *destlen, int *ivlen);
-typedef nyx_error_t (*nyx_security_create_rsa_key_function_t)(nyx_device_handle_t handle, int keylen, int *key_index);
-typedef nyx_error_t (*nyx_security_crypt_rsa_function_t)(nyx_device_handle_t handle, int key_index, int encrypt, const char *src, int srclen, char *dest, int *destlen);
-typedef nyx_error_t (*nyx_security_init_hash_function_t)(nyx_device_handle_t handle, const char *hash_algo);
-typedef nyx_error_t (*nyx_security_update_hash_function_t)(nyx_device_handle_t handle, const char *src, int srclen);
-typedef nyx_error_t (*nyx_security_finalize_hash_function_t)(nyx_device_handle_t handle, char *dest);
-typedef nyx_error_t (*nyx_security_finalize_and_save_hash_function_t)(nyx_device_handle_t handle, int *index);
-typedef nyx_error_t (*nyx_security_load_hash_function_t)(nyx_device_handle_t handle, const char *hash_algo, int index, char *dest);
-typedef nyx_error_t (*nyx_security_save_certificate_function_t)(nyx_device_handle_t handle, int *index, const char *x509);
-typedef nyx_error_t (*nyx_security_load_certificate_function_t)(nyx_device_handle_t handle, int index, char **x509);
+typedef nyx_error_t (*nyx_os_info_query_function_t)(nyx_device_t *,
+        nyx_os_info_query_t type, const char **val);
+typedef nyx_error_t (*nyx_security_create_aes_key_function_t)(
+    nyx_device_handle_t handle, int keylen, int *key_index);
+typedef nyx_error_t (*nyx_security_crypt_aes_function_t)(
+    nyx_device_handle_t handle, int key_index, nyx_security_aes_block_mode_t mode,
+    int encrypt, const char *src, int srclen, char *dest, int *destlen, int *ivlen);
+typedef nyx_error_t (*nyx_security_create_rsa_key_function_t)(
+    nyx_device_handle_t handle, int keylen, int *key_index);
+typedef nyx_error_t (*nyx_security_crypt_rsa_function_t)(
+    nyx_device_handle_t handle, int key_index, int encrypt, const char *src,
+    int srclen, char *dest, int *destlen);
+typedef nyx_error_t (*nyx_security_init_hash_function_t)(
+    nyx_device_handle_t handle, const char *hash_algo);
+typedef nyx_error_t (*nyx_security_update_hash_function_t)(
+    nyx_device_handle_t handle, const char *src, int srclen);
+typedef nyx_error_t (*nyx_security_finalize_hash_function_t)(
+    nyx_device_handle_t handle, char *dest);
+typedef nyx_error_t (*nyx_security_finalize_and_save_hash_function_t)(
+    nyx_device_handle_t handle, int *index);
+typedef nyx_error_t (*nyx_security_load_hash_function_t)(
+    nyx_device_handle_t handle, const char *hash_algo, int index, char *dest);
+typedef nyx_error_t (*nyx_security_save_certificate_function_t)(
+    nyx_device_handle_t handle, int *index, const char *x509);
+typedef nyx_error_t (*nyx_security_load_certificate_function_t)(
+    nyx_device_handle_t handle, int index, char **x509);
 
 #ifdef __cplusplus
 }

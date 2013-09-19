@@ -26,24 +26,30 @@
 
 #include "nyx_led_controller_impl.h"
 
-nyx_error_t nyx_led_controller_execute_effect(nyx_device_handle_t handle, nyx_led_controller_effect_t effect)
+nyx_error_t nyx_led_controller_execute_effect(nyx_device_handle_t handle,
+        nyx_led_controller_effect_t effect)
 {
-	nyx_execute_return_function(led_controller_execute_effect, LED_CONTROLLER, EXECUTE_EFFECT, handle, effect);
+	nyx_execute_return_function(led_controller_execute_effect, LED_CONTROLLER,
+	                            EXECUTE_EFFECT, handle, effect);
 }
 
-nyx_error_t nyx_led_controller_stop(nyx_device_handle_t handle, nyx_led_controller_led_t led)
+nyx_error_t nyx_led_controller_stop(nyx_device_handle_t handle,
+                                    nyx_led_controller_led_t led)
 {
-	nyx_execute_return_function(led_controller_stop, LED_CONTROLLER, STOP, handle, led);
+	nyx_execute_return_function(led_controller_stop, LED_CONTROLLER, STOP, handle,
+	                            led);
 }
 
 nyx_error_t nyx_led_controller_get_state(nyx_device_handle_t handle,
-        nyx_led_controller_led_t led, nyx_led_controller_state_t* state)
+        nyx_led_controller_led_t led, nyx_led_controller_state_t *state)
 {
-	nyx_execute_return_function(led_controller_get_state, LED_CONTROLLER, GET_STATE, handle, led, state);
+	nyx_execute_return_function(led_controller_get_state, LED_CONTROLLER, GET_STATE,
+	                            handle, led, state);
 }
 
 nyx_error_t nyx_led_controller_set_abl_state(nyx_device_handle_t handle,
         nyx_led_controller_led_t led, nyx_led_controller_abl_state_t abl_state)
 {
-	nyx_execute_return_function(led_controller_set_abl_state, LED_CONTROLLER, SET_ABL_STATE, handle, led, abl_state);
+	nyx_execute_return_function(led_controller_set_abl_state, LED_CONTROLLER,
+	                            SET_ABL_STATE, handle, led, abl_state);
 }

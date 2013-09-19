@@ -67,7 +67,8 @@ typedef enum {
 	NYX_DEVICE_INFO_STORAGE_SIZE,   /**< Value as specified on the product data sheet */
 	NYX_DEVICE_INFO_WIFI_ADDR,      /**< WiFi MAC Address */
 	NYX_DEVICE_INFO_HARDWARE_ID,    /**< Internal ID code for the specific MACHINE */
-} nyx_device_info_type_t;
+}
+nyx_device_info_type_t;
 
 /** @} */
 

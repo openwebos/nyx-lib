@@ -32,16 +32,17 @@ extern "C" {
 #endif
 
 /**
- * @brief	Get the display metrics: pixels, dpi, aspect ratio.
+ * @brief   Get the display metrics: pixels, dpi, aspect ratio.
  *
- * @param[in] 	handle - handle to the device.
- * @param[out] 	metrics_out_ptr - the structure, which contains display related metrics.
+ * @param[in]   handle - handle to the device.
+ * @param[out]  metrics_out_ptr - the structure, which contains display related metrics.
  *
  * @return error that will be NYX_ERROR_NONE if operation is
  * successful or an actual error if operation did not succeed.
  *
  */
-NYX_API_EXPORT nyx_error_t nyx_display_get_metrics(nyx_device_handle_t handle, nyx_display_metrics_t* metrics_out_ptr);
+NYX_API_EXPORT nyx_error_t nyx_display_get_metrics(nyx_device_handle_t handle,
+        nyx_display_metrics_t *metrics_out_ptr);
 
 /** @} */
 

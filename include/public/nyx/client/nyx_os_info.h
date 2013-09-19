@@ -43,12 +43,12 @@ extern "C" {
 */
 
 /**
- * @brief	Get the os information.
+ * @brief   Get the os information.
  *
- * @param[in] 	handle - handle to the device
- * @param[in] 	type - type of information to retrieve
+ * @param[in]   handle - handle to the device
+ * @param[in]   type - type of information to retrieve
  *
- * @param[out]	val - location into which the pointer to the string information
+ * @param[out]  val - location into which the pointer to the string information
  *              is copied; it will always be NUL-terminated
  *
  * @return error code
@@ -59,7 +59,8 @@ extern "C" {
  *   - NYX_ERROR_DEVICE_UNAVAILABLE if value or device for given 'type' is not available
 
  */
-NYX_API_EXPORT nyx_error_t nyx_os_info_query(nyx_device_handle_t handle, nyx_os_info_query_t type, const char ** val);
+NYX_API_EXPORT nyx_error_t nyx_os_info_query(nyx_device_handle_t handle,
+        nyx_os_info_query_t type, const char **val);
 
 /** @} */
 
