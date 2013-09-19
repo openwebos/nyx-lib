@@ -31,7 +31,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#define READ_BUFFER_SIZE 10
+#define READ_BUFFER_SIZE 20
 
 int32_t nyx_utils_read_value (char* path)
 {
@@ -42,10 +42,12 @@ int32_t nyx_utils_read_value (char* path)
 	}
 
 	char buffer[READ_BUFFER_SIZE];
-	ssize_t r = read (fd, buffer, READ_BUFFER_SIZE);
+	ssize_t r = read (fd, buffer, READ_BUFFER_SIZE-1);
 	if (r <= 0) {
 		goto end;
 	}
+
+	buffer[r] = '\0';
 
 	char* endptr = NULL;
 	val = (int32_t) strtol (buffer, &endptr, 10);
@@ -67,7 +69,8 @@ void nyx_utils_write_value (char* path, int32_t val)
 	int32_t fd = open (path, O_WRONLY);
 	if (fd >= 0) {
 		char buffer[READ_BUFFER_SIZE];
-		sprintf(buffer, "%i", val);
+		snprintf(buffer, READ_BUFFER_SIZE-1, "%i", val);
+		buffer[READ_BUFFER_SIZE-1] = '\0';
 
 		int32_t l = strlen (buffer);
 
