@@ -251,7 +251,7 @@ typedef nyx_error_t (*nyx_system_shutdown_function_t)(nyx_device_t *,
 typedef nyx_error_t (*nyx_system_reboot_function_t)(nyx_device_t *,
         nyx_system_shutdown_type_t, const char *);
 typedef nyx_error_t (*nyx_system_erase_partition_function_t)(nyx_device_t *,
-        nyx_system_erase_type_t, const char *);
+        nyx_system_erase_type_t);
 
 typedef nyx_error_t (*nyx_bearing_get_location_function_t)(nyx_device_t *,
         nyx_sensor_bearing_location_t *);

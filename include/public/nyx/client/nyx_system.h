@@ -137,11 +137,12 @@ NYX_API_EXPORT nyx_error_t nyx_system_reboot(nyx_device_handle_t handle,
         nyx_system_shutdown_type_t type, const char *reason);
 
 /**
- * @brief Erase partition.
+ * @brief Erase a logical partition and restore its original contents upon the next reboot.
+ *
+ * The actual erasure might not occur until the reboot is performed.
  *
  * @param[in]  handle - the handle returned from nyx_device_open
- * @param[in]  type   - erase type (var/media/all/wipe)
- * @param[out] error_msg - error message in case underlying erase script fails
+ * @param[in]  type   - erase type
  *
  *
  * @return error code (NYX_ERROR_NONE if operation is successful)
@@ -149,7 +150,7 @@ NYX_API_EXPORT nyx_error_t nyx_system_reboot(nyx_device_handle_t handle,
  */
 
 NYX_API_EXPORT nyx_error_t nyx_system_erase_partition(nyx_device_handle_t
-        handle, nyx_system_erase_type_t type, const char *error_msg);
+        handle, nyx_system_erase_type_t type);
 
 /**
  * @brief Load a new QOS profile.

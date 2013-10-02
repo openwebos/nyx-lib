@@ -70,8 +70,8 @@ nyx_error_t nyx_system_reboot(nyx_device_handle_t handle,
 }
 
 nyx_error_t nyx_system_erase_partition(nyx_device_handle_t handle,
-                                       nyx_system_erase_type_t type, const char *error_msg)
+                                       nyx_system_erase_type_t type)
 {
 	nyx_execute_return_function(system_erase_partition, SYSTEM, ERASE_PARTITION,
-	                            handle, type, error_msg);
+	                            handle, type);
 }
