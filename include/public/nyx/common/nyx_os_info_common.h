@@ -1,6 +1,6 @@
 /* @@@LICENSE
 *
-*      Copyright (c) 2013 LG Electronics
+*      Copyright (c) 2013-2014 LG Electronics
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -53,7 +53,11 @@ typedef enum {
 	NYX_OS_INFO_WEBOS_IMAGENAME,
 	NYX_OS_INFO_WEBOS_API_VERSION,
 	NYX_OS_INFO_WEBOS_PRERELEASE,
-	NYX_OS_INFO_MANUFACTURING_VERSION
+	NYX_OS_INFO_MANUFACTURING_VERSION,
+	// NYX_OS_INFO_MANUFACTURING_VERSION will be deprecated,
+	// use NYX_OS_INFO_WEBOS_MANUFACTURING_VERSION instead
+	NYX_OS_INFO_WEBOS_MANUFACTURING_VERSION = NYX_OS_INFO_MANUFACTURING_VERSION,
+	NYX_OS_INFO_ENCRYPTION_KEY_TYPE
 }
 nyx_os_info_query_t;
 

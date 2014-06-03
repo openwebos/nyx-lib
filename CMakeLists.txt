@@ -1,6 +1,6 @@
 # @@@LICENSE
 #
-#      Copyright (c) 2010-2013 LG Electronics, Inc.
+#      Copyright (c) 2010-2014 LG Electronics, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,10 +25,10 @@ cmake_minimum_required(VERSION 2.8.7)
 project(nyx)
 
 set(NYX_API_VERSION_MAJOR 6)
-set(NYX_API_VERSION_MINOR 0)
+set(NYX_API_VERSION_MINOR 1)
 
 include(webOS/webOS)
-webos_modules_init(1 0 0 QUALIFIER RC5)
+webos_modules_init(1 0 0 QUALIFIER RC7)
 webos_component(${NYX_API_VERSION_MAJOR} ${NYX_API_VERSION_MINOR} 0)
 
 set(NYX_LIB_ROOT ${WEBOS_INSTALL_LIBDIR}/nyx CACHE PATH "Nyx internal executables install root path")
